@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111030190615) do
+ActiveRecord::Schema.define(:version => 20111030193949) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -109,5 +109,17 @@ ActiveRecord::Schema.define(:version => 20111030190615) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "lendings", :force => true do |t|
+    t.date     "return_date"
+    t.integer  "borrower_id"
+    t.integer  "book_id"
+    t.boolean  "returned"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lendings", ["book_id"], :name => "index_lendings_on_book_id"
+  add_index "lendings", ["borrower_id"], :name => "index_lendings_on_borrower_id"
 
 end

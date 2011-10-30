@@ -61,4 +61,5 @@ namespace :db do
       Borrower.create(user)
     end
   end
+
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  return_date: 2011-10-30
+  borrower: 
+  book: 
+  returned: false
+
+two:
+  return_date: 2011-10-30
+  borrower: 
+  book: 
+  returned: false
