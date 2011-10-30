@@ -31,8 +31,8 @@ namespace :db do
         # Komplexeres
 
         datum = book.delete(:datum)
-        entleiher = book.delete(:entleiher)
-        leihende = book.delete(:leihende)
+        entleiher = book.delete(:entleiher) || ""
+        leihende = book.delete(:leihende) || ""
         aenderungsdatum = book.delete(:aenderungsdatum)
         book.delete(:dump)
         book.delete(:Vormerken)
@@ -45,6 +45,28 @@ namespace :db do
           puts b.errors
           puts b.isbn
         end
+        if entleiher.strip != "" or leihende.strip != ""
+          borrower = Borrower.find_by_name(entleiher.strip)
+          unless borrower
+            puts "Borrower not found: #{entleiher.strip }"
+            puts "book: #{b.id}, #{b.titel}"
+          else
+            lending = Lending.new
+            lending.book = b
+            lending.borrower = borrower
+            lending.returned = false
+            begin 
+              lending.return_date = DateTime.strptime(leihende, "%m/%d/%Y")
+            rescue => e
+              puts e
+              puts leihende
+              lending.return_date = 1.month.from_now
+            end
+            unless lending.save
+              puts lending.errors
+            end
+          end
+        end
       end
     end
   end
@@ -53,12 +75,14 @@ namespace :db do
 
     DB = Sequel.connect(ENV["OLD_DB"])
     users = DB[:ausleihers]
-    users.each do |user|
-      user.delete(:email2)
-      user[:updated_at] = user[:aenderungsdatum]
-      user.delete(:aenderungsdatum)
-      user.delete(:fachkombi)
-      Borrower.create(user)
+    Borrower.transaction do
+      users.each do |user|
+        user.delete(:email2)
+        user[:updated_at] = user[:aenderungsdatum]
+        user.delete(:aenderungsdatum)
+        user.delete(:fachkombi)
+        Borrower.create(user)
+      end
     end
   end
 
