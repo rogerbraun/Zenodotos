@@ -48,4 +48,17 @@ namespace :db do
       end
     end
   end
+
+  task :import_users => :environment do
+
+    DB = Sequel.connect(ENV["OLD_DB"])
+    users = DB[:ausleihers]
+    users.each do |user|
+      user.delete(:email2)
+      user[:updated_at] = user[:aenderungsdatum]
+      user.delete(:aenderungsdatum)
+      user.delete(:fachkombi)
+      Borrower.create(user)
+    end
+  end
 end

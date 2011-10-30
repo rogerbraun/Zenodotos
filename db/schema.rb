@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111025150547) do
+ActiveRecord::Schema.define(:version => 20111030190615) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -89,6 +89,23 @@ ActiveRecord::Schema.define(:version => 20111025150547) do
     t.integer  "jid"
     t.string   "nacsis_url"
     t.string   "interne_notizen"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "borrowers", :force => true do |t|
+    t.string   "anschrift"
+    t.string   "bearbeiter"
+    t.string   "email"
+    t.string   "heimatanschrift"
+    t.integer  "matrikelnr"
+    t.string   "mobiltelefon"
+    t.string   "name"
+    t.string   "status"
+    t.string   "telefon"
+    t.string   "telefon2"
+    t.string   "ub_nr"
+    t.string   "vermerke"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
