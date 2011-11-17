@@ -10,5 +10,28 @@ ActiveAdmin.register Book do
 
     default_actions
   end
+
+  sidebar "Aktionen", :only => :show do
+    book = Book.find(params[:id])
+    unless book.current_lending
+
+      @lending = Lending.new
+      @lending.book = book
+      @lending.return_date = 1.month.from_now
+      render :partial => "lending", :locals => {lending: @lending}
+    else
+      "Ausgeliehen"
+    end
+  end
+
+  member_action :lend, :method => :post do
+    book = Book.find(params[:id])
+    lending = Lending.create(params[:lending])
+    unless lending.id
+      redirect_to admin_book_path(book), :notice => "Buch wurde nicht verliehen."
+    else
+      redirect_to admin_book_path(book), :notice => "Buch wurde verliehen!"
+    end
+  end
   
 end

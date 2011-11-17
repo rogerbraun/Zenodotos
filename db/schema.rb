@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111030193949) do
+ActiveRecord::Schema.define(:version => 20111117215909) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(:version => 20111030193949) do
     t.date     "return_date"
     t.integer  "borrower_id"
     t.integer  "book_id"
-    t.boolean  "returned"
+    t.boolean  "returned",    :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

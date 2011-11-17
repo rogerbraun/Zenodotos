@@ -26,7 +26,6 @@ group :development do
   gem "sequel"
   gem "rspec-rails"
   gem "capybara"
-  gem "guard-rspec"
   gem "libnotify"
   gem "mailcatcher"
 end
@@ -49,4 +48,7 @@ group :test do
   gem 'turn', :require => false
   gem "factory_girl_rails"
   gem "rspec-rails"
+  gem "spork"
+  gem "guard-spork"
+  gem "guard-rspec"
 end

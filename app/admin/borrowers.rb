@@ -6,5 +6,5 @@ ActiveAdmin.register Borrower do
     column :matrikelnr
     default_actions
   end
-  
+
 end

@@ -1,4 +1,5 @@
 require 'spec_helper'
+require "pry"
 
 describe "Admin page" do
 
@@ -49,6 +50,25 @@ describe "Admin page" do
       click_on "Overdue"
       page.should have_content(lending.borrower.name)
       page.should have_content(lending.book.titel)
+    end
+  end
+
+  describe "Borrowing and returning" do
+
+    describe "Borrowing a book" do
+      it "should be lendable from the book page" do
+        book = Factory(:book)
+        borrower = Factory(:borrower)
+
+        visit admin_book_path(book)
+        select(borrower.name, from: "Borrower")
+        click_on "Verleihen"
+
+        page.should have_content("wurde verliehen")
+
+        book.current_lending.should_not be_nil
+
+      end
     end
   end
 end
