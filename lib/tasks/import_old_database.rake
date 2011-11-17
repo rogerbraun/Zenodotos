@@ -9,6 +9,8 @@ namespace :db do
   task :import_books=> :environment do
     DB = Sequel.connect(ENV["OLD_DB"])
     books = DB[:buch]
+    puts "Warning: No Borrowers in DB." if Borrower.count == 0
+    puts "Found #{books.count} books, trying to add them..."
     Book.transaction do 
       books.each do |book|
         book.rename(:ID,:id)
@@ -69,12 +71,14 @@ namespace :db do
         end
       end
     end
+    puts "Done"
   end
 
   task :import_users => :environment do
 
     DB = Sequel.connect(ENV["OLD_DB"])
     users = DB[:ausleihers]
+    puts "Found #{users.count} users, trying to add them..."
     Borrower.transaction do
       users.each do |user|
         user.delete(:email2)
@@ -84,6 +88,7 @@ namespace :db do
         Borrower.create(user)
       end
     end
+    puts "Done"
   end
 
 end

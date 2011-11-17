@@ -25,7 +25,12 @@ group :development do
   gem "pry"
   gem "mysql2"
   gem "sequel"
+  gem "rspec-rails"
+  gem "capybara"
+  gem "guard-rspec"
+  gem "libnotify"
 end
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -42,4 +47,6 @@ end
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem "factory_girl_rails"
+  gem "rspec-rails"
 end
