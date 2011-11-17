@@ -1,3 +1,4 @@
+#encoding: utf-8
 ActiveAdmin.register Lending do
   scope :overdue
 
@@ -19,5 +20,11 @@ ActiveAdmin.register Lending do
 
   sidebar :actions do
     button_to "Mahnungen abschicken", send_overdue_reminders_path, :method => :post , :id => "send_overdue_reminders"
+  end
+
+  member_action :return, :method => :post do
+    lending = Lending.find(params[:id])
+    lending.return
+    redirect_to admin_book_path(lending.book), :notice => "Buch wurde zurückgegeben"
   end
 end

@@ -1,3 +1,4 @@
+#encoding: utf-8
 require 'spec_helper'
 require "pry"
 
@@ -68,6 +69,18 @@ describe "Admin page" do
 
         book.current_lending.should_not be_nil
 
+      end
+    end
+
+    describe "Returning a book" do
+      it "should be returnable if borrowed" do
+        lending = Factory(:lending)
+
+        visit admin_book_path(lending.book)
+        click_on "return_book"
+
+        page.should have_content("wurde zurückgegeben")
+        lending.book.current_lending.should be_nil
       end
     end
   end

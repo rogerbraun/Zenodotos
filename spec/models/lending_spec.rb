@@ -15,7 +15,6 @@ describe Lending do
 
     lending.id.should_not be_nil
 
-
     lending = Lending.new
     lending.borrower = user
     lending.book = book

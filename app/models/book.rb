@@ -4,6 +4,5 @@ class Book < ActiveRecord::Base
   def current_lending
     Lending.find_by_book_id_and_returned(id, false)
   end
-
   
 end

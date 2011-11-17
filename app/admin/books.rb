@@ -1,3 +1,4 @@
+#encoding: utf-8
 ActiveAdmin.register Book do
 
   index do
@@ -20,7 +21,7 @@ ActiveAdmin.register Book do
       @lending.return_date = 1.month.from_now
       render :partial => "lending", :locals => {lending: @lending}
     else
-      "Ausgeliehen"
+      button_to "Zurückgeben", return_admin_lending_path(book.current_lending), :id => "return_book"
     end
   end
 
