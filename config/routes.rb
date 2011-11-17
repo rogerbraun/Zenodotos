@@ -5,6 +5,8 @@ Zenodotos::Application.routes.draw do
 
   get "home/index"
 
+  match "/borrowers/send_overdue_reminders" => 'borrowers#send_overdue_reminders', :as => :send_overdue_reminders, :via => :post
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

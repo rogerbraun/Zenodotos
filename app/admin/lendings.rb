@@ -11,4 +11,8 @@ ActiveAdmin.register Lending do
     column :return_date
     column :returned
   end 
+
+  sidebar :actions do
+    link_to "Mahnungen abschicken", send_overdue_reminders_path, :method => :post , :id => "send_overdue_reminders"
+  end
 end

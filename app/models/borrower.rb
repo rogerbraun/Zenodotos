@@ -8,10 +8,7 @@ class Borrower < ActiveRecord::Base
     lending.borrower = self
     lending.book = book
     lending.return_date = date
-    unless lending.save
-      puts lending.errors
-    end
-    
+    lending.save
   end
 
   def send_overdue_reminder

@@ -31,9 +31,20 @@ describe "Admin index page" do
         visit admin_lendings_path
         page.should have_content(Lending.first.book.titel)
       end
-    end
 
-    describe "overdue book index" do
+      it "should have a way to send overdue reminders to all users" do
+        ActionMailer::Base.deliveries = []
+
+        10.times do 
+          Factory(:overdue_lending)
+        end
+
+        visit admin_lendings_path    
+        click_on "send_overdue_reminders"
+        ActionMailer::Base.deliveries.last.should_not be_nil
+        page.should have_content("gemahnt")
+      end
+
       it "should display all overdue books" do
         lending = Factory(:overdue_lending)
         
