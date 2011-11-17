@@ -1,6 +1,9 @@
 ActiveAdmin.register Lending do
   scope :overdue
 
+  filter :borrower
+  filter :return_date
+
   index do
     column :book, :sortable => :book do |lending|
       link_to lending.book.titel, admin_book_path(lending.book)
@@ -9,10 +12,12 @@ ActiveAdmin.register Lending do
       link_to lending.borrower.name, admin_borrower_path(lending.borrower)
     end
     column :return_date
-    column :returned
+    column :returned, :sortable => :returned do |lending|
+      lending.returned ? t("yes") : t("no")
+    end
   end 
 
   sidebar :actions do
-    link_to "Mahnungen abschicken", send_overdue_reminders_path, :method => :post , :id => "send_overdue_reminders"
+    button_to "Mahnungen abschicken", send_overdue_reminders_path, :method => :post , :id => "send_overdue_reminders"
   end
 end
