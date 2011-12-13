@@ -11,6 +11,10 @@ class Borrower < ActiveRecord::Base
     lending.save
   end
 
+  def return_all_books
+    lendings.unreturned.each(&:return)
+  end
+
   def send_overdue_reminder
     return nil if lendings.overdue.count == 0
     BorrowerMailer.overdue_reminder(self).deliver

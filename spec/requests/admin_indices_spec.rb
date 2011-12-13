@@ -82,6 +82,14 @@ describe "Admin page" do
         page.should have_content("wurde zurückgegeben")
         lending.book.current_lending.should be_nil
       end
+
+      it "should be returnable from the borrower view" do
+        lending = Factory(:lending)
+        visit admin_borrower_path(lending.borrower)
+        click_on "return_all_books"
+
+        page.should have_content("Bücher wurden zurückgegeben")
+      end
     end
   end
 end
