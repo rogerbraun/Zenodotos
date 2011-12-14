@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+  paginates_per 10
   has_many :lendings
 
   def current_lending
