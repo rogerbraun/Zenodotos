@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+  
+    <div class="span4">
+      <h1>Blindtext</h1>
+      <p>
+      <%= form_tag search_path, method: "get", id: "search_form" do %>
+        <%= text_field_tag :q %>
+        <div class="actions">
+          <button id="search_button" class="btn">Suchen</button>
+        </div>
+      <% end %>
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper fermentum sapien consequat bibendum. Curabitur cursus urna quis massa sagittis sagittis. Mauris tincidunt tortor id augue iaculis commodo. Maecenas sodales elit ut lectus molestie tempus convallis libero euismod. Morbi ultricies ipsum non justo placerat fermentum. Nam gravida aliquet orci, sit amet consequat libero hendrerit eget. Quisque dolor justo, congue sed sagittis eget, auctor in eros. Nam est risus, eleifend sed accumsan nec, adipiscing et dui. Fusce tortor ipsum, commodo eu rutrum a, posuere vel risus. In hac habitasse platea dictumst.
+      <p>
+      Suspendisse ultricies placerat rutrum. Vestibulum elementum tincidunt quam, id convallis velit vestibulum id. Etiam risus ante, consequat eu varius vel, laoreet ac massa. Suspendisse sagittis erat quis nulla tempus scelerisque aliquam nisi vehicula. Vestibulum a nisi non libero consequat rhoncus non ut diam. Nulla sagittis ullamcorper metus, in luctus sem adipiscing a. Donec quis nulla mauris, quis cursus sapien.</p>
+    </div>
+    <div class="span12">
+      <h1>Ergebnisse</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Titel</th>
+            <th>Titel - Japanisch</th>
+            <th>Autor</th>
+            <th>Autor - Japanisch</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+            <tr>
+              <td><%= book.titel %></td>
+              <td><%= book.titel_japanisch%></td>
+              <td><%= book.autor %></td>
+              <td><%= book.autor_japanisch %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

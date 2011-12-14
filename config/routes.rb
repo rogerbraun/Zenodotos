@@ -5,6 +5,8 @@ Zenodotos::Application.routes.draw do
 
   get "home/index"
 
+  match "/search" => 'search#index'
+
   match "/borrowers/send_overdue_reminders" => 'borrowers#send_overdue_reminders', :as => :send_overdue_reminders, :via => :post
 
   # The priority is based upon order of creation:
@@ -56,7 +58,7 @@ Zenodotos::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to => 'search#index'
 
   # See how all your routes lay out with "rake routes"
 

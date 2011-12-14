@@ -8,6 +8,9 @@ FactoryGirl.define do
 
   factory :book do
     sequence(:titel){|n| "Titel #{n}"}
+    sequence(:autor){|n| "Autor #{n}"}
+    sequence(:autor_japanisch){|n| "Autor japanisch #{n}"}
+    sequence(:titel_japanisch){|n| "Titel japanisch #{n}"}
   end
 
   factory :borrower do
