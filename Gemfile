@@ -18,6 +18,7 @@ gem 'sass-rails',   '~> 3.1.4'
 gem 'jquery-rails'
 
 gem "activeadmin"
+gem "kaminari"
 
 group :development do
   gem "thin"

@@ -236,6 +236,7 @@ DEPENDENCIES
   factory_girl_rails
   guard-rspec
   jquery-rails
+  kaminari
   libnotify
   mailcatcher
   mysql2

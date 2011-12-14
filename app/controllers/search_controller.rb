@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def index
-    @books = Book.quicksearch(params[:q])
+    @page = params[:page] || 1
+    @books = Book.quicksearch(params[:q]).page(@page)
     respond_to do |f|
       f.html
     end
