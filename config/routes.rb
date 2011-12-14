@@ -11,7 +11,7 @@ Zenodotos::Application.routes.draw do
 
   match "/borrowers/send_overdue_reminders" => 'borrowers#send_overdue_reminders', :as => :send_overdue_reminders, :via => :post
   
-  match "/printout" => "printouts#index"
+  resources :printouts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

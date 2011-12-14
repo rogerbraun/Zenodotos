@@ -4,7 +4,10 @@
       <h1>Leihzettel</h1>
     </div>
     <div class="span6">
-      Sachen
+      <p>
+        <h2>Ungedruckt: <%= @unprinted %></h2>
+        <%= link_to "Pdf generieren", new_printout_path %>
+      </p>
     </div>
     <div class="span10">
       <h1>Leihzettel-PDFs</h1>
