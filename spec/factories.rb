@@ -11,6 +11,7 @@ FactoryGirl.define do
     sequence(:autor){|n| "Autor #{n}"}
     sequence(:autor_japanisch){|n| "Autor japanisch #{n}"}
     sequence(:titel_japanisch){|n| "Titel japanisch #{n}"}
+    sequence(:signatur){|n| "Signatur #{n}"}
   end
 
   factory :borrower do

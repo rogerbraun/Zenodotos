@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    Ascii85 (1.0.1)
     actionmailer (3.1.1)
       actionpack (= 3.1.1)
       mail (~> 2.3.0)
@@ -126,9 +127,14 @@ GEM
     nokogiri (1.5.0)
     nyan-cat-formatter (0.0.4)
     orm_adapter (0.0.5)
+    pdf-reader (0.10.1)
+      Ascii85 (~> 1.0.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.2)
+    prawn (0.12.0)
+      pdf-reader (>= 0.9.0)
+      ttfunk (~> 1.0.2)
     pry (0.9.6.2)
       coderay (~> 0.9.8)
       method_source (~> 0.6.5)
@@ -216,6 +222,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    ttfunk (1.0.3)
     turn (0.8.3)
       ansi
     tzinfo (0.3.30)
@@ -242,6 +249,7 @@ DEPENDENCIES
   mailcatcher
   mysql2
   nyan-cat-formatter
+  prawn
   pry
   rails (= 3.1.1)
   rspec-rails

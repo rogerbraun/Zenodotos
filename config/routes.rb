@@ -1,4 +1,6 @@
 Zenodotos::Application.routes.draw do
+  get "printout/index"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -8,6 +10,8 @@ Zenodotos::Application.routes.draw do
   match "/search" => 'search#index'
 
   match "/borrowers/send_overdue_reminders" => 'borrowers#send_overdue_reminders', :as => :send_overdue_reminders, :via => :post
+  
+  match "/printout" => "printouts#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

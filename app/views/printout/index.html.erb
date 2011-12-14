@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="page-header">
+      <h1>Leihzettel</h1>
+    </div>
+    <div class="span6">
+      Sachen
+    </div>
+    <div class="span10">
+      <h1>Leihzettel-PDFs</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Erstellungsdatum</th>
+            <th>Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @printouts.each do |printout| %>
+            <tr>
+              <td><%= printout.created_at %></td>
+              <td><%= link_to "PDF", printout.pdf_url %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

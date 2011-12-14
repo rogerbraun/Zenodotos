@@ -19,6 +19,7 @@ gem 'jquery-rails'
 
 gem "activeadmin"
 gem "kaminari"
+gem "prawn"
 
 group :development do
   gem "thin"

@@ -3,6 +3,7 @@ class Lending < ActiveRecord::Base
   scope :unreturned, where("returned != ?", true)
   belongs_to :borrower
   belongs_to :book
+  belongs_to :printout
 
   validates_presence_of :borrower, :book, :return_date
   validates_uniqueness_of :book_id, :scope => :returned
