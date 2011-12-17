@@ -8,8 +8,12 @@ ActiveAdmin.register Borrower do
     default_actions
   end
 
+ # show do
+  #  render "show"
+  #end
+
   sidebar :actions, :only => :show do 
-    button_to "Alle Bücher zurückgeben", return_all_books_admin_borrower_path, :id => "return_all_books"
+    render "sidebar"
   end
 
   member_action :return_all_books, :method => :post do
