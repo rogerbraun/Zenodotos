@@ -29,6 +29,7 @@ namespace :db do
         book.rename(:litvor_sj, :literaturvorlage_japanisch)
         book.rename(:nacsis_sj, :nacsis_japanisch)
         book.rename(:internenotizen, :interne_notizen)
+        book.rename(:Vormerken,:vormerken)
 
         # Komplexeres
 
@@ -37,7 +38,6 @@ namespace :db do
         leihende = book.delete(:leihende) || ""
         aenderungsdatum = book.delete(:aenderungsdatum)
         book.delete(:dump)
-        book.delete(:Vormerken)
         book.delete(:mahnung)
         book.delete(:verlaengerung)
 
