@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <div class="sidebar">
+    <h1>Sidebar</h1>
+  </div>
+  <div class="content">
+    <div class="page-header">
+    <h1>Buchansicht</h1>
+    </div>
+    <div class="fm-style">
+      <form>
+        <div class="row">
+          <p>
+          <%= fm_textinput "signatur" %>
+          <%= fm_textinput "nebensignatur", spans: 6 %>
+          <%= fm_textinput "stifter" %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+          <%= fm_textinput "autor_japanisch", label: "Autor(J)", spans: 11 %>
+          <%= fm_textinput "standort" %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+          <%= fm_textinput "autor", spans: 11 %>
+          <%= fm_textinput "publikationsart" %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+          <%= fm_textinput "hrsg_japanisch", label: "Hrsg.(J)", spans: 16 %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+          <%= fm_textinput "hrsg", spans:16 %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+          <%= fm_textinput "titel_japanisch", label: "Titel(J)", spans: 16 %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+          <%= fm_textinput "titel", spans:16 %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            <%= fm_textinput "verlag_japanisch", label: "Verlag(J)", spans:8 %>
+            <%= fm_textinput "verlag", spans:8 %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            <%= fm_textinput "ort", spans: 7 %>
+            <%= fm_textinput "seiten", spans: 5 %>
+            <%= fm_textinput "format", spans: 4 %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            <%= fm_textinput "jahr" %>
+            <%= fm_textinput "auflage", spans: 6 %>
+            <%= fm_textinput "baende", label: "Bände" %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            <%= fm_textinput "isbn", spans: 8 %>
+            <%= fm_textinput "issn", spans: 8 %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            <%= fm_textinput "reihe_japanisch", label: "Reihe(J)", spans:16 %>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            <%= fm_textinput "reihe", spans: 16 %>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

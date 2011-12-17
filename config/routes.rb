@@ -1,5 +1,6 @@
 Zenodotos::Application.routes.draw do
-  get "printout/index"
+  get "fm_style/index"
+
 
   ActiveAdmin.routes(self)
 
