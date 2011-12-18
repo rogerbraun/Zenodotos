@@ -36,7 +36,6 @@ class Printout < ActiveRecord::Base
           0.upto(1) do |x|
             if not slice.empty? 
               lending = slice.pop
-              puts "Writing #{lending}"
               base_x = (x * width) + 5.mm
               base_y = (total_height - (y * height)) - 5.mm
               pdf.bounding_box([base_x, base_y], width: width - 5.mm, height: height -5.mm) do

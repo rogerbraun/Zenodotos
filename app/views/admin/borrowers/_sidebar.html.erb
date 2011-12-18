@@ -1,12 +1,15 @@
 <h2>Entliehene Bücher</h2>
 <p>
+<% if @borrower.unreturned.count == 0 %>
+Nichts entliehen
+<% else %>
   <ul>
     <% @borrower.unreturned.each do |lending| %>
       <li><%= link_to lending.book.titel, admin_lending_path(lending) %></li>
     <% end %>
   </ul>
-
 </p>
 <p>
   <%= button_to "Alle Bücher zurückgeben", return_all_books_admin_borrower_path, :id => "return_all_books" %>
+<% end %>
 </p>

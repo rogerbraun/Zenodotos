@@ -13,6 +13,7 @@ namespace :db do
     puts "Found #{books.count} books, trying to add them..."
     Book.transaction do 
       books.each do |book|
+
         book.rename(:ID,:id)
         book.rename(:Hrsg,:hrsg)
         book.rename(:Signatur, :signatur)
@@ -81,6 +82,9 @@ namespace :db do
     puts "Found #{users.count} users, trying to add them..."
     Borrower.transaction do
       users.each do |user|
+        user.each do |k, v|
+          v.gsub!("\v","\n") if v.class == String
+        end
         user.delete(:email2)
         user[:updated_at] = user[:aenderungsdatum]
         user.delete(:aenderungsdatum)
