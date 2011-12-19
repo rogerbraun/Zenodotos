@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Borrower do
 
-  it "should be possible to return all borrowed books" do
+  it "should return all borrowed books" do
     borrower = Factory(:borrower)
     book_1, book_2 = Factory(:book), Factory(:book)
 
@@ -17,7 +17,7 @@ describe Borrower do
 
   end
 
-  it "should be possible to borrow books" do
+  it "should borrow books" do
     borrower = Factory(:borrower)
     book = Factory(:book)
 
@@ -26,6 +26,17 @@ describe Borrower do
     borrower.borrow(book)
     
     borrower.lendings.count.should == 1
+  end
+
+  it "should send a reminder" do
+    borrower = Factory(:borrower)
+    book1, book2 = Factory(:book), Factory(:book)
+    borrower.borrow(book1, 1.month.ago)
+    borrower.borrow(book2, 1.month.ago)
+    borrower.send_overdue_reminder
+    mail = ActionMailer::Base.deliveries.last
+    mail.body.to_s.should include(book1.titel)
+    mail.body.to_s.should include(book2.titel)
   end
 
 end
