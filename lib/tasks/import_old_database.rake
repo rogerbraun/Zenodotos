@@ -31,10 +31,11 @@ namespace :db do
         book.rename(:nacsis_sj, :nacsis_japanisch)
         book.rename(:internenotizen, :interne_notizen)
         book.rename(:Vormerken,:vormerken)
+        book.rename(:datum, :altes_datum)
 
         # Komplexeres
 
-        datum = book.delete(:datum)
+        #datum = book.delete(:datum)
         entleiher = book.delete(:entleiher) || ""
         leihende = book.delete(:leihende) || ""
         aenderungsdatum = book.delete(:aenderungsdatum)
@@ -44,10 +45,17 @@ namespace :db do
 
         b = Book.new(book)
         
+        begin
+          b.aufnahmedatum = DateTime.strptime(b.altes_datum, "%m/%d/%Y")
+        rescue
+        end
+
         unless b.save
           puts b.errors
           puts b.isbn
         end
+
+
         if entleiher.strip != "" or leihende.strip != ""
           borrower = Borrower.find_by_name(entleiher.strip)
           unless borrower
