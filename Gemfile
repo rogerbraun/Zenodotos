@@ -22,6 +22,7 @@ gem "kaminari"
 gem "prawn"
 gem "mysql2"
 gem "sequel"
+gem "paper_trail", "~> 2"
 
 group :development do
   gem "thin"
