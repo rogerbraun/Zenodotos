@@ -38,12 +38,16 @@ end
 namespace :db_setup do
   task :create_shared, :roles => :app do
     run "mkdir -p #{deploy_to}/#{shared_dir}/db/"
-    run "chmod 666 #{deploy_to}/#{shared_dir}/db/"
+    run "chmod 1777 #{deploy_to}/#{shared_dir}/db/"
+    run "mkdir -p #{deploy_to}/#{shared_dir}/pdf/"
+    run "chmod 1777 #{deploy_to}/#{shared_dir}/pdf/"
   end
 
   task :link_shared do
     run "rm -rf #{release_path}/db/sqlite"
     run "ln -nfs #{shared_path}/db #{release_path}/db/sqlite"
+    run "rm -rf #{release_path}/public/pdf"
+    run "ln -nfs #{shared_path}/pdf #{release_path}/public/pdf"
   end
 end
 
