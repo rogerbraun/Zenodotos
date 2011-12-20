@@ -1,4 +1,5 @@
 class Lending < ActiveRecord::Base
+  has_paper_trail
   scope :overdue, lambda { where("return_date < ? and returned != ?", Time.now, true) }
   scope :unreturned, where("returned != ?", true)
   belongs_to :borrower

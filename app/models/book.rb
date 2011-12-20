@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+  has_paper_trail
   paginates_per 10
   has_many :lendings
 

@@ -34,5 +34,11 @@ ActiveAdmin.register Book do
       redirect_to admin_book_path(book), :notice => "Buch wurde verliehen!"
     end
   end
+
+  controller do
+    def user_for_paper_trail
+      current_admin_user
+    end
+  end
   
 end

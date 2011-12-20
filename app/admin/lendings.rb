@@ -27,4 +27,11 @@ ActiveAdmin.register Lending do
     lending.return
     redirect_to admin_book_path(lending.book), :notice => "Buch wurde zurückgegeben"
   end
+
+  controller do
+    def user_for_paper_trail
+      current_admin_user
+    end
+  end
+
 end

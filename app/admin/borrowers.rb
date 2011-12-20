@@ -22,4 +22,10 @@ ActiveAdmin.register Borrower do
     redirect_to admin_borrower_path(borrower), :notice => "Bücher wurden zurückgegeben"
   end
 
+  controller do
+    def user_for_paper_trail
+      current_admin_user
+    end
+  end
+
 end

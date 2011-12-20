@@ -1,4 +1,5 @@
 class Borrower < ActiveRecord::Base
+  has_paper_trail
 
   has_many :lendings
 
