@@ -6,7 +6,8 @@ class Lending < ActiveRecord::Base
   belongs_to :printout
 
   validates_presence_of :borrower, :book, :return_date
-  validates_uniqueness_of :book_id, :scope => :returned
+  
+  #validates_uniqueness_of :book_id, :scope => :returned
 
   def return
     update_attribute(:returned, true)

@@ -20,12 +20,12 @@ gem 'jquery-rails'
 gem "activeadmin"
 gem "kaminari"
 gem "prawn"
+gem "mysql2"
+gem "sequel"
 
 group :development do
   gem "thin"
   gem "pry"
-  gem "mysql2"
-  gem "sequel"
   gem "rspec-rails"
   gem "capybara"
   gem "libnotify"
