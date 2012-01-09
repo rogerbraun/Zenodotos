@@ -1,6 +1,6 @@
 <%= semantic_form_for lending, :url => lend_admin_book_path do |f| %>
   <%= f.inputs do %>
-    <%= f.input :borrower %>
+    <%= f.input :borrower, :collection => Borrower.order("name") %>
     <%= f.input :book_id, :as => :hidden %>
     <%= f.input :return_date %>
   <% end %>
