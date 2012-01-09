@@ -21,7 +21,8 @@ ActiveAdmin.register Book do
       @lending.return_date = 1.month.from_now
       render :partial => "lending", :locals => {lending: @lending}
     else
-      button_to "Zurückgeben", return_admin_lending_path(book.current_lending), :id => "return_book"
+      render :partial => "return_lending", :locals => {lending: book.current_lending}
+      #button_to "Zurückgeben", return_admin_lending_path(book.current_lending), :id => "return_book"
     end
   end
 

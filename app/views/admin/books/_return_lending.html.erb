@@ -1,0 +1,5 @@
+<h3>Entliehen von:</h3>
+<p><%= link_to lending.borrower.name, admin_borrower_path(lending.borrower) %></p>
+<hr>
+<h3>Aktionen:</h3>
+<p><%= link_to "Zurückgeben", return_admin_lending_path(lending), :id => "return_book" %></p>
