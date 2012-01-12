@@ -72,6 +72,19 @@ describe "Admin page" do
       end
     end
 
+    describe "Extending the return date" do
+      it "has a link for extending the return date" do
+        lending = Factory(:lending)
+        lending.reload
+        date = lending.return_date.dup
+        visit admin_book_path(lending.book)
+        click_on "extend_return_date"
+        page.should have_content("wurde verlängert")
+        lending.reload
+        lending.return_date.should == date + 28.days
+      end
+    end
+
     describe "Returning a book" do
       it "should be returnable if borrowed" do
         lending = Factory(:lending)

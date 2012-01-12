@@ -53,4 +53,20 @@ describe Lending do
     l2.returned.should be_true
 
   end
+
+  it "allows extending the return date by a standard amount of days" do
+    lending = Factory(:lending)
+    date = lending.return_date.dup
+    date = date + 28.days
+    lending.extend_date
+    lending.return_date.should == date
+  end
+
+  it "allows extenden the return date by a given amout of days" do
+    lending = Factory(:lending)
+    date = lending.return_date.dup
+    date = date + 40.days
+    lending.extend_date(40.days)
+    lending.return_date.should == date
+  end
 end

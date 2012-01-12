@@ -13,4 +13,8 @@ class Lending < ActiveRecord::Base
   def return
     update_attribute(:returned, true)
   end
+
+  def extend_date(days = 28.days)
+    update_attribute(:return_date, return_date + days)
+  end
 end

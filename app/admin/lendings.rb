@@ -28,6 +28,12 @@ ActiveAdmin.register Lending do
     redirect_to admin_book_path(lending.book), :notice => "Buch wurde zurückgegeben"
   end
 
+  member_action :extend_return_date, :method => :post do
+    lending = Lending.find(params[:id])
+    lending.extend_date
+    redirect_to admin_book_path(lending.book), :notice => "Buch wurde verlängert"
+  end
+
   controller do
     def user_for_paper_trail
       current_admin_user
