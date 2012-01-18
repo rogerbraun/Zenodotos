@@ -12,6 +12,8 @@ ActiveAdmin.register Book do
     default_actions
   end
 
+  form :partial => "form"
+
   sidebar "Aktionen", :only => :show do
     book = Book.find(params[:id])
     unless book.current_lending

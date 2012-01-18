@@ -1,0 +1,77 @@
+<%= semantic_form_for [:admin, @book] do |f| %>
+<fieldset class="inputs">
+  <table class="form_table">
+    <tr>
+      <td><%= input(@book, :signatur)  %></td>
+      <td><%= input(@book, :nebensignatur) %></td>
+      <td><%= input(@book, :stifter) %></td>
+    </tr>
+    <tr>
+      <td colspan='2'><%= input(@book, :autor) %></td>
+      <td><%= input(@book, :standort) %></td>
+    </tr>
+    <tr>
+      <td colspan='2' class='japanisch'><%= input(@book, :autor_japanisch) %></td>
+      <td><%= input(@book, :publikationsart) %></td>
+    </tr>
+    <tr>
+      <td colspan='2'><%= input(@book, :hrsg) %></td>
+      <td class="japanisch"><%= input(@book, :hrsg_japanisch) %></td>
+    </tr>
+    <tr>
+      <td colspan='2'><%= input(@book, :titel) %></td>
+      <td class="japanisch"><%= input(@book, :titel_japanisch) %></td>
+    </tr>
+    <tr>
+      <td colspan='2'><%= input(@book, :verlag) %></td>
+      <td class="japanisch"><%= input(@book, :verlag_japanisch) %></td>
+    </tr>
+    <tr>
+      <td><%= input(@book, :ort) %></td>
+      <td><%= input(@book, :seiten) %></td>
+      <td><%= input(@book, :format) %></td>
+    </tr>
+    <tr>
+      <td><%= input(@book, :jahr) %></td>
+      <td><%= input(@book, :auflage) %></td>
+      <td><%= input(@book, :baende) %></td>
+    </tr>
+    <tr>
+      <td colspan='2'><%= input(@book, :isbn) %></td>
+      <td><%= input(@book, :issn) %></td>
+    </tr>
+    <tr>
+      <td colspan='2'><%= input(@book, :reihe) %></td>
+      <td class="japanisch"><%= input(@book, :reihe_japanisch) %></td>
+    </tr>
+    <tr>
+      <td colspan='3'><%= input(@book, :inhalt) %></td>
+    </tr>
+    <tr>
+      <td colspan='3'><%= input(@book, :anmerkungen) %></td>
+    </tr>
+    <tr>
+      <td colspan='3'><%= input(@book, :nacsis_url) %></td>
+    </td>
+    <tr>
+      <td colspan='3'><%= textarea(@book, :nacsis_japanisch, 4) %></td>
+    </tr>
+    <tr>
+      <td><%= input(@book, :aufnahmedatum) %></td>
+      <td><%= input(@book, :sprache) %></td>
+      <td><%= input(@book, :preis) %></td>
+    </tr>
+    <tr>
+      <td><%= input(@book, :invent) %></td>
+      <td><%= input(@book, :bearbeiter) %></td>
+      <td><%= input(@book, :altes_datum) %></td>
+    </tr>
+    <tr>
+      <td colspan='2'><%= textarea(@book, :kommentar, 6) %></td>
+      <td><%= textarea(@book, :interne_notizen, 6) %></td>
+    </tr>
+  </table>
+</fieldset>
+
+<%= f.buttons %>
+<% end %>
