@@ -9,6 +9,15 @@ class Lending < ActiveRecord::Base
   validates_presence_of :borrower, :book, :return_date
   
   #validates_uniqueness_of :book_id, :scope => :returned
+  class CurrentLendingValidator < ActiveModel::Validator
+    def validate record
+      if record.book.current_lending then
+        record.errors[:base] << "Book is already lent!"
+      end
+    end
+  end
+  validates_with CurrentLendingValidator
+
 
   def return
     update_attribute(:returned, true)
