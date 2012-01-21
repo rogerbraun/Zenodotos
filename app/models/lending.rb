@@ -16,6 +16,7 @@ class Lending < ActiveRecord::Base
       end
     end
   end
+
   validates_with CurrentLendingValidator
 
 
