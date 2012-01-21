@@ -2,7 +2,7 @@
   <%= f.inputs do %>
     <%= f.input :borrower, :collection => Borrower.order("name") %>
     <%= f.input :book_id, :as => :hidden %>
-    <%= f.input :return_date %>
+    <%= f.input :return_date, :as => :string %>
   <% end %>
 
   <%= f.submit "Verleihen" %>
