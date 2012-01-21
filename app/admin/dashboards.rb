@@ -1,3 +1,4 @@
+#encoding: utf-8
 ActiveAdmin::Dashboards.build do
 
   # Define your dashboard sections here. Each block will be
@@ -14,6 +15,21 @@ ActiveAdmin::Dashboards.build do
   #       end
   #     end
   #   end
+
+  section "Bücher" do
+    ul do
+      li "#{Book.count} Bücher in der Datenbank"
+      li "#{Lending.unreturned.count} Bücher verliehen"
+      li "#{Lending.overdue.count} Bücher überfällig"
+    end
+  end
+
+  section "Leihzettel" do
+    ul do
+      li "#{Lending.where("printout_id is null").count} ungedruckt."
+      li link_to "Zu den Leihzetteln", printouts_path
+    end
+  end
   
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can
