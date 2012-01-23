@@ -134,12 +134,20 @@ GEM
     pdf-reader (1.0.0)
       Ascii85 (~> 1.0.0)
       ruby-rc4
+    picky (4.0.4)
+      activesupport (~> 3.0)
+      procrastinate (~> 0.4)
+      rack_fast_escape
+      text
+      yajl-ruby
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
     prawn (0.12.0)
       pdf-reader (>= 0.9.0)
       ttfunk (~> 1.0.2)
+    procrastinate (0.4.0)
+      state_machine (~> 0.9.4)
     pry (0.9.7.4)
       coderay (~> 0.9.8)
       method_source (~> 0.6.7)
@@ -156,6 +164,8 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    rack_fast_escape (2009.06.24)
+      url_escape
     rails (3.1.1)
       actionmailer (= 3.1.1)
       actionpack (= 3.1.1)
@@ -218,6 +228,8 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.5)
+    state_machine (0.9.4)
+    text (1.0.1)
     thin (1.3.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -234,10 +246,12 @@ GEM
     uglifier (1.2.2)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    url_escape (2009.06.24)
     warden (1.1.0)
       rack (>= 1.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -255,6 +269,7 @@ DEPENDENCIES
   mysql2
   nyan-cat-formatter
   paper_trail (~> 2)
+  picky
   prawn
   pry
   rails (= 3.1.1)
