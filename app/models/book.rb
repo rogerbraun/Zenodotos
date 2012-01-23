@@ -17,8 +17,8 @@ class Book < ActiveRecord::Base
   private
   
   def init
-    self.signatur = "Signatur folgt."
-    self.aufnahmedatum = Date.today
+    self.signatur ||= "Signatur folgt."
+    self.aufnahmedatum ||= Date.today
   end
   
 end
