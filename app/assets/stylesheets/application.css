@@ -6,3 +6,7 @@
  *= require home
  *= require fm_style
 */
+
+form li {
+  list-style: none;
+}

@@ -1,0 +1,149 @@
+<%= semantic_form_for [:admin, @book], :html => {:class => "form-stacked"} do |f| %>
+<%= f.buttons %>
+<fieldset class="inputs">
+  <div class="row">
+    <div class="span5">
+      <%= f.input :signatur, :input_html => {:class => "span5"} %>
+    </div>
+    <div class="span5">
+      <%= f.input :nebensignatur, :input_html => {:class => "span5"}%>
+    </div>
+    <div class="span6">
+      <%= f.input :stifter, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span10">
+      <%= f.input :autor, :input_html => {:class => "span10"} %>
+    </div>
+    <div class="span6">
+      <%= f.input :standort, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span10">
+      <%= f.input :autor_japanisch, :input_html => {:class => "span10"} %>
+    </div>
+    <div class="span6">
+      <%= f.input :publikationsart, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span10">
+      <%= f.input :hrsg, :input_html => {:class => "span10"} %>
+    </div>
+    <div class="span6">
+      <%= f.input :hrsg_japanisch, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span10">
+      <%= f.input :titel, :input_html => {:class => "span10"} %>
+    </div>
+    <div class="span6">
+      <%= f.input :titel_japanisch, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span10">
+      <%= f.input :verlag, :input_html => {:class => "span10"} %>
+    </div>
+    <div class="span6">
+      <%= f.input :verlag_japanisch, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span5">
+      <%= f.input :ort, :input_html => {:class => "span5"} %>
+    </div>
+    <div class="span5">
+      <%= f.input :seiten, :input_html => {:class => "span5"}%>
+    </div>
+    <div class="span6">
+      <%= f.input :format, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span5">
+      <%= f.input :jahr, :input_html => {:class => "span5"} %>
+    </div>
+    <div class="span5">
+      <%= f.input :auflage, :input_html => {:class => "span5"}%>
+    </div>
+    <div class="span6">
+      <%= f.input :baende, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span10">
+      <%= f.input :isbn, :input_html => {:class => "span10"} %>
+    </div>
+    <div class="span6">
+      <%= f.input :issn, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span10">
+      <%= f.input :reihe, :input_html => {:class => "span10"} %>
+    </div>
+    <div class="span6">
+      <%= f.input :reihe_japanisch, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span16">
+      <%= f.input :inhalt, :input_html => {:class => "span16", :rows => "4"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span16">
+      <%= f.input :anmerkungen, :input_html => {:class => "span16", :rows => "4"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span16">
+      <%= f.input :nacsis_url, :input_html => {:class => "span16"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span16">
+      <%= f.input :nacsis_japanisch, :input_html => {:class => "span16", :rows => "4"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span5">
+      <%= f.input :aufnahmedatum, :input_html => {:class => "span5"}, :as => :string %>
+    </div>
+    <div class="span5">
+      <%= f.input :sprache, :input_html => {:class => "span5"}%>
+    </div>
+    <div class="span6">
+      <%= f.input :preis, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span5">
+      <%= f.input :invent, :input_html => {:class => "span5"} %>
+    </div>
+    <div class="span5">
+      <%= f.input :bearbeiter, :input_html => {:class => "span5"}%>
+    </div>
+    <div class="span6">
+      <%= f.input :altes_datum, :input_html => {:class => "span6"} %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span8">
+      <%= f.input :kommentar, :input_html => {:class => "span8", :rows => 4} %>
+    </div>
+    <div class="span8">
+      <%= f.input :interne_notizen, :input_html => {:class => "span8", :rows => 4}, :as => :text %>
+    </div>
+  </div>
+    
+</fieldset>
+
+<%= f.buttons %>
+<% end %>

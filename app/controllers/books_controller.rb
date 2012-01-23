@@ -7,4 +7,8 @@ class BooksController < ApplicationController
     @page = params[:page] || 0
     @books = Book.page(@page)
   end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
 end
