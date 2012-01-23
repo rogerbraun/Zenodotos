@@ -1,0 +1,28 @@
+<% content_for :content do %>
+  <div class="page-header">
+    <h1>Bücher</h1>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Titel</th>
+        <th>Autor</th>
+        <th>Signatur</th>
+        <th>Aktionen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book.id %></td>
+          <td><%= link_to book.titel, admin_book_path(book) %></td>
+          <td><%= book.autor %></td>
+          <td><%= "#{book.signatur} #{book.nebensignatur}" %></td>
+          <td><%= link_to "Anzeigen", admin_book_path(book)%> | <%= link_to "Bearbeiten", edit_admin_book_path(book) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @books %>
+<% end %>

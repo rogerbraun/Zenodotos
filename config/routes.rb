@@ -1,6 +1,7 @@
 Zenodotos::Application.routes.draw do
   get "fm_style/index"
 
+  match "admin/books" => "books#index"
 
   ActiveAdmin.routes(self)
 
