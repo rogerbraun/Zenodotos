@@ -2,6 +2,7 @@ class Lending < ActiveRecord::Base
   has_paper_trail
   scope :overdue, lambda { where("return_date < ? and returned != ?", Time.now, true) }
   scope :unreturned, where("returned != ?", true)
+  scope :unprinted, where("printout_id is null")
   belongs_to :borrower
   belongs_to :book
   belongs_to :printout

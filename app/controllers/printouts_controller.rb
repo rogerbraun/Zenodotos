@@ -1,6 +1,6 @@
 class PrintoutsController < ApplicationController
   def index
-    @unprinted = Lending.where("printout_id is null").count
+    @unprinted = Lending.unprinted.count
     @printouts = Printout.order("id DESC")
   end
 
