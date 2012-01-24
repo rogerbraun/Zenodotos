@@ -135,7 +135,7 @@ GEM
     pdf-reader (1.0.0)
       Ascii85 (~> 1.0.0)
       ruby-rc4
-    picky (4.0.9)
+    picky (4.1.0)
       activesupport (~> 3.0)
       procrastinate (~> 0.4)
       rack_fast_escape

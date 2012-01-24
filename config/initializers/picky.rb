@@ -4,7 +4,7 @@
 
 BookIndex = Picky::Index.new :books do
   source Book.all
-  backend Picky::Backends::SQLite.new
+  backend Picky::Backends::SQLite.new{realtime:true}
 
   Book.attribute_names[1..-1].each do |cname|
     category cname.to_sym
@@ -20,3 +20,5 @@ BookSearch = Picky::Search.new BookIndex do
             splits_text_on: /\s/u
 
 end
+
+BookIndex.load
