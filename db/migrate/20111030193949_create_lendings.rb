@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateLendings < ActiveRecord::Migration
   def change
     create_table :lendings do |t|

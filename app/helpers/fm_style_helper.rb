@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module FmStyleHelper
   def fm_textinput(name, options = {})
     label = options[:label] || name.capitalize

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Book < ActiveRecord::Base
   require 'picky'
   has_paper_trail
@@ -24,11 +25,12 @@ class Book < ActiveRecord::Base
     self.all.each do |book|
       book.reindex
     end
+    true
   end
 
   def self.search keys
     # TODO: Find out how to tell Picky to get all ids
-    ids = (BookSearch.search keys, 1000000).ids
+    ids = (BookSearch.search keys, 1000000).ids(1000000)
     Book.where("id in (?)", ids)
   end
 

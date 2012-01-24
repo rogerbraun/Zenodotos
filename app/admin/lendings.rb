@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 #encoding: utf-8
 ActiveAdmin.register Lending do
   scope :overdue

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 def input(object, name)
   id = (object.class.to_s + "_" + name.to_s).downcase
   form_name = "#{object.class.to_s.downcase}[#{name.to_s.downcase}]"

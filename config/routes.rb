@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Zenodotos::Application.routes.draw do
   get "fm_style/index"
 

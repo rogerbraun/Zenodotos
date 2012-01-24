@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Lending < ActiveRecord::Base
   has_paper_trail
   scope :overdue, lambda { where("return_date < ? and returned != ?", Time.now, true) }

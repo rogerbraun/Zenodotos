@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class BooksController < ApplicationController
 
   before_filter :authenticate_admin_user!
@@ -5,7 +6,7 @@ class BooksController < ApplicationController
 
   def index
     @page = params[:page] || 0
-    @books = Book.page(@page)
+    @books = (params[:search] ? Book.search(params[:search]) : Book).page(@page)
   end
 
   def edit

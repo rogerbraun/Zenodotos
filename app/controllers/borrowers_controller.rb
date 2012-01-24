@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class BorrowersController < ActionController::Base
 
   def send_overdue_reminders

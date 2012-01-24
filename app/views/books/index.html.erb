@@ -1,3 +1,15 @@
+<% content_for :sidebar do %>
+  <h1>Suche</h1>
+  <p>
+  <%= form_tag admin_books_path, method: "get", id: "search_form" do %>
+    <fieldset>
+      <input type="text" id="search" name="search" class="span3" value="<%= params[:search] %>"></input>
+    <fieldset>
+    <button id="search_button" class="btn span2">Suchen</button>
+  <% end %>
+  </p>
+<% end %>
+
 <% content_for :content do %>
   <div class="page-header">
     <h1>Bücher</h1>

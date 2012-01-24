@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PrintoutsController < ApplicationController
   def index
     @unprinted = Lending.unprinted.count
