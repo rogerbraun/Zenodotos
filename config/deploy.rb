@@ -5,6 +5,7 @@ require "capistrano/ext/multistage"
 
 set :application, "Zenodotos"
 set :repository,  "git://github.com/rogerbraun/Zenodotos.git"
+set :branch, "anti_admin"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -42,6 +43,8 @@ namespace :db_setup do
     run "chmod 1777 #{deploy_to}/#{shared_dir}/db/"
     run "mkdir -p #{deploy_to}/#{shared_dir}/pdf/"
     run "chmod 1777 #{deploy_to}/#{shared_dir}/pdf/"
+    run "mkdir -p #{deploy_to}/#{shared_dir}/index/"
+    run "chmod -R 1777 #{deploy_to}/#{shared_dir}/index/"
   end
 
   task :link_shared do
@@ -49,6 +52,8 @@ namespace :db_setup do
     run "ln -nfs #{shared_path}/db #{release_path}/db/sqlite"
     run "rm -rf #{release_path}/public/pdf"
     run "ln -nfs #{shared_path}/pdf #{release_path}/public/pdf"
+    run "rm -rf #{release_path}/index"
+    run "ln -nfs #{shared_path}/index #{release_path}/index"
   end
 end
 
