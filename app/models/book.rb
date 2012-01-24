@@ -4,15 +4,6 @@ class Book < ActiveRecord::Base
   paginates_per 10
   has_many :lendings
 
-  @@index = Picky::Index.new :books do
-    source Book.all
-    Book.attribute_names[1..-1].each do |cname|
-      category cname.to_sym
-    end
-  end
-
-  @@search = Picky::Search.new @@index
-
   after_initialize :init
   after_save :reindex
 
@@ -21,7 +12,7 @@ class Book < ActiveRecord::Base
   end
 
   def reindex
-    @@index.replace self
+    BookIndex.replace self
   end
 
   def self.quicksearch q
@@ -37,13 +28,10 @@ class Book < ActiveRecord::Base
 
   def self.search keys
     # TODO: Find out how to tell Picky to get all ids
-    ids = (@@search.search keys, 1000000).ids
+    ids = (BookSearch.search keys, 1000000).ids
     Book.where("id in (?)", ids)
   end
 
-  def self.index
-    @@index
-  end
   private
   
   def init
