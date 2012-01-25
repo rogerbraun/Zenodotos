@@ -10,8 +10,8 @@ class Lending < ActiveRecord::Base
   
   #validates_uniqueness_of :book_id, :scope => :returned
   class CurrentLendingValidator < ActiveModel::Validator
-    def validate record
-      if record.book.current_lending then
+    def validate record      
+      if record.new_record? and record.book.current_lending then
         record.errors[:base] << "Book is already lent!"
       end
     end
