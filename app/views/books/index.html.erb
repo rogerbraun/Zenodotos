@@ -1,12 +1,20 @@
 <% content_for :sidebar do %>
-  <h1>Suche</h1>
+  <div class="page-header">
+    <h1>Suche</h1>
+  </div>
   <p>
   <%= form_tag admin_books_path, method: "get", id: "search_form" do %>
     <fieldset>
       <input type="text" id="search" name="search" class="span3" value="<%= params[:search] %>"></input>
     <fieldset>
-    <button id="search_button" class="btn span2">Suchen</button>
+    <button id="search_button" class="btn">Suchen</button>
   <% end %>
+  </p>
+  <div class="page-header">
+    <h1>Aktionen</h1>
+  </div>
+  <p>
+    <%= link_to "Neues Buch", new_admin_book_path, :class => "btn" %>
   </p>
 <% end %>
 
@@ -14,27 +22,39 @@
   <div class="page-header">
     <h1>Bücher</h1>
   </div>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Titel</th>
-        <th>Autor</th>
-        <th>Signatur</th>
-        <th>Aktionen</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @books.each do |book| %>
-        <tr>
-          <td><%= book.id %></td>
-          <td><%= link_to book.titel, admin_book_path(book) %></td>
-          <td><%= book.autor %></td>
-          <td><%= "#{book.signatur} #{book.nebensignatur}" %></td>
-          <td><%= link_to "Anzeigen", admin_book_path(book)%> | <%= link_to "Bearbeiten", edit_admin_book_path(book) %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="span12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Titel</th>
+            <th>Autor</th>
+            <th>Signatur</th>
+            <th>Entliehen</th>
+            <th>Bearbeiten</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+            <tr>
+              <td><%= book.id %></td>
+              <td><%= link_to book.titel, admin_book_path(book) %></td>
+              <td><%= book.autor %></td>
+              <td><%= "#{book.signatur} #{book.nebensignatur}" %></td>
+              <td><%=
+                if book.current_lending
+                  link_to(book.borrower, admin_borrower_path(book.current_lending.borrower)) + tag("br") + link_to(book.current_lending.return_date.strftime("%d.%m.%Y"), admin_lending_path(book.current_lending))
+                else
+                  "Nicht entliehen"
+                end %>
+              </td>
+              <td><%= link_to icon("pencil"), edit_admin_book_path(book) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
   <%= paginate @books %>
 <% end %>

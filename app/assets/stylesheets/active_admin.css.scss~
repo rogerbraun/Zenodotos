@@ -1,5 +1,4 @@
 // Active Admin CSS Styles
-//=require jquery-ui-1.8.17.custom
 @import "active_admin/mixins";
 @import "active_admin/base";
 

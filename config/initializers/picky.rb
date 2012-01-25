@@ -9,6 +9,9 @@ if Book.table_exists? then
     Book.attribute_names[1..-1].each do |cname|
       category cname.to_sym
     end
+
+    category(:entleiher, from: :borrower)
+
     indexing  removes_characters: /[^\p{Han}\p{Hiragana}\p{Katakana}a-zA-Z0-9\. ]/u,
               substitutes_characters_with: Picky::CharacterSubstituters::WestEuropean.new,
               splits_text_on: /\s/u

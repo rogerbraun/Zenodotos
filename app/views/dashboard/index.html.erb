@@ -1,29 +1,30 @@
 <% content_for :content do %>
-  <div class="hero-unit">
-    <h1>Dashboard</h1>
-    <p>Die wichtigsten Informationen im Überblick.</p>
+  <div class="page-header">
+    <h1>Dashboard <small>Die wichtigsten Informationen im Überblick.</small></h1>
   </div>
   <div class="row">
-    <div class="span6">
-      <h2>Bücher</h2>
-      <p>
-        <ul>
-          <li><%= Book.count %> Bücher insgesamt.</li>
-          <li><%= Lending.unreturned.count %> Bücher verliehen.</li>
-          <li><%= Lending.overdue.count %> Bücher überfällig.</li>
-        </ul>
-      </p>
+    <div class="span4">
+      <div class="well">
+        <h2>Bücher</h2>
+        <p>
+          <ul>
+            <li><%= Book.count %> Bücher insgesamt.</li>
+            <li><%= Lending.unreturned.count %> Bücher verliehen.</li>
+            <li><%= Lending.overdue.count %> Bücher überfällig.</li>
+          </ul>
+        </p>
+      </div>
     </div>
-    <div class="span5">
-      <h2>Leihzettel</h2>
-      <p>
-        <ul>
-          <li><%= Lending.unprinted.count %> Zettel ungedruckt.</li>
-          <li><%= link_to "Zu den Leihzetteln", printouts_path %>.</li>
-        </ul>
-      </p>
-    </div>
-    <div class="span5">
+    <div class="span4">
+      <div class="well">
+        <h2>Leihzettel</h2>
+        <p>
+          <ul>
+            <li><%= Lending.unprinted.count %> Zettel ungedruckt.</li>
+            <li><%= link_to "Zu den Leihzetteln", printouts_path %>.</li>
+          </ul>
+        </p>
+      </div>
     </div>
   </div>
 

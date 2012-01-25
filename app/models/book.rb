@@ -16,6 +16,10 @@ class Book < ActiveRecord::Base
     BookIndex.replace self
   end
 
+  def borrower
+    current_lending ? current_lending.borrower.name : "nicht entliehen"
+  end
+
   def self.quicksearch q
     query = "%#{q}%"
     Book.where("autor like ? or autor_japanisch like ? or titel like ? or titel_japanisch like ?", query, query, query, query)
