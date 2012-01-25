@@ -6,7 +6,7 @@ class Book < ActiveRecord::Base
   has_many :lendings
 
   after_initialize :init
-  after_save :reindex
+  after_save :reindex #unless Rails.env == "test"
 
   def current_lending
     Lending.find_by_book_id_and_returned(id, false)
@@ -41,5 +41,4 @@ class Book < ActiveRecord::Base
     self.aufnahmedatum ||= Date.today
   end
 
-  
 end

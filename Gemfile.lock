@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/rogerbraun/picky.git
+  revision: 634f86b519bb2ac7cbdf20254aaae9168287e813
+  branch: yajl_encoding_workaround
+  specs:
+    picky (4.1.0)
+      activesupport (~> 3.0)
+      procrastinate (~> 0.4)
+      rack_fast_escape
+      text
+      yajl-ruby
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -135,12 +147,6 @@ GEM
     pdf-reader (1.0.0)
       Ascii85 (~> 1.0.0)
       ruby-rc4
-    picky (4.1.0)
-      activesupport (~> 3.0)
-      procrastinate (~> 0.4)
-      rack_fast_escape
-      text
-      yajl-ruby
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -186,7 +192,6 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
-    redis (2.2.2)
     responders (0.6.4)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
@@ -272,11 +277,10 @@ DEPENDENCIES
   mysql2
   nyan-cat-formatter
   paper_trail (~> 2)
-  picky
+  picky!
   prawn
   pry
   rails (= 3.1.1)
-  redis
   rspec-rails
   sass-rails (~> 3.1.4)
   sequel
