@@ -15,7 +15,11 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = Book.new
+    if params[:dup_id]
+      @book = Book.find(params[:dup_id]).dup
+    else
+      @book = Book.new
+    end
   end
 
   def show

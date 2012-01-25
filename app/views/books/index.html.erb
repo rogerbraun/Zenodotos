@@ -49,7 +49,7 @@
                   "Nicht entliehen"
                 end %>
               </td>
-              <td><%= link_to icon("pencil"), edit_admin_book_path(book) %></td>
+              <td><%= link_to icon("pencil"), edit_admin_book_path(book) %> | <%= link_to icon("repeat"), duplicate_admin_book_path(book) %></td>
             </tr>
           <% end %>
         </tbody>
