@@ -5,6 +5,7 @@
  *= require_self
  *= require home
  *= require fm_style
+ *= require new_admin
 */
 
 form li {
