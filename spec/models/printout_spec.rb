@@ -6,6 +6,7 @@ describe Printout do
     Lending.destroy_all
     1.upto(10) do Factory(:lending) end
     res = Printout.new_from_unprinted
+    res.valid?.should be_true
     res.lendings.size.should == 10
   end
 
@@ -13,6 +14,7 @@ describe Printout do
     Lending.destroy_all
     1.upto(10) do Factory(:lending) end
     res = Printout.new_from_unprinted
-    res.pdf_url.should_not be_nil
+    res.valid?.should be_true
+    File.exists?(File.join(Rails.root, "public", res.pdf_url)).should be_true
   end
 end
