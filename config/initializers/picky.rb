@@ -21,5 +21,10 @@ if Book.table_exists? then
 
   end
 
-  BookIndex.load
+  begin
+    BookIndex.load
+  rescue
+    BookIndex.index # Index on first boot
+  end
+  at_exit { BookIndex.dump }
 end
