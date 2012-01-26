@@ -33,11 +33,11 @@ class BooksController < ApplicationController
     @lending = Lending.new(params[:lending])
     session[:last_borrower] = @lending.borrower.id
     if @lending.save
-      flash[:notice] = "Buch wurde verliehen"
+      flash[:notice] = "'#{@lending.book.titel}' wurde verliehen"
     else
       flash[:error] = "Buch wurde nicht verliehen"
     end
-    redirect_to admin_books_path
+    redirect_to :back
   end
 
   def show
