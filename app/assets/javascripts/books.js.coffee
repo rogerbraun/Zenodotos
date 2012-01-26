@@ -10,7 +10,7 @@ $( () ->
   # Popovers
 
   $("td.actions a").popover
-    placement: "top"
+    placement: "left"
     delay:
       show: 500
       hide: 100
