@@ -7,7 +7,10 @@ Zenodotos::Application.routes.draw do
   match "admin/books/:id/edit" => "books#edit", :via => :get
   match "admin/books/new" => "books#new", :via => :get
   match "admin/books/:dup_id/duplicate" => "books#new", :via => :get, :as => "duplicate_admin_book"
+  match "admin/books/:id/lending/new" => "books#new_lending", :via => :get, :as => "new_book_lending"
+  match "admin/books/:id/lending" => "books#create_lending", :via => :post, :as => "create_book_lending"
   match "admin/books/:id" => "books#show", :via => :get
+
 
   ActiveAdmin.routes(self)
 

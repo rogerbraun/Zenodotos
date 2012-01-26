@@ -22,6 +22,24 @@ class BooksController < ApplicationController
     end
   end
 
+  def new_lending
+    @book = Book.find(params[:id])
+    @lending = @book.lendings.new
+    @lending.return_date = Date.today + 28.days
+    @lending.borrower_id = session[:last_borrower]
+  end
+
+  def create_lending
+    @lending = Lending.new(params[:lending])
+    session[:last_borrower] = @lending.borrower.id
+    if @lending.save
+      flash[:notice] = "Buch wurde verliehen"
+    else
+      flash[:error] = "Buch wurde nicht verliehen"
+    end
+    redirect_to admin_books_path
+  end
+
   def show
     # Braucht man wirklich show und edit?
     redirect_to :action => "edit"

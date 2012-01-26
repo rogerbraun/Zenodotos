@@ -1,0 +1,3 @@
+var dialog = $("<%= escape_javascript(render "lending_form")%>");
+$("#lending_return_date").datepicker({dateFormat: 'yy-mm-dd'});
+dialog.modal();

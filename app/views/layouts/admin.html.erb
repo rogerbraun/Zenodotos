@@ -26,6 +26,12 @@
     <%= yield :sidebar %>
   </div>
   <div class="fluid-content">
+    <% flash.each do |type, message| %>
+      <div class="alert alert-<%= type %>">
+        <a class="close">x</a>
+        <%= message %>
+      </div>
+    <% end %>
     <%= yield :content %>
   </div>
 </div>
