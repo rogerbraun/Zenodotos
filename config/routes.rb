@@ -11,6 +11,7 @@ Zenodotos::Application.routes.draw do
   match "admin/books/:id/lending" => "books#create_lending", :via => :post, :as => "create_book_lending"
   match "admin/books/:id" => "books#show", :via => :get
   match "admin/books/:id/return" => "books#return_current_lending", :via => :post, :as => "return_current_lending"
+  match "admin/books/:id/extend" => "books#extend_current_lending", :via => :post, :as => "extend_current_lending"
 
 
 

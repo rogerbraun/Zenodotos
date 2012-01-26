@@ -53,7 +53,7 @@
                 <% end %>
               </td>
               <td class="actions">
-                <div class="btn-group span2">
+                <div class="btn-group span3">
                   <%= link_to icon("pencil"), edit_admin_book_path(book), :class => "btn", :title => "Bearbeiten", :data => {:content => "Auf diesen Knopf drücken um das Buch anzusehen oder zu bearbeiten."}%>
                   <%= link_to icon("repeat"), duplicate_admin_book_path(book), :class => "btn", :title => "Duplizieren", :data => {:content => "Auf diesen Knopf drücken um das Buch zu duplizieren und den duplizierten Eintrag zu bearbeiten."} %>
                   <% unless book.current_lending %>
@@ -61,6 +61,9 @@
                   <% else %>
                     <%= link_to icon("book"), return_current_lending_path(book), :class => "btn", :title => "Zurückgeben", :data => {:content => "Auf diesen Knopf drücken um das Buch zurück zu geben."},:method => :post, :confirm => "Wirklich zurückgeben?" %>
                     
+                    <% if book.current_lending.overdue? %>
+                      <%= link_to icon("plus"), extend_current_lending_path(book), :class => "btn", :title => "Verlängern", :data => {:content => "Dieser Knopf verlängert das Ausleihdatum um vier Wochen. Wenn eine andere Frist gewünscht ist bitte direkt auf den Leihvorgang gehen und dort das Datum editieren."}, :method => :post, :confirm => "Wirklich verlängern?" %>
+                    <% end %>
                   <% end %>
                 </div>
               </td>

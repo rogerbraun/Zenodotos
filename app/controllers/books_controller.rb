@@ -48,8 +48,12 @@ class BooksController < ApplicationController
     redirect_to :back
   end
 
-  def extend_lending
+  def extend_current_lending
+    @book = Book.find(params[:id])
+    @book.current_lending.extend_date
+    flash[:notice] = "'#{@book.titel}' wurde verlängert."
 
+    redirect_to :back
   end
 
   def show
