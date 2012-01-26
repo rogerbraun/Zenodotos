@@ -3,21 +3,24 @@ Zenodotos::Application.routes.draw do
   get "fm_style/index"
 
   match "admin" => "dashboard#index", :via => :get
-  match "admin/books" => "books#index", :via => :get
-  match "admin/books/:id/edit" => "books#edit", :via => :get
-  match "admin/books/new" => "books#new", :via => :get
+  match "admin/books" => "books#index", :via => :get, :as => "admin_books"
+  match "admin/books/:id/edit" => "books#edit", :via => :get, :as => "edit_admin_book"
+  match "admin/books/new" => "books#new", :via => :get, :as => "new_admin_book"
   match "admin/books/:dup_id/duplicate" => "books#new", :via => :get, :as => "duplicate_admin_book"
   match "admin/books/:id/lending/new" => "books#new_lending", :via => :get, :as => "new_book_lending"
   match "admin/books/:id/lending" => "books#create_lending", :via => :post, :as => "create_book_lending"
-  match "admin/books/:id" => "books#show", :via => :get
+
+  match "admin/books/:id" => "books#show", :via => :get, :as => "admin_book"
   match "admin/books/:id/return" => "books#return_current_lending", :via => :post, :as => "return_current_lending"
   match "admin/books/:id/extend" => "books#extend_current_lending", :via => :post, :as => "extend_current_lending"
 
+  match "admin/borrowers" => "borrowers#index", :via => :get, :as => "admin_borrowers"
+  match "admin/borrower/:id" => "borrowers#show", :via => :get, :as => "admin_borrower"
 
+  match "admin/lendings" => "lendings#index", :via => :get, :as => "admin_lendings"
+  match "admin/lending/:id" => "lendings#show", :via => :get, :as => "admin_lending"
 
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :admin_users, :path => "admin"
 
   get "home/index"
 

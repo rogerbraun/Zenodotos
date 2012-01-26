@@ -18,7 +18,8 @@ end
 gem 'sass-rails',   '~> 3.1.5'
 gem 'jquery-rails'
 
-gem "activeadmin"
+gem "devise"
+gem "formtastic"
 gem "kaminari"
 gem "prawn"
 gem "mysql2"
@@ -53,5 +54,4 @@ group :test do
   gem "factory_girl_rails"
   gem "rspec-rails"
   gem "guard-rspec"
-  gem "nyan-cat-formatter"
 end
