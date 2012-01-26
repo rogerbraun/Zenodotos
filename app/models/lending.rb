@@ -8,6 +8,8 @@ class Lending < ActiveRecord::Base
   belongs_to :book
   belongs_to :printout
 
+  after_save :update_book_index
+
   validates_presence_of :borrower, :book, :return_date
   
   #validates_uniqueness_of :book_id, :scope => :returned
@@ -28,5 +30,10 @@ class Lending < ActiveRecord::Base
 
   def extend_date(days = 28.days)
     update_attribute(:return_date, return_date + days)
+  end
+
+  private
+  def update_book_index
+    self.book.reindex
   end
 end
