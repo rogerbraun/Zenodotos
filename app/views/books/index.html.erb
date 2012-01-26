@@ -42,12 +42,15 @@
               <td><%= link_to book.titel, admin_book_path(book) %></td>
               <td><%= book.autor %></td>
               <td><%= "#{book.signatur} #{book.nebensignatur}" %></td>
-              <td><%=
-                if book.current_lending
-                  link_to(book.borrower, admin_borrower_path(book.current_lending.borrower)) + tag("br") + link_to(book.current_lending.return_date.strftime("%d.%m.%Y"), admin_lending_path(book.current_lending))
-                else
+              <td><% if book.current_lending %>
+                  <%= link_to(book.borrower, admin_borrower_path(book.current_lending.borrower)) %>
+                  <%= tag("br") %>
+                  <%= "<span class='label warning'>".html_safe if book.current_lending.overdue? %>
+                  <%= link_to(book.current_lending.return_date.strftime("%d.%m.%Y"), admin_lending_path(book.current_lending)) %>
+                  <%= "</span>".html_safe if book.current_lending.overdue? %>
+                <% else %>
                   "Nicht entliehen"
-                end %>
+                <% end %>
               </td>
               <td class="actions">
                 <div class="btn-group span2">

@@ -48,6 +48,10 @@ class BooksController < ApplicationController
     redirect_to :back
   end
 
+  def extend_lending
+
+  end
+
   def show
     # Braucht man wirklich show und edit?
     redirect_to :action => "edit"

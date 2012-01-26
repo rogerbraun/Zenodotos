@@ -20,18 +20,6 @@ class Book < ActiveRecord::Base
     current_lending ? current_lending.borrower.name : "nicht entliehen"
   end
 
-  def self.quicksearch q
-    query = "%#{q}%"
-    Book.where("autor like ? or autor_japanisch like ? or titel like ? or titel_japanisch like ?", query, query, query, query)
-  end
-
-  def self.reindex
-    self.all.each do |book|
-      book.reindex
-    end
-    true
-  end
-
   def self.search keys
     # TODO: Find out how to tell Picky to get all ids
     ids = (BookSearch.search keys, 1000000).ids(1000000)
