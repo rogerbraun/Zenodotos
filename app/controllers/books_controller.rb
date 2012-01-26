@@ -22,6 +22,14 @@ class BooksController < ApplicationController
     end
   end
 
+  def return_current_lending
+    @book = Book.find(params[:id])
+    @book.current_lending.return
+    flash[:notice] = "'#{@book.titel}' wurde zurück gegeben."
+
+    redirect_to :back
+  end
+
   def new_lending
     @book = Book.find(params[:id])
     @lending = @book.lendings.new

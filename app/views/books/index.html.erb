@@ -56,7 +56,7 @@
                   <% unless book.current_lending %>
                     <%= link_to icon("share"), new_book_lending_path(book), :class => "btn", :title => "Verleihen", :data => {:content => "Auf diesen Knopf drücken um das Buch zu verleihen."}, :remote => true %>
                   <% else %>
-                    <%= link_to icon("book"), new_book_lending_path(book), :class => "btn", :title => "Zurückgeben", :data => {:content => "Auf diesen Knopf drücken um das Buch zurück zu geben."}, :remote => true %>
+                    <%= link_to icon("book"), return_current_lending_path(book), :class => "btn", :title => "Zurückgeben", :data => {:content => "Auf diesen Knopf drücken um das Buch zurück zu geben."},:method => :post, :confirm => "Wirklich zurückgeben?" %>
                     
                   <% end %>
                 </div>
