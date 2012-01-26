@@ -6,8 +6,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require bootstrap-transition
 //= require bootstrap-modal
 //= require bootstrap-tooltip
 //= require bootstrap-popover
 //= require books
-//= require_tree .

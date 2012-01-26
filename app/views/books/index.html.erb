@@ -51,9 +51,9 @@
               </td>
               <td class="actions">
                 <div class="btn-group span2">
-                  <%= link_to icon("pencil"), edit_admin_book_path(book), :class => "btn"%>
-                  <%= link_to icon("repeat"), duplicate_admin_book_path(book), :class => "btn" %>
-                  <%= link_to icon("share"), lend_admin_book_path(book), :class => "btn" %>
+                  <%= link_to icon("pencil"), edit_admin_book_path(book), :class => "btn", :title => "Bearbeiten", :data => {:content => "Auf diesen Knopf drücken um das Buch anzusehen oder zu bearbeiten."}%>
+                  <%= link_to icon("repeat"), duplicate_admin_book_path(book), :class => "btn", :title => "Duplizieren", :data => {:content => "Auf diesen Knopf drücken um das Buch zu duplizieren und den duplizierten Eintrag zu bearbeiten."} %>
+                  <%= link_to icon("share"), lend_admin_book_path(book), :class => "btn", :title => "Verleihen", :data => {:content => "Auf diesen Knopf drücken um das Buch zu verleihen."} %>
                 </div>
               </td>
             </tr>
