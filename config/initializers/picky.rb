@@ -25,9 +25,10 @@ if Book.table_exists? then
   end
 
   begin
-    BookIndex.load
+    raise "testing" if Rails.env == "test"
+    BookIndex.load 
   rescue
     BookIndex.index # Index on first boot
   end
-  at_exit { BookIndex.dump }
+  at_exit { BookIndex.dump } unless Rails.env == "test"
 end
