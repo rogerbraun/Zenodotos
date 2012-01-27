@@ -16,7 +16,7 @@ describe "Admin page" do
     visit new_admin_user_session_path
     fill_in "Email", with: admin.email
     fill_in "Password", with: admin.password
-    click_on "Login"
+    click_on "Sign in"
   end
 
   describe "book index" do

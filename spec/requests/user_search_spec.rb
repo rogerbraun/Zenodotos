@@ -12,7 +12,7 @@ describe "The interface for end users" do
   it "should return search results" do
     book = Factory(:book, titel: "Ein verrückter Titel", autor: "crazy Author")
     visit root_path
-    fill_in "q", :with => "verrückt"
+    fill_in "search", :with => "verrückt"
     click_on "search_button"
     page.should have_content("crazy") 
   end
