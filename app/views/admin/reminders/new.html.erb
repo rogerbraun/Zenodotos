@@ -1,5 +1,6 @@
-<h1>New reminder</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', admin_reminders_path %>
+<% content_for :content do %>
+  <div class="page-header">
+    <h1>Neue Mahnung</h1>
+  </div>
+  <%= render "form" %>
+<% end %>

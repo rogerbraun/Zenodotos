@@ -25,6 +25,7 @@ gem "prawn"
 gem "mysql2"
 gem "sequel"
 gem "paper_trail", "~> 2"
+gem "draper"
 
 group :development do
   gem "thin"

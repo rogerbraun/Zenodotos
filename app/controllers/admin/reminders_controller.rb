@@ -6,7 +6,7 @@ class Admin::RemindersController < ApplicationController
   # GET /reminders
   # GET /reminders.json
   def index
-    @reminders = Reminder.all
+    @reminders = ReminderDecorator.decorate(Reminder.all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,7 +28,7 @@ class Admin::RemindersController < ApplicationController
   # GET /reminders/new
   # GET /reminders/new.json
   def new
-    @reminder = Reminder.from_overdue
+    @reminder = ReminderDecorator.new(Reminder.from_overdue)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,17 +38,18 @@ class Admin::RemindersController < ApplicationController
 
   # GET /reminders/1/edit
   def edit
-    @reminder = Reminder.find(params[:id])
+    @reminder = ReminderDecorator.find(params[:id])
   end
 
   # POST /reminders
   # POST /reminders.json
   def create
     @reminder = Reminder.new(params[:reminder])
+    binding.pry
 
     respond_to do |format|
       if @reminder.save
-        format.html { redirect_to @reminder, notice: 'Reminder was successfully created.' }
+        format.html { redirect_to [:admin, @reminder], notice: 'Reminder was successfully created.' }
         format.json { render json: @reminder, status: :created, location: @reminder }
       else
         format.html { render action: "new" }

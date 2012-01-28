@@ -4,15 +4,42 @@
   </div>
   
   <div class="row">
-    <table>
-      <tr>
-        <th>Mahndatum</th>
-      </tr>
-      <% @reminders.each do |reminder| %>
-        <tr>
-          <td><%= reminder.send_date %></td>
-        </tr>
-      <% end %>
-    </table>
+    <div class="span12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Erstellt am</th>
+            <th>Gemahnt am</th>
+            <th>Mahnungen insgesamt</th>
+            <th>Aktionen</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @reminders.each do |reminder| %>
+          <tr>
+            <td><%= reminder.created_at %></td>
+            <td><%= reminder.send_date %></td>
+            <td><%= reminder.total_emails %></td>
+            <td>
+              <div class="btn-group span2">
+                <%= link_to icon("pencil"), edit_admin_reminder_path(reminder), :class => "btn" %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :sidebar do %>
+
+  <div class="page-header">
+    <h1>Aktionen</h1>
+  </div>
+
+  <div class="well">
+    <%= link_to "Neue Mahnung", new_admin_reminder_path, :class => "btn" %>
   </div>
 <% end %>

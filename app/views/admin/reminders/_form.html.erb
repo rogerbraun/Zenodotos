@@ -1,21 +1,22 @@
-<%= form_for([:admin, @reminder]) do |f| %>
-  <% if @reminder.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@reminder.errors.count, "error") %> prohibited this reminder from being saved:</h2>
-
-      <ul>
-      <% @reminder.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<div class="row">
+  <div class="span12">
+    <%= form_for [:admin, @reminder] do |f| %>
+      <% @reminder.lendings_by_borrower.each do |borrower, lendings| %>
+        <% lendings = LendingDecorator.decorate(lendings) %>
+        <h2><%= link_to borrower.name %></h2>
+        <h3><%= borrower.email %></h3>
+        <fieldset>
+          <% lendings.each do |lending| %>
+            <label class="checkbox">
+              <%= check_box_tag "reminder[lending_ids][]", lending.id, @reminder.lending_ids.include?(lending.id) %>
+              <%= lending.book_info %>
+            </label>
+          <% end %>
+        </fieldset>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :send_date %><br />
-    <%= f.date_select :send_date %>
+      <div class="form-actions">
+        <%= f.submit "Mahnung speichern", :class => "btn" %>
+      </div>
+    <% end %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
