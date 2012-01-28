@@ -7,6 +7,7 @@ class Lending < ActiveRecord::Base
   belongs_to :borrower
   belongs_to :book
   belongs_to :printout
+  has_and_belongs_to_many :reminders
 
   after_save :update_book_index
 

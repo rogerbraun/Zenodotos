@@ -24,11 +24,28 @@ if Book.table_exists? then
 
   end
 
+  BorrowerIndex = Picky::Index.new :borrowers do
+    source Borrower.all
+    Borrower.attribute_names[1..-1].each do |cname|
+      category cname.to_sym
+    end
+  end
+
+  BorrowerSearch = Picky::Search.new BorrowerIndex
+
   begin
     raise "testing" if Rails.env == "test"
     BookIndex.load 
+    BorrowerIndex.load
   rescue
     BookIndex.index # Index on first boot
+    BorrowerIndex.index
   end
-  at_exit { BookIndex.dump } unless Rails.env == "test"
+
+  unless Rails.env == "test"
+    at_exit do 
+      BookIndex.dump
+      BorrowerIndex.dump
+    end
+  end
 end

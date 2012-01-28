@@ -1,0 +1,18 @@
+<% content_for :content do %>
+  <div class="page-header">
+    <h1>Mahnungen</h1>
+  </div>
+  
+  <div class="row">
+    <table>
+      <tr>
+        <th>Mahndatum</th>
+      </tr>
+      <% @reminders.each do |reminder| %>
+        <tr>
+          <td><%= reminder.send_date %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>

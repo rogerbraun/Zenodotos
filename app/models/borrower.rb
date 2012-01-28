@@ -4,6 +4,8 @@ class Borrower < ActiveRecord::Base
 
   has_many :lendings
 
+  after_save :reindex #unless Rails.env == "test"
+
   def borrow(book, date = nil)
     date ||= 1.month.from_now
     lending = Lending.new
@@ -30,5 +32,19 @@ class Borrower < ActiveRecord::Base
     self.all.each do |borrower|
       borrower.send_overdue_reminder
     end
+  end
+
+  def reindex
+    BorrowerIndex.replace self
+  end
+
+  def borrower
+    current_lending ? current_lending.borrower.name : "nicht entliehen"
+  end
+
+  def self.search keys
+    # TODO: Find out how to tell Picky to get all ids
+    ids = (BorrowerSearch.search keys, 1000000).ids(1000000)
+    Borrower.where("id in (?)", ids)
   end
 end

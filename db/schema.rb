@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111220223043) do
+ActiveRecord::Schema.define(:version => 20120128162740) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -125,9 +125,21 @@ ActiveRecord::Schema.define(:version => 20111220223043) do
   add_index "lendings", ["book_id"], :name => "index_lendings_on_book_id"
   add_index "lendings", ["borrower_id"], :name => "index_lendings_on_borrower_id"
 
+  create_table "lendings_reminders", :force => true do |t|
+    t.integer "lending_id"
+    t.integer "reminder_id"
+  end
+
   create_table "printouts", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "reminders", :force => true do |t|
+    t.date     "send_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.boolean  "sent"
   end
 
   create_table "versions", :force => true do |t|

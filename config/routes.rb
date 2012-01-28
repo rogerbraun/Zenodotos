@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 Zenodotos::Application.routes.draw do
+
   get "fm_style/index"
 
   match "admin" => "dashboard#index", :via => :get
@@ -70,6 +71,9 @@ Zenodotos::Application.routes.draw do
   #     end
   #   end
 
+  namespace :admin do
+    resources :reminders
+  end
   # Sample resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
