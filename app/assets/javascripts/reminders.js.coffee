@@ -12,4 +12,6 @@ $(() ->
       $(this).data("state", "all")
     false
   )
+
+  $(".alert").alert()
 )

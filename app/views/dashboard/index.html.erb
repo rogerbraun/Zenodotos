@@ -26,6 +26,17 @@
         </p>
       </div>
     </div>
+    <div class="span4">
+      <div class="well">
+        <h2>Mahnungen</h2>
+        <p>
+          <ul>
+            <li>Am <%= @last_reminder_date  %> zum letzten Mal gemahnt.</li>
+            <li><%= link_to "Zu den Mahnungen", admin_reminders_path %>.</li>
+          </ul>
+        </p>
+      </div>
+    </div>
   </div>
 
 <% end %>

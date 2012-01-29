@@ -11,5 +11,6 @@
 //= require bootstrap-modal
 //= require bootstrap-tooltip
 //= require bootstrap-popover
+//= require bootstrap-alert
 //= require books
 //= require reminders

@@ -29,7 +29,7 @@
   <div class="fluid-content">
     <% flash.each do |type, message| %>
       <div class="alert alert-<%= type %>">
-        <a class="close">x</a>
+        <a class="close" data-dismiss="alert">&times;</a>
         <%= message %>
       </div>
     <% end %>

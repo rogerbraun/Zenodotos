@@ -15,9 +15,6 @@ Zenodotos::Application.routes.draw do
   match "admin/books/:id/return" => "books#return_current_lending", :via => :post, :as => "return_current_lending"
   match "admin/books/:id/extend" => "books#extend_current_lending", :via => :post, :as => "extend_current_lending"
 
-  match "admin/borrowers" => "borrowers#index", :via => :get, :as => "admin_borrowers"
-  match "admin/borrower/:id" => "borrowers#show", :via => :get, :as => "admin_borrower"
-
   match "admin/lendings" => "lendings#index", :via => :get, :as => "admin_lendings"
   match "admin/lending/:id" => "lendings#show", :via => :get, :as => "admin_lending"
 
@@ -26,8 +23,6 @@ Zenodotos::Application.routes.draw do
   get "home/index"
 
   match "/search" => 'search#index'
-
-  match "/borrowers/send_overdue_reminders" => 'borrowers#send_overdue_reminders', :as => :send_overdue_reminders, :via => :post
   
   resources :printouts
 
@@ -72,6 +67,7 @@ Zenodotos::Application.routes.draw do
   #   end
 
   namespace :admin do
+    resources :borrowers
     resources :reminders do
       member do
         post "deliver"

@@ -4,5 +4,7 @@ class DashboardController < ApplicationController
   layout "admin"
 
   def index
+    @last_reminder_date = ReminderDecorator.new(Reminder.order("send_date DESC").first).send_date
+
   end
 end

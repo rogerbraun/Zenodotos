@@ -1,0 +1,54 @@
+<% content_for :sidebar do %>
+  <div class="page-header">
+    <h1>Suche</h1>
+  </div>
+  <p>
+  <%= form_tag admin_borrowers_path, method: "get", id: "search_form" do %>
+    <fieldset>
+      <input type="text" id="search" name="search" class="span3" value="<%= params[:search] %>"></input>
+    <fieldset>
+    <button id="search_button" class="btn">Suchen</button>
+  <% end %>
+  </p>
+  <div class="page-header">
+    <h1>Aktionen</h1>
+  </div>
+  <p>
+    <%= link_to "Neuer Entleiher", new_admin_borrower_path, :class => "btn" %>
+  </p>
+<% end %>
+
+<% content_for :content do %>
+  <div class="page-header">
+    <h1>Bücher</h1>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Bearbeiten</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @borrowers.each do |borrower| %>
+            <tr>
+              <td><%= borrower.id %></td>
+              <td><%= link_to borrower.name, edit_admin_borrower_path(borrower) %></td>
+              <td><%= borrower.email %></td>
+              <td class="actions">
+                <div class="btn-group span3">
+                  <%= link_to icon("pencil"), edit_admin_borrower_path(borrower), :class => "btn", :title => "Bearbeiten", :data => {:content => "Auf diesen Knopf drücken um den Entleiher anzusehen oder zu bearbeiten."}%>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= paginate @borrowers %>
+<% end %>

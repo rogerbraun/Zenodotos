@@ -1,10 +1,13 @@
 # -*- encoding : utf-8 -*-
-class BorrowersController < ActionController::Base
+class Admin::BorrowersController < ActionController::Base
+
+  layout "admin"
 
   def index
     params[:search] = nil if params[:search] and params[:search].strip == ""
     @page = params[:page] || 0
     @borrowers = (params[:search] ? Borrower.search(params[:search]) : Borrower).page(@page)
+    flash[:notice] = "Nichts gefunden..." if @borrowers.size == 0
   end
 
   def send_overdue_reminders
