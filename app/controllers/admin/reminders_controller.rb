@@ -45,7 +45,6 @@ class Admin::RemindersController < ApplicationController
   # POST /reminders.json
   def create
     @reminder = Reminder.new(params[:reminder])
-    binding.pry
 
     respond_to do |format|
       if @reminder.save
