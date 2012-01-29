@@ -12,3 +12,4 @@
 //= require bootstrap-tooltip
 //= require bootstrap-popover
 //= require books
+//= require reminders

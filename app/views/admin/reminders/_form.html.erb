@@ -3,16 +3,19 @@
     <%= form_for [:admin, @reminder] do |f| %>
       <% @reminder.lendings_by_borrower.each do |borrower, lendings| %>
         <% lendings = LendingDecorator.decorate(lendings) %>
-        <h2><%= link_to borrower.name %></h2>
-        <h3><%= borrower.email %></h3>
-        <fieldset>
-          <% lendings.each do |lending| %>
-            <label class="checkbox">
-              <%= check_box_tag "reminder[lending_ids][]", lending.id, @reminder.lending_ids.include?(lending.id) %>
-              <%= lending.book_info %>
-            </label>
-          <% end %>
-        </fieldset>
+        <div class="borrower">
+          <h2><%= link_to borrower.name %></h2>
+          <h3><%= borrower.email %></h3>
+          <%= link_to(icon("remove") + "Alles / Nichts", "", :class => "boxes_selector btn small") %>
+          <fieldset>
+            <% lendings.each do |lending| %>
+              <label class="checkbox">
+                <%= check_box_tag "reminder[lending_ids][]", lending.id, @reminder.lending_ids.include?(lending.id) %>
+                <%= lending.book_info %>
+              </label>
+            <% end %>
+          </fieldset>
+        </div>
       <% end %>
       <div class="form-actions">
         <%= f.submit "Mahnung speichern", :class => "btn" %>
