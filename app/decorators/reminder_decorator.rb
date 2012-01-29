@@ -36,14 +36,18 @@ class ReminderDecorator < ApplicationDecorator
 
   def send_date
     if reminder.send_date
-      send_date.strftime("%d.%m.%Y")
+      reminder.send_date.strftime("%d.%m.%Y")
     else
       "Noch nicht versandt."
     end
   end
 
+  def sent?
+    !!reminder.send_date
+  end
+
   def lendings_by_borrower
-    reminder.lendings.group_by(&:borrower)
+    reminder.lendings.group_by(&:borrower).sort_by{|borrower, lendings| borrower.name}
   end
 
   def total_emails

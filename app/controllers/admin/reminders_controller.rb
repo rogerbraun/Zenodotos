@@ -48,7 +48,7 @@ class Admin::RemindersController < ApplicationController
 
     respond_to do |format|
       if @reminder.save
-        format.html { redirect_to [:admin, @reminder], notice: 'Reminder was successfully created.' }
+        format.html { redirect_to admin_reminders_path, notice: 'Reminder was successfully created.' }
         format.json { render json: @reminder, status: :created, location: @reminder }
       else
         format.html { render action: "new" }
@@ -71,6 +71,13 @@ class Admin::RemindersController < ApplicationController
         format.json { render json: @reminder.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def deliver 
+    Reminder.find(params[:id]).deliver
+    respond_to do |format|
+      format.html { redirect_to admin_reminders_path, notice: "Mahnungen wurden verschickt" }
+     end
   end
 
   # DELETE /reminders/1

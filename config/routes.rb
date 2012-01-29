@@ -72,7 +72,11 @@ Zenodotos::Application.routes.draw do
   #   end
 
   namespace :admin do
-    resources :reminders
+    resources :reminders do
+      member do
+        post "deliver"
+      end
+    end
   end
   # Sample resource route within a namespace:
   #   namespace :admin do

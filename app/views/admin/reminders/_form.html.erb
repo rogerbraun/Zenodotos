@@ -6,7 +6,7 @@
         <div class="borrower">
           <h2><%= link_to borrower.name %></h2>
           <h3><%= borrower.email %></h3>
-          <%= link_to(icon("remove") + "Alles / Nichts", "", :class => "boxes_selector btn small") %>
+          <%= link_to(icon("ok") + "Alles / Nichts", "", :class => "boxes_selector btn small") %>
           <fieldset>
             <% lendings.each do |lending| %>
               <label class="checkbox">
