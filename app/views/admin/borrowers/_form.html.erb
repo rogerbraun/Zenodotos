@@ -1,0 +1,40 @@
+<%= semantic_form_for [:admin, @borrower] do |f| %>
+  <fieldset class="inputs">
+    <div class="row">
+      <div class="span4">
+        <%= f.input :name, :input_html => {:class => "span4"} %>
+      </div>
+      <div class="span4">
+        <%= f.input :matrikelnr, :as => :string, :input_html => {:class => "span4"} %>
+      </div>
+      <div class="span4">
+        <%= f.input :ub_nr, :input_html => {:class => "span4"} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span4">
+        <%= f.input :email, :input_html => {:class => "span4"} %>
+      </div>
+      <div class="span4">
+        <%= f.input :telefon, :input_html => {:class => "span4"} %>
+      </div>
+      <div class="span4">
+        <%= f.input :status, :input_html => {:class => "span4"} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <%= f.input :anschrift, :as => :text, :input_html => {:class => "span6", :rows => "4"} %>
+      </div>
+      <div class="span6">
+        <%= f.input :heimatanschrift, :as => :text, :input_html => {:class => "span6", :rows => "4"} %>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="form-actions">
+    <button class="btn primary"><%=icon "file"%>Speichern</button>
+    <%= link_to "Abbrechen", request.referrer, :class => "btn" %>
+  </fieldset>
+
+
+<% end %>

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-class PrintoutsController < ApplicationController
+class Admin::PrintoutsController < Admin::AdminController
   def index
     @unprinted = Lending.unprinted.count
     @printouts = Printout.order("id DESC")
@@ -7,7 +7,7 @@ class PrintoutsController < ApplicationController
 
   def new
     Printout.new_from_unprinted
-    redirect_to printouts_path
+    redirect_to admin_printouts_path, :notice => "PDF erstellt"
   end
 
 end

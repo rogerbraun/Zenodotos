@@ -1,8 +1,6 @@
 # -*- encoding : utf-8 -*-
 Zenodotos::Application.routes.draw do
 
-  get "fm_style/index"
-
   match "admin" => "dashboard#index", :via => :get
   match "admin/books" => "books#index", :via => :get, :as => "admin_books"
   match "admin/books/:id/edit" => "books#edit", :via => :get, :as => "edit_admin_book"
@@ -24,7 +22,6 @@ Zenodotos::Application.routes.draw do
 
   match "/search" => 'search#index'
   
-  resources :printouts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -67,7 +64,9 @@ Zenodotos::Application.routes.draw do
   #   end
 
   namespace :admin do
+    post "lendings/return"
     resources :borrowers
+    resources :printouts
     resources :reminders do
       member do
         post "deliver"

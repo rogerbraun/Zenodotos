@@ -1,17 +1,10 @@
-<div class="container">
+<% content_for :content do %>
   <div class="row">
     <div class="page-header">
       <h1>Leihzettel</h1>
     </div>
-    <div class="span6">
-      <p>
-        <h2>Ungedruckt: <%= @unprinted %></h2>
-        <%= link_to "Pdf generieren", new_printout_path %>
-      </p>
-    </div>
-    <div class="span10">
-      <h1>Leihzettel-PDFs</h1>
-      <table>
+    <div class="span12">
+      <table class="table">
         <thead>
           <tr>
             <th>Erstellungsdatum</th>
@@ -29,4 +22,13 @@
       </table>
     </div>
   </div>
-</div>
+<% end %>
+<% content_for :sidebar do %>
+  <div class="page-header">
+    <h1>Aktionen</h1>
+  </div>
+  <div class="well">
+    <h3>Ungedruckt: <%= @unprinted %></h3>
+    <%= link_to "Pdf generieren", new_admin_printout_path, :class => "btn" %>
+  </div>
+<% end %>

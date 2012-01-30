@@ -43,7 +43,7 @@
               <td><%= book.autor %></td>
               <td><%= "#{book.signatur} #{book.nebensignatur}" %></td>
               <td><% if book.current_lending %>
-                  <%= link_to(book.borrower, admin_borrower_path(book.current_lending.borrower)) %>
+                  <%= link_to(book.borrower, edit_admin_borrower_path(book.current_lending.borrower)) %>
                   <%= tag("br") %>
                   <%= "<span class='label warning'>".html_safe if book.current_lending.overdue? %>
                   <%= link_to(book.current_lending.return_date.strftime("%d.%m.%Y"), admin_lending_path(book.current_lending)) %>

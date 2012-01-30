@@ -1,7 +1,4 @@
-class Admin::RemindersController < ApplicationController
-
-  before_filter :authenticate_admin_user!
-  layout "admin"
+class Admin::RemindersController < Admin::AdminController
 
   # GET /reminders
   # GET /reminders.json

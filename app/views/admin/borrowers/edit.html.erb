@@ -1,0 +1,46 @@
+<% content_for :content do %>
+  <div class="page-header">
+    <h1>Nutzer bearbeiten</h1>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <%= render "form"%>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :sidebar do %>
+  <div class="page-header">
+    <h1>Aktionen</h1>
+  </div>
+  <div class="well">
+    <h3>Entliehene Bücher</h3>
+    <hr></hr>
+    <% if @borrower.unreturned.count == 0 %>
+      <p><span class="label success">Keine Bücher entliehen!</span></p>
+    <% else %>
+      <%= form_tag admin_lendings_return_path, :method => :post do |f| %>
+        <%= link_to(icon("ok") + "Alles / Nichts", "", :class => "boxes_selector btn small", :data => {:state => "all"}) %>
+        <br></br>
+        <fieldset>
+          <% @borrower.unreturned.each do |lending| %>
+            <% lending = LendingDecorator.new(lending) %>
+            <label class="checkbox">
+              <%= check_box_tag "lending_ids[]", lending.id, false %>
+              <%= lending.book_info %>
+              <br />
+              <%= lending.return_date %>
+            </label>
+          <% end %>
+        </fieldset>
+        
+        <fieldset class="actions">
+          <button class="btn primary">
+            Zurückgeben
+          </button>
+        </fieldset>
+      <% end %>
+    <% end %>
+  </div>
+   
+<% end %>

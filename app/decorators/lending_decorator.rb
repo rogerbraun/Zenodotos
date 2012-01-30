@@ -34,4 +34,9 @@ class LendingDecorator < ApplicationDecorator
   def book_info
     "#{lending.book.signatur} #{lending.book.nebensignatur}: #{lending.book.autor}, #{lending.book.titel}"
   end
+
+  def return_date
+    h.content_tag :span, lending.return_date.strftime("%m.%d.%Y"),
+                  :class => "label " + (lending.overdue? ? "warning" : "success")
+  end
 end
