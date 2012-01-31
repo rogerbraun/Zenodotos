@@ -57,7 +57,7 @@
                   <%= link_to icon("pencil"), edit_admin_book_path(book), :class => "btn", :title => "Bearbeiten", :data => {:content => "Auf diesen Knopf drücken um das Buch anzusehen oder zu bearbeiten."}%>
                   <%= link_to icon("repeat"), duplicate_admin_book_path(book), :class => "btn", :title => "Duplizieren", :data => {:content => "Auf diesen Knopf drücken um das Buch zu duplizieren und den duplizierten Eintrag zu bearbeiten."} %>
                   <% unless book.current_lending %>
-                    <%= link_to icon("share"), lendings_new_admin_book_path(book), :class => "btn", :title => "Verleihen", :data => {:content => "Auf diesen Knopf drücken um das Buch zu verleihen."}, :remote => true %>
+                    <%= link_to icon("share"), lendings_new_admin_book_path(book), :class => "btn", :title => "Verleihen", :data => {:content => "Auf diesen Knopf drücken um das Buch zu verleihen."}, :remote => true, :id => "lend_book_#{book.id}" %>
                   <% else %>
                     <%= link_to icon("book"), return_book_admin_book_path(book), :class => "btn", :title => "Zurückgeben", :data => {:content => "Auf diesen Knopf drücken um das Buch zurück zu geben."},:method => :post, :confirm => "Wirklich zurückgeben?" %>
                     

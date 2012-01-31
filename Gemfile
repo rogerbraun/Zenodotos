@@ -32,6 +32,7 @@ group :development do
   gem "pry"
   gem "rspec-rails"
   gem "capybara"
+  gem "capybara-webkit"
   gem "libnotify"
   gem "mailcatcher"
 end
@@ -55,4 +56,5 @@ group :test do
   gem "factory_girl_rails"
   gem "rspec-rails"
   gem "guard-rspec"
+  gem "capybara-webkit"
 end

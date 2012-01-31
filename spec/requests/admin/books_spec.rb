@@ -28,6 +28,22 @@ describe Admin do
         click_on "new_book_button"
         page.should have_content("Neues Buch")
       end
+
+      it "has a working search" do
+        Factory(:book, :titel => "Mein liebstes Buch")
+        fill_in "search", with: "Mein liebstes Buch"
+        click_on "search_button"
+        page.should have_content("Mein liebstes Buch")
+      end
+
+      it "can lend a book", :js => true do
+        @book = Factory(:book, :titel => "Mein liebstes Buch")  
+        fill_in "search", with: "Mein liebstes Buch"
+        click_on "search_button"
+        page.find("#lend_book_#{@book.id}").click
+        page.should have_content("Buch verleihen")
+      end
+
     end
 
     describe "Member Page" do
