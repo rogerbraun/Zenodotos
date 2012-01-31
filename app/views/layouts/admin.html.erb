@@ -19,6 +19,10 @@
         <li><%= link_to "Leihzettel", admin_printouts_path %></li>
         <li><%= link_to "Mahnungen", admin_reminders_path %></li>
       </ul>
+      <ul class="nav pull-right">
+        <li><%= image_tag current_admin_user.gravatar_url, :class => "avatar" %></li> 
+        <li><%= link_to "#{current_admin_user.email} abmelden.", destroy_admin_user_session_path, :method => :delete %></li>
+      </ul>
     </div>
   </div>
 </div>

@@ -23,11 +23,25 @@
       </div>
     </div>
     <div class="row">
-      <div class="span6">
-        <%= f.input :anschrift, :as => :text, :input_html => {:class => "span6", :rows => "4"} %>
+      <div class="span4">
+        <%= f.input :bearbeiter, :input_html => {:class => "span4"} %>
       </div>
-      <div class="span6">
-        <%= f.input :heimatanschrift, :as => :text, :input_html => {:class => "span6", :rows => "4"} %>
+      <div class="span4">
+        <%= f.input :telefon2, :input_html => {:class => "span4"} %>
+      </div>
+      <div class="span4">
+        <%= f.input :mobiltelefon, :input_html => {:class => "span4"} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span4">
+        <%= f.input :anschrift, :as => :text, :input_html => {:class => "span4", :rows => "4"} %>
+      </div>
+      <div class="span4">
+        <%= f.input :heimatanschrift, :as => :text, :input_html => {:class => "span4", :rows => "4"} %>
+      </div>
+      <div class="span4">
+        <%= f.input :vermerke, :as => :text, :input_html => {:class => "span4", :rows => "4"} %>
       </div>
     </div>
   </fieldset>

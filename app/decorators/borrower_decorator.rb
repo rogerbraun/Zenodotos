@@ -1,5 +1,5 @@
-class LendingDecorator < ApplicationDecorator
-  decorates :lending
+class BorrowerDecorator < ApplicationDecorator
+  decorates :borrower
 
   # Accessing Helpers
   #   You can access any helper via a proxy
@@ -29,14 +29,10 @@ class LendingDecorator < ApplicationDecorator
   #     h.content_tag :span, time.strftime("%a %m/%d/%y"), 
   #                   :class => 'timestamp'
   #   end
-  #
- 
-  def book_info
-    "#{lending.book.signatur} #{lending.book.nebensignatur}: #{lending.book.autor}, #{lending.book.titel}"
-  end
 
-  def return_date
-    h.content_tag :span, lending.return_date.strftime("%d.%m.%Y"),
-                  :class => "label " + (lending.overdue? ? "warning" : "success")
+  def books_info
+    h.content_tag(:span, unreturned.count, :class => "label success") + 
+    " / " + 
+    h.content_tag(:span, unreturned.overdue.count, :class => "label important")
   end
 end

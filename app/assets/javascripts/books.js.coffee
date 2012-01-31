@@ -6,6 +6,7 @@ $( () ->
   # Datepickers
   $("#book_aufnahmedatum").datepicker({dateFormat: 'yy-mm-dd'})
   $("#lending_return_date").datepicker({dateFormat: 'yy-mm-dd'})
+  $("input.date").datepicker({dateFormat: 'yy-mm-dd'})
 
   # Popovers
 

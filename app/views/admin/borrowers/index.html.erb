@@ -31,6 +31,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Matrikelnummer</th>
+            <th>Bücher</th>
             <th>Bearbeiten</th>
           </tr>
         </thead>
@@ -41,6 +42,7 @@
               <td><%= link_to borrower.name, edit_admin_borrower_path(borrower) %></td>
               <td><%= borrower.email %></td>
               <td><%= borrower.matrikelnr %></td>
+              <td><%= borrower.books_info %></td>
               <td class="actions">
                 <div class="btn-group span3">
                   <%= link_to icon("pencil"), edit_admin_borrower_path(borrower), :class => "btn", :title => "Bearbeiten", :data => {:content => "Auf diesen Knopf drücken um den Entleiher anzusehen oder zu bearbeiten."}%>

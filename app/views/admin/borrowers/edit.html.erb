@@ -19,7 +19,7 @@
     <% if @borrower.unreturned.count == 0 %>
       <p><span class="label success">Keine Bücher entliehen!</span></p>
     <% else %>
-      <%= form_tag admin_lendings_return_path, :method => :post do |f| %>
+      <%= form_tag admin_lendings_return_or_extend_path, :method => :post do |f| %>
         <%= link_to(icon("ok") + "Alles / Nichts", "", :class => "boxes_selector btn small", :data => {:state => "all"}) %>
         <br></br>
         <fieldset>
@@ -33,11 +33,20 @@
             </label>
           <% end %>
         </fieldset>
+        <fieldset>
+          <label for="return_date">Neues Rückgabedatum</label>
+          <input id="return_date" name="return_date" class="date" value="<%= Date.today + 28.days%>"/>
+        </fieldset>
         
         <fieldset class="actions">
-          <button class="btn primary">
-            Zurückgeben
-          </button>
+          <div class="btn-group">
+            <button type="submit" name="return" class="btn primary" title="Zurückgeben" data-confirm="Wirklich zurückgeben?">
+              <%= icon("share") %>
+            </button>
+            <button type="submit" name="extend" class="btn" title="Verlängern" data-confirm="Wirklich verlängern?">
+              <%= icon("plus") %>
+            </button>
+          </div>
         </fieldset>
       <% end %>
     <% end %>

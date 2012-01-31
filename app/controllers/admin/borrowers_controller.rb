@@ -5,6 +5,7 @@ class Admin::BorrowersController < Admin::AdminController
     params[:search] = nil if params[:search] and params[:search].strip == ""
     @page = params[:page] || 0
     @borrowers = (params[:search] ? Borrower.search(params[:search]) : Borrower).page(@page)
+    @borrowers = BorrowerDecorator.decorate(@borrowers)
     flash[:notice] = "Nichts gefunden..." if @borrowers.size == 0
   end
 

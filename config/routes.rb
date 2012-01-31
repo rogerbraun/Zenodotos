@@ -64,7 +64,7 @@ Zenodotos::Application.routes.draw do
   #   end
 
   namespace :admin do
-    post "lendings/return"
+    post "lendings/return_or_extend"
     resources :borrowers
     resources :printouts
     resources :reminders do
