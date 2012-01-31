@@ -2,10 +2,10 @@
   <div class="modal-header">
     <h3>Buch verleihen</h3>
   </div>
-  <%= semantic_form_for @lending, :url => create_book_lending_path do |f| %>
+  <%= semantic_form_for @lending, :url => lendings_admin_book_path, :method => :post do |f| %>
     <div class="modal-body">
       <%= f.input :return_date, :as => :string %>
-      <%= f.input :borrower %>
+      <%= f.input :borrower, :collection => Borrower.order("name") %>
       <%= f.input :book_id, :as => :hidden %>
       
     </div>

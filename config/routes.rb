@@ -2,19 +2,6 @@
 Zenodotos::Application.routes.draw do
 
   match "admin" => "dashboard#index", :via => :get
-  match "admin/books" => "books#index", :via => :get, :as => "admin_books"
-  match "admin/books/:id/edit" => "books#edit", :via => :get, :as => "edit_admin_book"
-  match "admin/books/new" => "books#new", :via => :get, :as => "new_admin_book"
-  match "admin/books/:dup_id/duplicate" => "books#new", :via => :get, :as => "duplicate_admin_book"
-  match "admin/books/:id/lending/new" => "books#new_lending", :via => :get, :as => "new_book_lending"
-  match "admin/books/:id/lending" => "books#create_lending", :via => :post, :as => "create_book_lending"
-
-  match "admin/books/:id" => "books#show", :via => :get, :as => "admin_book"
-  match "admin/books/:id/return" => "books#return_current_lending", :via => :post, :as => "return_current_lending"
-  match "admin/books/:id/extend" => "books#extend_current_lending", :via => :post, :as => "extend_current_lending"
-
-  match "admin/lendings" => "lendings#index", :via => :get, :as => "admin_lendings"
-  match "admin/lending/:id" => "lendings#show", :via => :get, :as => "admin_lending"
 
   devise_for :admin_users, :path => "admin"
 
@@ -65,7 +52,15 @@ Zenodotos::Application.routes.draw do
 
   namespace :admin do
     post "lendings/return_or_extend"
-    resources :borrowers
+    resources :borrowers 
+    resources :books do
+      member do
+        get "duplicate"
+        get "lendings/new", :action => "new_lending"
+        post "lendings", :action => "create_lending"
+        post "return_book"
+      end
+    end
     resources :printouts
     resources :reminders do
       member do

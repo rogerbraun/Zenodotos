@@ -1,8 +1,5 @@
 # -*- encoding : utf-8 -*-
-class BooksController < ApplicationController
-
-  before_filter :authenticate_admin_user!
-  layout "admin"
+class Admin::BooksController < Admin::AdminController
 
   def index
     params[:search] = nil if params[:search] and params[:search].strip == ""
@@ -15,14 +12,15 @@ class BooksController < ApplicationController
   end
 
   def new
-    if params[:dup_id]
-      @book = Book.find(params[:dup_id]).dup
-    else
-      @book = Book.new
-    end
+    @book = Book.new
   end
 
-  def return_current_lending
+  def duplicate
+    @book = Book.find(params[:id]).dup
+    render "new"
+  end
+
+  def return_book
     @book = Book.find(params[:id])
     @book.current_lending.return
     flash[:notice] = "'#{@book.titel}' wurde zurück gegeben."
