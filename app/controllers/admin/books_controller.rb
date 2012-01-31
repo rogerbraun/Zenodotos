@@ -20,6 +20,16 @@ class Admin::BooksController < Admin::AdminController
     render "new"
   end
 
+  def update
+    @book = Book.find(params[:id])
+    if @book.update_attributes(params[:book]) then
+      redirect_to admin_books_path, notice: "Buch wurde gespeichert!"
+    else
+      redirect_to edit_admin_book_path(@book), notice: "Buch konnte nicht gespeichert werden."
+    end
+  end
+    
+
   def return_book
     @book = Book.find(params[:id])
     @book.current_lending.return

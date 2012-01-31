@@ -67,6 +67,13 @@ describe Admin do
       it "displays a single book", :js => false do
         page.should have_selector("input[value='#{@book.titel}']")
       end
+
+      it "can update a book" do
+        fill_in "book_titel", with: "Ein neuer Titel"
+        click_on "submit_book"
+        @book.reload
+        @book.titel.should == "Ein neuer Titel"
+      end
     end
   end
 end
