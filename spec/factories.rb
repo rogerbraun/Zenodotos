@@ -28,6 +28,6 @@ FactoryGirl.define do
   end
 
   factory :overdue_lending, parent: :lending do
-    return_date 1.month.ago
+    return_date 1.day.ago
   end
 end

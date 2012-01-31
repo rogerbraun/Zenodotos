@@ -62,7 +62,7 @@
                     <%= link_to icon("book"), return_book_admin_book_path(book), :class => "btn", :title => "Zurückgeben", :data => {:content => "Auf diesen Knopf drücken um das Buch zurück zu geben."},:method => :post, :confirm => "Wirklich zurückgeben?" %>
                     
                     <% if book.current_lending.overdue? %>
-                      <%= link_to icon("plus"), extend_current_lending_path(book), :class => "btn", :title => "Verlängern", :data => {:content => "Dieser Knopf verlängert das Ausleihdatum um vier Wochen. Wenn eine andere Frist gewünscht ist bitte direkt auf den Leihvorgang gehen und dort das Datum editieren."}, :method => :post, :confirm => "Wirklich verlängern?" %>
+                      <%= link_to icon("plus"), extend_current_lending_admin_book_path(book), :class => "btn", :title => "Verlängern", :data => {:content => "Dieser Knopf verlängert das Ausleihdatum um vier Wochen. Wenn eine andere Frist gewünscht ist bitte direkt auf den Leihvorgang gehen und dort das Datum editieren."}, :method => :post, :confirm => "Wirklich verlängern?", :id => "extend_book_#{book.id}" %>
                     <% end %>
                   <% end %>
                 </div>

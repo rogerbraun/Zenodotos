@@ -36,6 +36,15 @@ describe Admin do
         page.should have_content("Mein liebstes Buch")
       end
 
+      it "can extend the return date of a book" do
+        @overdue = Factory(:overdue_lending)
+        @book = @overdue.book
+        fill_in "search", with: @book.titel
+        click_on "search_button"
+        page.find("#extend_book_#{@book.id}").click
+        @book.lendings.overdue.should be_empty
+      end
+
       it "can lend a book", :js => true do
         @book = Factory(:book, :titel => "Mein liebstes Buch")  
         @book.current_lending.should be_false

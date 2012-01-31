@@ -58,6 +58,7 @@ Zenodotos::Application.routes.draw do
         get "duplicate"
         get "lendings/new", :action => "new_lending"
         post "lendings", :action => "create_lending"
+        post "extend_current_lending"
         post "return_book"
       end
     end
