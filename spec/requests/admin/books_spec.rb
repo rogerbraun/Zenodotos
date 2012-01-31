@@ -38,10 +38,13 @@ describe Admin do
 
       it "can lend a book", :js => true do
         @book = Factory(:book, :titel => "Mein liebstes Buch")  
+        @book.current_lending.should be_false
         fill_in "search", with: "Mein liebstes Buch"
         click_on "search_button"
         page.find("#lend_book_#{@book.id}").click
         page.should have_content("Buch verleihen")
+        page.click_on "lend_book_button"
+        @book.current_lending.should be_true
       end
 
     end
@@ -52,7 +55,7 @@ describe Admin do
         visit admin_book_path(@book)
       end
         
-      it "displays a single book" do
+      it "displays a single book", :js => false do
         page.should have_selector("input[value='#{@book.titel}']")
       end
     end

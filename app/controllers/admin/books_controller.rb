@@ -32,7 +32,7 @@ class Admin::BooksController < Admin::AdminController
     @book = Book.find(params[:id])
     @lending = @book.lendings.new
     @lending.return_date = Date.today + 28.days
-    @lending.borrower_id = session[:last_borrower]
+    @lending.borrower_id = session[:last_borrower] || Borrower.order(:name).first
   end
 
   def create_lending
