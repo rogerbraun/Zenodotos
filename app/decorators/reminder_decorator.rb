@@ -35,6 +35,7 @@ class ReminderDecorator < ApplicationDecorator
   end
 
   def send_date
+    return "noch nie" unless reminder
     if reminder.send_date
       reminder.send_date.strftime("%d.%m.%Y")
     else
