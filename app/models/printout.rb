@@ -5,7 +5,8 @@ class Printout < ActiveRecord::Base
   has_many :lendings
 
   def self.new_from_unprinted
-    Printout.create(lendings: Lending.where("printout_id is null"))
+    lendings = Lending.where("printout_id is null").all
+    Printout.create(lendings: lendings)
   end
   
   after_create :create_pdf
@@ -32,7 +33,7 @@ class Printout < ActiveRecord::Base
       total_width = pdf.page.document.margin_box.width
       total_height = pdf.page.document.margin_box.height
 
-      lendings.each_slice(8) do |slice|
+      lendings.sort_by{|l| l.book.signatur}.reverse.each_slice(8) do |slice|
         0.upto(3) do |y|
           0.upto(1) do |x|
             if not slice.empty? 
@@ -41,10 +42,13 @@ class Printout < ActiveRecord::Base
               base_y = (total_height - (y * height)) - 5.mm
               pdf.bounding_box([base_x, base_y], width: width - 5.mm, height: height -5.mm) do
                  
-                pdf.text lending.book.signatur.to_s
-                pdf.text lending.created_at.to_s
-                pdf.text lending.book.autor.to_s
+                pdf.text "Signatur: #{lending.book.signatur} #{lending.book.nebensignatur}"
+                pdf.text "\n"
                 pdf.text lending.book.titel.to_s
+                pdf.text lending.book.autor.to_s
+                pdf.text "\n"
+                pdf.text "Leihende: #{lending.return_date.strftime("%d.%m.%Y")}"
+                pdf.text "Entleiher: #{lending.borrower.name}"
 
               end
             end
