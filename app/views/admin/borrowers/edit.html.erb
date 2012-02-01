@@ -26,7 +26,7 @@
           <% @borrower.unreturned.each do |lending| %>
             <% lending = LendingDecorator.new(lending) %>
             <label class="checkbox">
-              <%= check_box_tag "lending_ids[]", lending.id, false %>
+              <%= check_box_tag "lending_ids[]", lending.id, false, :id => "lending_id_#{lending.id}" %>
               <%= lending.book_info %>
               <br />
               <%= lending.return_date %>
@@ -40,10 +40,10 @@
         
         <fieldset class="actions">
           <div class="btn-group">
-            <button type="submit" name="return" class="btn primary" title="Zurückgeben" data-confirm="Wirklich zurückgeben?">
+            <button type="submit" id="return" name="return" class="btn primary" title="Zurückgeben" data-confirm="Wirklich zurückgeben?">
               <%= icon("share") %>
             </button>
-            <button type="submit" name="extend" class="btn" title="Verlängern" data-confirm="Wirklich verlängern?">
+            <button type="submit" id="extend" name="extend" class="btn" title="Verlängern" data-confirm="Wirklich verlängern?">
               <%= icon("plus") %>
             </button>
           </div>

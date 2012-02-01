@@ -22,6 +22,11 @@ if Book.table_exists? then
               substitutes_characters_with: Picky::CharacterSubstituters::WestEuropean.new,
               splits_text_on: /\s/u
 
+    boost [:titel] => +6,
+          [:titel_japanisch] => +6,
+          [:autor] => +4,
+          [:autor_japanisch] => +4
+
   end
 
   BorrowerIndex = Picky::Index.new :borrowers do

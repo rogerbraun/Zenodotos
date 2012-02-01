@@ -8,7 +8,7 @@ class Borrower < ActiveRecord::Base
   after_save :reindex #unless Rails.env == "test"
 
   def borrow(book, date = nil)
-    date ||= 1.month.from_now
+    date ||= 28.days.from_now
     lending = Lending.new
     lending.borrower = self
     lending.book = book

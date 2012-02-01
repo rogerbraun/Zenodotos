@@ -20,6 +20,10 @@ class Admin::BorrowersController < Admin::AdminController
     @borrower = Borrower.find(params[:id])
   end
 
+  def show 
+    redirect_to :action => "edit"
+  end
+
   def update 
     @borrower = Borrower.find(params[:id])
     respond_to do |format|
