@@ -5,7 +5,6 @@ require "capistrano/ext/multistage"
 
 set :application, "Zenodotos"
 set :repository,  "git://github.com/rogerbraun/Zenodotos.git"
-set :branch, "anti_admin"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
