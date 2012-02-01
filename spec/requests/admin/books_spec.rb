@@ -45,6 +45,15 @@ describe Admin do
         @book.lendings.overdue.should be_empty
       end
 
+      it "can return a book" do
+        @lending = Factory(:lending)
+        @book = @lending.book
+        fill_in "search", with: @book.titel
+        click_on "search_button"
+        page.find("#return_book_#{@book.id}").click
+        @book.current_lending.should be_nil
+      end
+
       it "can lend a book", :js => true do
         @book = Factory(:book, :titel => "Mein liebstes Buch")  
         @book.current_lending.should be_false
