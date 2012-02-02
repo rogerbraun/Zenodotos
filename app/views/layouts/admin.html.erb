@@ -7,13 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar navbar-fixed">
+<div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
       <a class="brand" href="#">Zenodotos</a>
       <ul class="nav">
         <li><%= link_to "Dashboard", admin_path %></li>
         <li><%= link_to "Bücher", admin_books_path %></li>
+        <li><%= link_to "Sammlungen", admin_collections_path %></li>
         <li><%= link_to "Entleiher", admin_borrowers_path %></li>
         <li><%= link_to "Leihzettel", admin_printouts_path %></li>
         <li><%= link_to "Mahnungen", admin_reminders_path %></li>
@@ -26,18 +27,20 @@
   </div>
 </div>
 
-<div class="container-fluid sidebar-left">
-  <div class="fluid-sidebar">
-    <%= yield :sidebar %>
-  </div>
-  <div class="fluid-content">
-    <% flash.each do |type, message| %>
-      <div class="alert alert-<%= type %>">
-        <a class="close" data-dismiss="alert">&times;</a>
-        <%= message %>
-      </div>
-    <% end %>
-    <%= yield :content %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3 sidebar">
+      <%= yield :sidebar %>
+    </div>
+    <div class="span9">
+      <% flash.each do |type, message| %>
+        <div class="alert alert-<%= type %>">
+          <a class="close" data-dismiss="alert">&times;</a>
+          <%= message %>
+        </div>
+      <% end %>
+      <%= yield :content %>
+    </div>
   </div>
 </div>
 </body>

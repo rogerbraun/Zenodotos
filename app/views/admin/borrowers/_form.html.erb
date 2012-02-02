@@ -1,47 +1,47 @@
 <%= semantic_form_for [:admin, @borrower] do |f| %>
-  <fieldset class="inputs">
-    <div class="row">
+  <fieldset class="inputs well">
+    <div class="row-fluid">
       <div class="span4">
-        <%= f.input :name, :input_html => {:class => "span4"} %>
+        <%= f.input :name %>
       </div>
       <div class="span4">
-        <%= f.input :matrikelnr, :as => :string, :input_html => {:class => "span4"} %>
+        <%= f.input :matrikelnr, :as => :string %>
       </div>
       <div class="span4">
-        <%= f.input :ub_nr, :input_html => {:class => "span4"} %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="span4">
-        <%= f.input :email, :input_html => {:class => "span4"} %>
-      </div>
-      <div class="span4">
-        <%= f.input :telefon, :input_html => {:class => "span4"} %>
-      </div>
-      <div class="span4">
-        <%= f.input :status, :input_html => {:class => "span4"} %>
+        <%= f.input :ub_nr %>
       </div>
     </div>
-    <div class="row">
+    <div class="row-fluid">
       <div class="span4">
-        <%= f.input :bearbeiter, :input_html => {:class => "span4"} %>
+        <%= f.input :email %>
       </div>
       <div class="span4">
-        <%= f.input :telefon2, :input_html => {:class => "span4"} %>
+        <%= f.input :telefon %>
       </div>
       <div class="span4">
-        <%= f.input :mobiltelefon, :input_html => {:class => "span4"} %>
+        <%= f.input :status %>
       </div>
     </div>
-    <div class="row">
+    <div class="row-fluid">
       <div class="span4">
-        <%= f.input :anschrift, :as => :text, :input_html => {:class => "span4", :rows => "4"} %>
+        <%= f.input :bearbeiter %>
       </div>
       <div class="span4">
-        <%= f.input :heimatanschrift, :as => :text, :input_html => {:class => "span4", :rows => "4"} %>
+        <%= f.input :telefon2 %>
       </div>
       <div class="span4">
-        <%= f.input :vermerke, :as => :text, :input_html => {:class => "span4", :rows => "4"} %>
+        <%= f.input :mobiltelefon %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">
+        <%= f.input :anschrift, :as => :text, :input_html => {rows: 4} %>
+      </div>
+      <div class="span4">
+        <%= f.input :heimatanschrift, :as => :text, :input_html => {rows: 4} %>
+      </div>
+      <div class="span4">
+        <%= f.input :vermerke, :as => :text, :input_html => {rows: 4} %>
       </div>
     </div>
   </fieldset>

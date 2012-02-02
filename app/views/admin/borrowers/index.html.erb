@@ -1,21 +1,21 @@
 <% content_for :sidebar do %>
-  <div class="page-header">
-    <h1>Suche</h1>
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Aktionen</li>
+      <li><%= link_to icon("file") + "Neuer Entleiher", new_admin_borrower_path, :id => "new_borrower_button" %></li>
+    </ul>
+    <ul class="nav nav-list">
+      <li class="nav-header">Suche</li>
+      <li>
+        <%= form_tag admin_borrowers_path, method: "get", id: "search_form" do %>
+          <fieldset>
+            <input type="text" id="search" name="search" class="span12" value="<%= params[:search] %>"></input>
+          <fieldset>
+          <button id="search_button" class="btn">Suchen</button>
+        <% end %>
+      </li>
+    </ul>
   </div>
-  <p>
-  <%= form_tag admin_borrowers_path, method: "get", id: "search_form" do %>
-    <fieldset>
-      <input type="text" id="search" name="search" class="span3" value="<%= params[:search] %>"></input>
-    <fieldset>
-    <button id="search_button" class="btn">Suchen</button>
-  <% end %>
-  </p>
-  <div class="page-header">
-    <h1>Aktionen</h1>
-  </div>
-  <p>
-    <%= link_to "Neuer Entleiher", new_admin_borrower_path, :class => "btn" %>
-  </p>
 <% end %>
 
 <% content_for :content do %>

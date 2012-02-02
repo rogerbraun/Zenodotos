@@ -52,6 +52,7 @@ Zenodotos::Application.routes.draw do
 
   namespace :admin do
     post "lendings/return_or_extend"
+    resources :collections
     resources :borrowers 
     resources :books do
       member do

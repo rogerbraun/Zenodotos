@@ -31,8 +31,8 @@ class BorrowerDecorator < ApplicationDecorator
   #   end
 
   def books_info
-    h.content_tag(:span, unreturned.count, :class => "label success") + 
+    h.content_tag(:span, unreturned.count, :class => "label label-success") + 
     " / " + 
-    h.content_tag(:span, unreturned.overdue.count, :class => "label important")
+    h.content_tag(:span, unreturned.overdue.count, :class => "label label-important")
   end
 end

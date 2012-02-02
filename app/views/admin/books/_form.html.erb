@@ -1,119 +1,119 @@
-<%= semantic_form_for [:admin, @book] do |f| %>
-<fieldset class="inputs">
-  <div class="row">
+<%= semantic_form_for [:admin, @book], :html => {:class => "maxed-form"} do |f| %>
+<fieldset class="inputs well">
+  <div class="row-fluid">
     <div class="span2">
-      <%= f.input :signatur, :input_html => {:class => "span2"} %>
+      <%= f.input :signatur %>
     </div>
     <div class="span2">
-      <%= f.input :nebensignatur, :input_html => {:class => "span2"}%>
+      <%= f.input :nebensignatur%>
     </div>
     <div class="span2">
-      <%= f.input :stifter, :input_html => {:class => "span2"} %>
+      <%= f.input :stifter %>
     </div>
     <div class="span2">
-      <%= f.input :standort, :input_html => {:class => "span2"} %>
+      <%= f.input :standort %>
     </div>
     <div class="span4">
-      <%= f.input :publikationsart, :input_html => {:class => "span4"} %>
+      <%= f.input :publikationsart %>
     </div>
   </div>
-  <div class="row">
+  <div class="row-fluid">
     <div class="span8">
-      <%= f.input :autor, :input_html => {:class => "span8"} %>
+      <%= f.input :autor %>
     </div>
     <div class="span4">
-      <%= f.input :autor_japanisch, :input_html => {:class => "span4"} %>
+      <%= f.input :autor_japanisch %>
     </div>
   </div>
-  <div class="row">
+  <div class="row-fluid">
     <div class="span8">
-      <%= f.input :titel, :input_html => {:class => "span8"} %>
+      <%= f.input :titel %>
     </div>
     <div class="span4">
-      <%= f.input :titel_japanisch, :input_html => {:class => "span4"} %>
+      <%= f.input :titel_japanisch %>
     </div>
   </div>
-  <div class="row">
+  <div class="row-fluid">
     <div class="span8">
-      <%= f.input :reihe, :input_html => {:class => "span8"} %>
+      <%= f.input :reihe %>
     </div>
     <div class="span4">
-      <%= f.input :reihe_japanisch, :input_html => {:class => "span4"} %>
+      <%= f.input :reihe_japanisch %>
     </div>
   </div>
-  <div class="row">
+  <div class="row-fluid">
     <div class="span4">
-      <%= f.input :verlag, :input_html => {:class => "span4"} %>
+      <%= f.input :verlag %>
     </div>
     <div class="span4">
-      <%= f.input :verlag_japanisch, :input_html => {:class => "span4"} %>
+      <%= f.input :verlag_japanisch %>
     </div>
     <div class="span4">
-      <%= f.input :ort, :input_html => {:class => "span4"} %>
+      <%= f.input :ort %>
     </div>
   </div>
-  <div class="row">
+  <div class="row-fluid">
     <div class="span1">
-      <%= f.input :seiten, :input_html => {:class => "span1"}%>
-    </div>
-    <div class="span1">
-      <%= f.input :format, :input_html => {:class => "span1"} %>
+      <%= f.input :seiten%>
     </div>
     <div class="span1">
-      <%= f.input :jahr, :input_html => {:class => "span1"} %>
+      <%= f.input :format %>
     </div>
     <div class="span1">
-      <%= f.input :auflage, :input_html => {:class => "span1"}%>
+      <%= f.input :jahr %>
     </div>
     <div class="span1">
-      <%= f.input :baende, :input_html => {:class => "span1"} %>
+      <%= f.input :auflage%>
     </div>
     <div class="span1">
-      <%= f.input :sprache, :input_html => {:class => "span1"}%>
+      <%= f.input :baende %>
     </div>
-    <div class="span1"> <%= f.input :preis, :input_html => {:class => "span1"} %>
+    <div class="span1">
+      <%= f.input :sprache%>
     </div>
-    <div class="span1"><%= f.input :invent, :input_html => {:class => "span1"} %>
+    <div class="span1"> <%= f.input :preis %>
+    </div>
+    <div class="span1"><%= f.input :invent %>
     </div>
     <div class="span4">
-      <%= f.input :aufnahmedatum, :input_html => {:class => "span4"}, :as => :string %>
+      <%= f.input :aufnahmedatum, :as => :string %>
     </div>
   </div>
-  <div class="row">
+  <div class="row-fluid">
     <div class="span6">
-      <%= f.input :isbn, :input_html => {:class => "span6"} %>
+      <%= f.input :isbn %>
     </div>
     <div class="span6">
-      <%= f.input :issn, :input_html => {:class => "span6"} %>
+      <%= f.input :issn %>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-fluid">
     <div class="span4">
-      <%= f.input :inhalt, :input_html => {:class => "span4", :rows => "4"} %>
+      <%= f.input :inhalt, :input_html => {:rows => 4, :class => "span12"} %>
     </div>
     <div class="span4">
-      <%= f.input :anmerkungen, :input_html => {:class => "span4", :rows => "4"} %>
+      <%= f.input :anmerkungen , :input_html => {:rows => 4, :class => "span12"} %>
     </div>
     <div class="span4">
-      <%= f.input :bearbeiter, :input_html => {:class => "span4"}%>
-      <%= f.input :altes_datum, :input_html => {:class => "span4"} %>
+      <%= f.input :bearbeiter%>
+      <%= f.input :altes_datum %>
     </div>
   </div>
-  <div class="row">
+  <div class="row-fluid">
     <div class="span12">
-      <%= f.input :nacsis_url, :input_html => {:class => "span12"} %>
+      <%= f.input :nacsis_url %>
      </div>
   </div>
-  <div class="row">
+  <div class="row-fluid">
     <div class="span6">
-      <%= f.input :nacsis_japanisch, :input_html => {:class => "span6", :rows => "4"} %>
+      <%= f.input :nacsis_japanisch, :input_html => {rows: 4, class: "span12"} %>
     </div>
     <div class="span3">
-      <%= f.input :kommentar, :input_html => {:class => "span3", :rows => 4} %>
+      <%= f.input :kommentar, :input_html => {rows: 4, class: "span12" }%>
     </div>
     <div class="span3">
-      <%= f.input :interne_notizen, :input_html => {:class => "span3", :rows => 4}, :as => :text %>
+      <%= f.input :interne_notizen, :as => :text, :input_html => {rows: 4, class: "span12" } %>
     </div>
   </div>
     

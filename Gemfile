@@ -20,6 +20,7 @@ gem 'jquery-rails'
 
 gem "devise"
 gem "formtastic"
+gem "formtastic-bootstrap"
 gem "kaminari"
 gem "prawn"
 gem "mysql2"

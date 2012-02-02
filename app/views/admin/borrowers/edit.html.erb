@@ -2,11 +2,7 @@
   <div class="page-header">
     <h1>Nutzer bearbeiten</h1>
   </div>
-  <div class="row">
-    <div class="span12">
-      <%= render "form"%>
-    </div>
-  </div>
+  <%= render "form"%>
 <% end %>
 
 <% content_for :sidebar do %>
@@ -17,7 +13,7 @@
     <h3>Entliehene Bücher</h3>
     <hr></hr>
     <% if @borrower.unreturned.count == 0 %>
-      <p><span class="label success">Keine Bücher entliehen!</span></p>
+      <p><span class="label label-success">Keine Bücher entliehen!</span></p>
     <% else %>
       <%= form_tag admin_lendings_return_or_extend_path, :method => :post do |f| %>
         <%= link_to(icon("ok") + "Alles / Nichts", "", :class => "boxes_selector btn small", :data => {:state => "all"}) %>

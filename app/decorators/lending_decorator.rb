@@ -37,6 +37,6 @@ class LendingDecorator < ApplicationDecorator
 
   def return_date
     h.content_tag :span, lending.return_date.strftime("%d.%m.%Y"),
-                  :class => "label " + (lending.overdue? ? "warning" : "success")
+                  :class => "label label-" + (lending.overdue? ? "warning" : "success")
   end
 end
