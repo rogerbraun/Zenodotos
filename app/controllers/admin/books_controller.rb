@@ -20,6 +20,15 @@ class Admin::BooksController < Admin::AdminController
     render "new"
   end
 
+  def create
+    @book = Book.new(params[:book])
+    if @book.save
+      redirect_to admin_books_path, notice: "Buch wurde erstellt!"
+    else
+      redirect_to :back, notice: "Das Buch konnte nicht gespeichert werden."
+    end
+  end
+
   def update
     @book = Book.find(params[:id])
     if @book.update_attributes(params[:book]) then

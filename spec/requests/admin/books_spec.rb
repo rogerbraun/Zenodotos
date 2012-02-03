@@ -27,6 +27,9 @@ describe Admin do
         page.should have_selector("#new_book_button")  
         click_on "new_book_button"
         page.should have_content("Neues Buch")
+        fill_in "book_titel", with: "Onko der harmonische"
+        click_on "submit_book"
+        Book.where("titel = ?", "Onko der harmonische").count.should == 1
       end
 
       it "has a working search" do
