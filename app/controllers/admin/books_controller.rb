@@ -29,6 +29,25 @@ class Admin::BooksController < Admin::AdminController
     end
   end
 
+  def add_to_collection
+    @book = Book.find(params[:id])
+    @collections = Collection.all
+  end
+
+  def put_into_collection
+    @book = Book.find(params[:id])
+    if params[:book_for_collection][:new_collection_name].strip != "" 
+      @collection = Collection.new(:name => params[:book_for_collection][:new_collection_name].strip)
+    else
+      @collection = Collection.find(params[:book_for_collection][:collection_id])
+    end
+
+    @collection.books << @book
+    @collection.save
+
+    redirect_to :back, :notice => "Zur Sammlung #{@collection.name} hinzugefügt."
+  end
+
   def update
     @book = Book.find(params[:id])
     if @book.update_attributes(params[:book]) then
@@ -38,7 +57,6 @@ class Admin::BooksController < Admin::AdminController
     end
   end
     
-
   def return_book
     @book = Book.find(params[:id])
     @book.current_lending.return

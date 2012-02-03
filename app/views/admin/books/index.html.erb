@@ -49,20 +49,21 @@
                   <%= book.current_lending.return_date.strftime("%d.%m.%Y") %>
                   <%= "</span>".html_safe if book.current_lending.overdue? %>
                 <% else %>
-                  "Nicht entliehen"
+                  Nicht entliehen
                 <% end %>
               </td>
               <td class="actions">
                 <div class="btn-group">
                   <%= link_to icon("pencil"), edit_admin_book_path(book), :class => "btn", :title => "Bearbeiten", :data => {:content => "Auf diesen Knopf drücken um das Buch anzusehen oder zu bearbeiten."}%>
                   <%= link_to icon("repeat"), duplicate_admin_book_path(book), :class => "btn", :title => "Duplizieren", :data => {:content => "Auf diesen Knopf drücken um das Buch zu duplizieren und den duplizierten Eintrag zu bearbeiten."} %>
+                  <%= link_to icon("list-alt"), add_to_collection_admin_book_path(book), :class => "btn", :title => "Zur Sammlung hinzufügen", :data => {content: "Dieses Buch zu einer Sammlung hinzufügen."}, :remote => true %>
                   <% unless book.current_lending %>
-                    <%= link_to icon("share"), lendings_new_admin_book_path(book), :class => "btn", :title => "Verleihen", :data => {:content => "Auf diesen Knopf drücken um das Buch zu verleihen."}, :remote => true, :id => "lend_book_#{book.id}" %>
+                    <%= link_to icon("share-alt"), lendings_new_admin_book_path(book), :class => "btn", :title => "Verleihen", :data => {:content => "Auf diesen Knopf drücken um das Buch zu verleihen."}, :remote => true, :id => "lend_book_#{book.id}" %>
                   <% else %>
-                    <%= link_to icon("book"), return_book_admin_book_path(book), :class => "btn", :title => "Zurückgeben", :data => {:content => "Auf diesen Knopf drücken um das Buch zurück zu geben."},:method => :post, :confirm => "Wirklich zurückgeben?", :id => "return_book_#{book.id}" %>
+                    <%= link_to icon("arrow-left"), return_book_admin_book_path(book), :class => "btn", :title => "Zurückgeben", :data => {:content => "Auf diesen Knopf drücken um das Buch zurück zu geben."},:method => :post, :confirm => "Wirklich zurückgeben?", :id => "return_book_#{book.id}" %>
                     
                     <% if book.current_lending.overdue? %>
-                      <%= link_to icon("plus"), extend_current_lending_admin_book_path(book), :class => "btn", :title => "Verlängern", :data => {:content => "Dieser Knopf verlängert das Ausleihdatum um vier Wochen. Wenn eine andere Frist gewünscht ist bitte direkt auf den Leihvorgang gehen und dort das Datum editieren."}, :method => :post, :confirm => "Wirklich verlängern?", :id => "extend_book_#{book.id}" %>
+                      <%= link_to icon("calendar"), extend_current_lending_admin_book_path(book), :class => "btn", :title => "Verlängern", :data => {:content => "Dieser Knopf verlängert das Ausleihdatum um vier Wochen. Wenn eine andere Frist gewünscht ist bitte direkt auf den Leihvorgang gehen und dort das Datum editieren."}, :method => :post, :confirm => "Wirklich verlängern?", :id => "extend_book_#{book.id}" %>
                     <% end %>
                   <% end %>
                 </div>

@@ -4,7 +4,8 @@ class Book < ActiveRecord::Base
   has_paper_trail
   paginates_per 10
   has_many :lendings
-  has_many :collections
+
+  has_and_belongs_to_many :collections
 
   after_initialize :init
   after_save :reindex #unless Rails.env == "test"

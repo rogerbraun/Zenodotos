@@ -56,6 +56,8 @@ Zenodotos::Application.routes.draw do
     resources :borrowers 
     resources :books do
       member do
+        get "add_to_collection"
+        post "put_into_collection"
         get "duplicate"
         get "lendings/new", :action => "new_lending"
         post "lendings", :action => "create_lending"
