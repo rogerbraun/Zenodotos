@@ -1,0 +1,19 @@
+<% content_for :sidebar do %>
+  <div class="page-header">
+    <h1>Achtung</h1>
+  </div>
+  <div class="well">
+    <p>Beim Speichern werden die ausgefüllten Felder ALLER in der Sammlung enthaltener Bücher geändert.</p>
+    <p>Jedes Feld das nicht leer ist wird also verändert.</p>
+  </div>
+<% end %>
+
+<% content_for :content do %>
+  <div class="page-header">
+    <h1>Alle Bücher editieren</h1>
+  </div>
+  <%= semantic_form_for [:admin, @book], :url => do_mass_edit_admin_collection_path(@collection), :html => {:class => "maxed-form"} do |f| %>
+    <%= render :partial => "admin/books/fields", :locals => {:f => f} %>
+  <% end %>
+  
+<% end %>

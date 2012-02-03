@@ -52,7 +52,14 @@ Zenodotos::Application.routes.draw do
 
   namespace :admin do
     post "lendings/return_or_extend"
-    resources :collections
+    resources :collections do
+
+      member do
+        get "mass_edit"
+        post "do_mass_edit"
+        match "/books/:book_id/remove" => "collections#remove_book", :as => "remove_book", :via => :post
+      end
+    end
     resources :borrowers 
     resources :books do
       member do
