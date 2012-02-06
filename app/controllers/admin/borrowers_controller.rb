@@ -24,6 +24,19 @@ class Admin::BorrowersController < Admin::AdminController
     redirect_to :action => "edit"
   end
 
+  def new
+    @borrower = Borrower.new
+  end
+
+  def create
+    @borrower = Borrower.new(params[:borrower])
+    if @borrower.save
+      redirect_to admin_borrowers_path, notice: "Entleiher gespeichert."
+    else
+      redirect_to :back, notice: "Entleiher konnte nicht gespeichert werden."
+    end
+  end
+
   def update 
     @borrower = Borrower.find(params[:id])
     respond_to do |format|
