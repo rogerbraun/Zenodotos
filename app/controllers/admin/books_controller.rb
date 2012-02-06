@@ -34,6 +34,26 @@ class Admin::BooksController < Admin::AdminController
     @collections = Collection.all
   end
 
+  def add_all_to_collection
+    @search = params[:search]
+    @count = Book.search(@search).count
+    @collections = Collection.all
+  end  
+
+  def put_all_into_collection
+    @books = Book.search(params[:book_for_collection][:search])
+    if params[:book_for_collection][:new_collection_name].strip != "" 
+      @collection = Collection.new(:name => params[:book_for_collection][:new_collection_name].strip)
+    else
+      @collection = Collection.find(params[:book_for_collection][:collection_id])
+    end
+
+    @collection.books << @books
+    @collection.save
+
+    redirect_to :back, :notice => "Zur Sammlung #{@collection.name} hinzugefügt."
+  end
+
   def put_into_collection
     @book = Book.find(params[:id])
     if params[:book_for_collection][:new_collection_name].strip != "" 

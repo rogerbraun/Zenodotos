@@ -3,6 +3,7 @@
     <ul class="nav nav-list">
       <li class="nav-header">Aktionen</li>
       <li><%= link_to icon("file") + "Neues Buch", new_admin_book_path, :id => "new_book_button" %></li>
+      <li><%= link_to icon("plus-sign") + "Alle zu Sammlung hinzufügen", add_all_to_collection_admin_books_path(search: params[:search]), :remote => true %></li>  
     </ul>
     <ul class="nav nav-list">
       <li class="nav-header">Suche</li>

@@ -1,0 +1,17 @@
+<div class="modal">
+  <div class="modal-header">
+    <h3><%= @count %> Bücher zur Sammlung hinzufügen</h3>
+  </div>
+  <%= form_for :book_for_collection, :url => put_all_into_collection_admin_books_path, :method => :post do |f| %>
+    <div class="modal-body">
+      <%= f.label :new_collection_name %>
+      <%= f.text_field :new_collection_name %> oder...
+      <%= f.label :collection_id %>
+      <%= f.collection_select :collection_id, @collections, :id, :name %>
+      <%= f.hidden_field :search, :value => @search %>
+    </div>
+    <div class="modal-footer">
+      <button id="add_book_to_collection_button" class="btn primary">Zur Sammlung hinzufügen</button>
+    </div>
+  <% end %>
+</div>

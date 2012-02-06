@@ -62,7 +62,12 @@ Zenodotos::Application.routes.draw do
     end
     resources :borrowers 
     resources :books do
+      collection do
+        get "add_all_to_collection"
+        post "put_all_into_collection"
+      end
       member do
+        # TODO find a nicer way to do this
         get "add_to_collection"
         post "put_into_collection"
         get "duplicate"
@@ -71,6 +76,7 @@ Zenodotos::Application.routes.draw do
         post "extend_current_lending"
         post "return_book"
       end
+
     end
     resources :printouts
     resources :reminders do
