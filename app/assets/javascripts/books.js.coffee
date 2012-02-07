@@ -16,7 +16,7 @@ $( () ->
       show: 500
       hide: 100
 
-  $("#next_free_signature").popover()
+  $("#next_free_signature, #fill_in_with_google").popover()
 
   $("#next_free_signature").click(() ->
     signature = $("#book_signatur").val()
@@ -27,6 +27,29 @@ $( () ->
         $("#book_signatur").val(signature + json["next_free_signature"])
     )
   )
+
+  $("#fill_in_with_google").click(() ->
+    title = $("#book_titel").val()
+    $.getJSON(
+      "https://www.googleapis.com/books/v1/volumes?callback=?",
+      {"q": title},
+      (json) ->
+        document.temp_json = json
+        guess = json.items[0].volumeInfo
+        authors = guess.authors.join("; ")
+        $("#book_autor").val(guess.authors.join("; "))
+        $("#book_verlag").val(guess.publisher)
+        $("#book_seiten").val(guess.pageCount);
+        $("#book_sprache").val(guess.language);
+        $("#book_inhalt").val(guess.description);
+        isbns = []
+        $.each(guess.industryIdentifiers, (index, isbn) ->
+          isbns.push(isbn.identifier)
+        )
+        $("#book_isbn").val(isbns.join(" / "))
+    )
+  )
+
 )
 
 
