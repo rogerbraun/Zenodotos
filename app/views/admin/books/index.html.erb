@@ -7,17 +7,21 @@
     </ul>
     <ul class="nav nav-list">
       <li class="nav-header">Suche</li>
-      <li>
-        <%= form_tag admin_books_path, method: "get", id: "search_form" do %>
-          <fieldset>
+      <%= form_tag admin_books_path, method: "get", id: "search_form" do %>
+        <fieldset>
+          <li>
             <input type="text" id="search" name="search" class="span12" value="<%= params[:search] %>"></input>
+          </li>
+          <li>
             <select name="sort_order">
               <%= options_for_select @sortables, @sort_order %>
             </select>
-          <fieldset>
+          </li>
+        <fieldset>
+        <li>
           <button id="search_button" class="btn">Suchen</button>
-        <% end %>
-      </li>
+        </li>
+      <% end %>
     </ul>
   </div>
 <% end %>
