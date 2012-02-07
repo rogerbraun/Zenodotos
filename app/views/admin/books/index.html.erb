@@ -11,6 +11,9 @@
         <%= form_tag admin_books_path, method: "get", id: "search_form" do %>
           <fieldset>
             <input type="text" id="search" name="search" class="span12" value="<%= params[:search] %>"></input>
+            <select name="sort_order">
+              <%= options_for_select @sortables, @sort_order %>
+            </select>
           <fieldset>
           <button id="search_button" class="btn">Suchen</button>
         <% end %>

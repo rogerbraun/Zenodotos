@@ -3,8 +3,11 @@ class Admin::BooksController < Admin::AdminController
 
   def index
     params[:search] = nil if params[:search] and params[:search].strip == ""
+    @sort_order = params[:sort_order] || "id"
+    @sortables = Book.attribute_names + Book.attribute_names.map{|n| "#{n} DESC"}
     @page = params[:page] || 0
-    @books = (params[:search] ? Book.search(params[:search]) : Book).page(@page)
+    @books = (params[:search] ? Book.search(params[:search]) : Book).order(@sort_order).page(@page)
+    
   end
 
   def edit
