@@ -28,6 +28,13 @@ class Book < ActiveRecord::Base
     Book.where("id in (?)", ids)
   end
 
+  def self.next_free_signature signature
+    @books = Book.where("signatur like ?", "#{signature}%").order("signatur DESC")
+    @books.reject!{|book| book.signatur.strip[-1] == "-"}
+    @numbers = @books.map{|book| book.signatur.split("-").last.to_i}
+    @numbers.max + 1
+  end
+
   private
   
   def init

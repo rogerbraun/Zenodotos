@@ -15,6 +15,18 @@ $( () ->
     delay:
       show: 500
       hide: 100
+
+  $("#next_free_signature").popover()
+
+  $("#next_free_signature").click(() ->
+    signature = $("#book_signatur").val()
+    free = $.getJSON(
+      "/admin/books/next_free_signature",
+      {signature: signature},
+      (json) ->
+        $("#book_signatur").val(signature + json["next_free_signature"])
+    )
+  )
 )
 
 

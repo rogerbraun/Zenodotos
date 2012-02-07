@@ -118,4 +118,13 @@ class Admin::BooksController < Admin::AdminController
     # Braucht man wirklich show und edit?
     redirect_to :action => "edit"
   end
+
+  def next_free_signature
+    @free = Book.next_free_signature params[:signature]
+    respond_to do |f|
+      f.json {render :json => {:next_free_signature => @free}}
+      f.js
+    end
+  end  
+
 end
