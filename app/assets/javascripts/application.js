@@ -10,3 +10,4 @@
 //= require bootstrap
 //= require books
 //= require reminders
+//= require jquery.select-autocomplete
