@@ -12,11 +12,18 @@
     <h1><%= @collection.name %></h1>
   </div>
   <table class="table">
+    <thead>
+      <th>Titel</th>
+      <th>Autor</th>
+      <th>Signatur</th>
+      <th>Aktionen</th>
+    </thead>
     <tbody>
       <% @collection.books.each do |book| %>
         <tr>
           <td><%= link_to book.titel, [:admin, book] %></td>
           <td><%= book.autor %></td>
+          <td><%= [book.signatur, book.nebensignatur].join(" / ") %></td>
           <td><%= link_to(icon("trash") + "Entfernen", 
                           remove_book_admin_collection_path(@collection, book), 
                           :method => :post, :confirm => "Wirklich aus der Sammlung entfernen?") %>
