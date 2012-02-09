@@ -49,8 +49,16 @@
           <% @books.each do |book| %>
             <tr>
               <td><%= book.id %></td>
-              <td><%= link_to book.titel, admin_book_path(book) %></td>
-              <td><%= book.autor %></td>
+              <td>
+                <%= link_to book.titel, admin_book_path(book) %>
+                <%= tag "br" %>    
+                <%= link_to book.titel_japanisch, admin_book_path(book)%>
+              </td>
+              <td>
+                <%= book.autor %>
+                <%= tag "br" %>
+                <%= book.autor_japanisch %>
+              </td>
               <td><%= "#{book.signatur} #{book.nebensignatur}" %></td>
               <td><% if book.current_lending %>
                   <%= link_to(book.borrower, edit_admin_borrower_path(book.current_lending.borrower)) %>
