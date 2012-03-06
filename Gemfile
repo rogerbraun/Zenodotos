@@ -18,6 +18,7 @@ end
 gem 'sass-rails',   '~> 3.2.3'
 gem 'jquery-rails'
 
+gem 'newrelic_rpm'
 gem "devise"
 gem "formtastic"
 gem "formtastic-bootstrap"
