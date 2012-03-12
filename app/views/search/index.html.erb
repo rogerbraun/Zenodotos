@@ -23,6 +23,7 @@
             <th>Signatur</th>
             <th>Titel</th>
             <th>Autor</th>
+            <th>Entliehen?</th>
             <th>Aktionen</th>
           </tr>
         </thead>
@@ -32,7 +33,8 @@
               <td><%= book.signatur %></td>
               <td><%= book.titel %></td>
               <td><%= book.autor %></td>
-              <td><%= link_to "Details", "#" %></td>
+              <td><%= book.current_lending ? "Bis #{book.current_lending.return_date.strftime '%d.%m.%y'}" : "Nicht entliehen" %></td>
+              <td><%= link_to 'Details', opac_show_book_path(book) %></td>
             </tr>
           <% end %>
         </tbody>

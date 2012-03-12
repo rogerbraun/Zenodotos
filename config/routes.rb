@@ -8,6 +8,7 @@ Zenodotos::Application.routes.draw do
   get "home/index"
 
   match "/search" => 'search#index'
+  match '/search/:id' => 'search#show', :as => 'opac_show_book'
   
 
   # The priority is based upon order of creation:

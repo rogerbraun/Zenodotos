@@ -4,4 +4,9 @@ class SearchController < ApplicationController
     @page = params[:page] || 1
     @books = Book.search(params[:search]).page(@page)
   end
+
+  def show
+    @book = Book.find(params[:id])
+  end
+
 end
