@@ -32,6 +32,12 @@ class Admin::BooksController < Admin::AdminController
     end
   end
 
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to admin_books_path, notice: 'Buch wurde gelöscht'
+  end
+
   def add_to_collection
     @book = Book.find(params[:id])
     @collections = Collection.all

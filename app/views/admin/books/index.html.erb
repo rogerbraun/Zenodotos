@@ -75,6 +75,7 @@
                   <%= link_to icon("pencil"), edit_admin_book_path(book), :class => "btn", :title => "Bearbeiten", :data => {:content => "Auf diesen Knopf drücken um das Buch anzusehen oder zu bearbeiten."}%>
                   <%= link_to icon("repeat"), duplicate_admin_book_path(book), :class => "btn", :title => "Duplizieren", :data => {:content => "Auf diesen Knopf drücken um das Buch zu duplizieren und den duplizierten Eintrag zu bearbeiten."} %>
                   <%= link_to icon("list-alt"), add_to_collection_admin_book_path(book), :class => "btn", :title => "Zur Sammlung hinzufügen", :data => {content: "Dieses Buch zu einer Sammlung hinzufügen."}, :remote => true %>
+                  <%= link_to icon('trash'), admin_book_path(book), :class => 'btn', :title => 'Löschen', :data => {:content => 'Dieses Buch löschen.'}, :confirm => 'Dieses Buch wirklich löschen', :method => :delete, :id => "delete_book_#{book.id}" %>
                   <% unless book.current_lending %>
                     <%= link_to icon("share-alt"), lendings_new_admin_book_path(book), :class => "btn", :title => "Verleihen", :data => {:content => "Auf diesen Knopf drücken um das Buch zu verleihen."}, :remote => true, :id => "lend_book_#{book.id}" %>
                   <% else %>

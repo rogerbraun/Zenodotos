@@ -68,6 +68,16 @@ describe Admin do
         @book.current_lending.should be_true
       end
 
+      it "can destroy a book", :js => true do
+        @book = Factory(:book, :titel => 'Unique Book')
+        fill_in "search", with: "Unique Book"
+        click_on "search_button"
+        id = @book.id
+        page.find("#delete_book_#{id}").click
+        #page.driver.browser.switch_to.alert.accept    
+        #Book.find(id).should be_nil
+      end
+
     end
 
     describe "Member Page" do
