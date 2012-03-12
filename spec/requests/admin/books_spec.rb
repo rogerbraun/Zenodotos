@@ -77,7 +77,7 @@ describe Admin do
       end
         
       it "displays a single book", :js => false do
-        page.should have_selector("input[value='#{@book.titel}']")
+        page.should have_content @book.titel
       end
 
       it "can update a book" do
