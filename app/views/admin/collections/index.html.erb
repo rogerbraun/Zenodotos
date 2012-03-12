@@ -14,6 +14,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Bücher</th>
+            <th>Aktionen</th>
           </tr>
         </thead>
         <tbody>
@@ -22,6 +23,10 @@
               <td><%= collection.id %></td>
               <td><%= link_to collection.name, [:admin, collection] %></td>
               <td><%= collection.books.count %></td>
+              <td>
+                <div class="btn-group">
+                  <%= link_to icon('trash'), [:admin, collection], :method => :delete, :confirm => 'Wirklich löschen?', :class => 'btn'%></td>
+              </div>
             </tr>
           <% end %>
         </tbody>

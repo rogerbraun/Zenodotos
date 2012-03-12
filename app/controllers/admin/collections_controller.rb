@@ -27,6 +27,12 @@ class Admin::CollectionsController < Admin::AdminController
     @book.aufnahmedatum = nil
   end
 
+  def destroy
+    @collection = Collection.find(params[:id])
+    @collection.destroy
+    redirect_to admin_collections_path, notice: 'Sammlung wurde gelöscht'
+  end
+
   def do_mass_edit
     changes = params[:book].reject{|k, v| v.strip == ""}
     @collection = Collection.find(params[:id])
