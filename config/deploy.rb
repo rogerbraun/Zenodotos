@@ -53,6 +53,7 @@ namespace :db_setup do
     run "ln -nfs #{shared_path}/pdf #{release_path}/public/pdf"
     run "rm -rf #{release_path}/index"
     run "ln -nfs #{shared_path}/index #{release_path}/index"
+    run "ln -nfs #{shared_path}/newrelic.yml #{release_path}/newrelic.yml"
   end
 end
 
