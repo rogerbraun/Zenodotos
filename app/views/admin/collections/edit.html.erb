@@ -48,7 +48,7 @@
                         :data => {:content => 'Das Buch aus der Sammlung entfernen'}
             %>
             <%= link_to icon('arrow-up'),
-              remove_books_admin_collection_path(@collection, :delete_up_to => i, :sort_order => @sort_order),
+              remove_books_admin_collection_path(@collection, :delete_up_to => i + ((@page - 1) * 10), :sort_order => @sort_order),
                         :title => 'Vorherige löschen',
                         :class => 'btn',
                         :method => :post,
@@ -61,4 +61,5 @@
       <% end %>
     </tbody>
   </table>
+  <%= paginate @books %>
 <% end %>

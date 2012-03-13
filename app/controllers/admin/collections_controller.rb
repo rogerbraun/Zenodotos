@@ -2,7 +2,7 @@
 class Admin::CollectionsController < Admin::AdminController
 
   def index
-    @page = params[:page] || 0
+    @page = params[:page] || 1
     @collections = Collection.page(@page) 
   end
 
@@ -13,7 +13,8 @@ class Admin::CollectionsController < Admin::AdminController
   def edit
     @sort_order = params[:sort_order] || "id"
     @collection = Collection.find(params[:id])
-    @books = @collection.books.order(@sort_order)
+    @page = (params[:page] || 1).to_i
+    @books = @collection.books.order(@sort_order).page(@page)
     @sortables = Book.attribute_names + Book.attribute_names.map{|n| "#{n} DESC"}
   end
 
@@ -31,7 +32,7 @@ class Admin::CollectionsController < Admin::AdminController
       to_remove = @collection.books.order(params[:sort_order]).limit(up_to)
       @collection.books.delete to_remove 
     end
-    redirect_to :back, :notice => "#{to_remove.size} Bücher wurden aus der Sammlung entfernt"
+    redirect_to admin_collection_path(@collection), :notice => "#{to_remove.size} Bücher wurden aus der Sammlung entfernt"
   end
 
   def mass_edit
