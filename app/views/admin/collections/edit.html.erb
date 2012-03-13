@@ -30,6 +30,7 @@
       <th>Autor</th>
       <th>Signatur</th>
       <th>Aktionen</th>
+      <th>Sortiert nach <%= @sort_order %></th>
     </thead>
     <tbody>
       <% @books.each_with_index do |book,i| %>
@@ -55,6 +56,7 @@
             %>
             </div>
           </td>
+          <td><%= book.send(@sort_order.split(" ")[0]) %></td>
         </tr>
       <% end %>
     </tbody>
