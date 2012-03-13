@@ -11,7 +11,10 @@ class Admin::CollectionsController < Admin::AdminController
   end
 
   def edit
+    @sort_order = params[:sort_order] || "id"
     @collection = Collection.find(params[:id])
+    @books = @collection.books.order(@sort_order)
+    @sortables = Book.attribute_names + Book.attribute_names.map{|n| "#{n} DESC"}
   end
 
   def remove_book
@@ -19,6 +22,16 @@ class Admin::CollectionsController < Admin::AdminController
     @book = Book.find(params[:book_id])
     @collection.books.delete(@book)
     redirect_to :back, :notice => "#{@book.titel} wurde aus der Sammlung entfernt."
+  end
+
+  def remove_books
+    if params[:delete_up_to] && params[:sort_order]
+      up_to = params[:delete_up_to]
+      @collection = Collection.find(params[:id])
+      to_remove = @collection.books.order(params[:sort_order]).limit(up_to)
+      @collection.books.delete to_remove 
+    end
+    redirect_to :back, :notice => "#{to_remove.size} Bücher wurden aus der Sammlung entfernt"
   end
 
   def mass_edit

@@ -10,7 +10,6 @@ Zenodotos::Application.routes.draw do
   match "/search" => 'search#index'
   match '/search/:id' => 'search#show', :as => 'opac_show_book'
   
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,6 +55,7 @@ Zenodotos::Application.routes.draw do
     resources :collections do
 
       member do
+        post 'remove_books'
         get "mass_edit"
         post "do_mass_edit"
         match "/books/:book_id/remove" => "collections#remove_book", :as => "remove_book", :via => :post

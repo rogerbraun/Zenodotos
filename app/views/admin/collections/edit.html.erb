@@ -3,6 +3,19 @@
     <ul class="nav nav-list">
       <li class="nav-header">Aktionen</li>
       <li><%= link_to icon("pencil") + "Alle editieren", mass_edit_admin_collection_path(@collection), :id => "mass_edit_button" %></li>
+      <%= form_tag '', method: "get", id: "search_form" do %>
+        <fieldset>
+          <li>
+            <label for="sort_order">Sortieren nach...</label>
+            <select name="sort_order">
+              <%= options_for_select @sortables, @sort_order %>
+            </select>
+          </li>
+        <fieldset>
+        <li>
+          <button id="sort_button" class="btn">Sortieren</button>
+        </li>
+      <% end %>
     </ul>
   </div>
 <% end %>
@@ -19,14 +32,28 @@
       <th>Aktionen</th>
     </thead>
     <tbody>
-      <% @collection.books.each do |book| %>
+      <% @books.each_with_index do |book,i| %>
         <tr>
           <td><%= link_to book.titel, [:admin, book] %></td>
           <td><%= book.autor %></td>
           <td><%= [book.signatur, book.nebensignatur].join(" / ") %></td>
-          <td><%= link_to(icon("trash") + "Entfernen", 
-                          remove_book_admin_collection_path(@collection, book), 
-                          :method => :post, :confirm => "Wirklich aus der Sammlung entfernen?") %>
+          <td class='actions'>
+            <div class='btn-group'>
+            <%= link_to icon("trash"), 
+                        remove_book_admin_collection_path(@collection, book), 
+                        :method => :post, :confirm => "Wirklich aus der Sammlung entfernen?",
+                        :title => 'Löschen',
+                        :class => 'btn',
+                        :data => {:content => 'Das Buch aus der Sammlung entfernen'}
+            %>
+            <%= link_to icon('arrow-up'),
+              remove_books_admin_collection_path(@collection, :delete_up_to => i, :sort_order => @sort_order),
+                        :title => 'Vorherige löschen',
+                        :class => 'btn',
+                        :method => :post,
+                        :data => {:content => 'Alle vorherigen Bücher aus der Sammlung entfernen.'} 
+            %>
+            </div>
           </td>
         </tr>
       <% end %>
