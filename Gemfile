@@ -6,7 +6,8 @@ gem 'rails', '3.2.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem "picky", :git => "git://github.com/rogerbraun/picky.git", :branch => "yajl_encoding_workaround"
+#gem "picky"#, :git => "git://github.com/rogerbraun/picky.git", :branch => "yajl_encoding_workaround"
+gem 'picky-client'
 
 # Gems used only for assets and not required
 # in production environments by default.
