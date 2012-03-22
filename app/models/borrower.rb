@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Borrower < ActiveRecord::Base
+  extend Picky::Client::ActiveRecord.configure(host: 'localhost', port: PICKY_PORT, path: '/')
   has_paper_trail
   paginates_per 10
 

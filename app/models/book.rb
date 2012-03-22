@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Book < ActiveRecord::Base
-  extend Picky::Client::ActiveRecord.configure(host: 'localhost', port: 9292, path: '/')
+  extend Picky::Client::ActiveRecord.configure(host: 'localhost', port: PICKY_PORT, path: '/')
   has_paper_trail
   paginates_per 10
   has_many :lendings

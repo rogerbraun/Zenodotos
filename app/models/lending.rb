@@ -38,6 +38,6 @@ class Lending < ActiveRecord::Base
 
   private
   def update_book_index
-    self.book.reindex
+    self.book.save
   end
 end

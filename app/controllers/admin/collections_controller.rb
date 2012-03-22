@@ -51,7 +51,7 @@ class Admin::CollectionsController < Admin::AdminController
     changes = params[:book].reject{|k, v| v.strip == ""}
     @collection = Collection.find(params[:id])
     @collection.books.update_all(changes)
-    @collection.books.each(&:reindex)
+    @collection.books.each(&:save)
     redirect_to admin_collections_path, notice: "Alle Bücher der Sammlung wurden verändert."
   end
 
