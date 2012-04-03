@@ -7,6 +7,7 @@ Zenodotos::Application.routes.draw do
 
   get "home/index"
 
+
   match "/search" => 'search#index'
   match '/search/:id' => 'search#show', :as => 'opac_show_book'
   
@@ -52,6 +53,8 @@ Zenodotos::Application.routes.draw do
 
   namespace :admin do
     post "lendings/return_or_extend"
+    match 'reservations/:id' => 'books#delete_reservation', :as => 'delete_reservation', :via => :delete
+
     resources :collections do
 
       member do
@@ -75,6 +78,8 @@ Zenodotos::Application.routes.draw do
         get "duplicate"
         get "lendings/new", :action => "new_lending"
         post "lendings", :action => "create_lending"
+        get 'reservations/new', action: 'new_reservation'
+        post 'reservations', action: 'create_reservation'
         post "extend_current_lending"
         post "return_book"
       end

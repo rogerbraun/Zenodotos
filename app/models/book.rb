@@ -4,6 +4,7 @@ class Book < ActiveRecord::Base
   has_paper_trail
   paginates_per 10
   has_many :lendings
+  has_many :reservations
 
   has_and_belongs_to_many :collections
 
@@ -15,6 +16,14 @@ class Book < ActiveRecord::Base
 
   def borrower
     current_lending ? current_lending.borrower.name : "nicht entliehen"
+  end
+
+  def next_reservation
+    if self.reservations.count == 0
+      nil
+    else
+      self.reservations.order(:created_at).first
+    end
   end
 
   def self.search keys

@@ -22,12 +22,34 @@ class Admin::BooksController < Admin::AdminController
     render "new"
   end
 
+  def delete_reservation
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to :back, notice: 'Die Reservierung wurde gelöscht'
+  end
+
   def create
     @book = Book.new(params[:book])
     if @book.save
       redirect_to admin_books_path, notice: "Buch wurde erstellt!"
     else
       redirect_to :back, notice: "Das Buch konnte nicht gespeichert werden."
+    end
+  end
+
+  def new_reservation
+    @reservation = Reservation.new
+    @reservation.book_id = params[:id]
+    @reservation.borrower_id = session[:last_borrower] || Borrower.order(:name).first
+  end
+
+  def create_reservation
+    @reservation = Reservation.new params[:reservation]
+
+    if @reservation.save
+      redirect_to admin_books_path, notice: "#{@reservation.book.titel} wurde für #{@reservation.borrower.name} vorgemerkt!"
+    else
+      redirect_to :back, notice: "Das Buch konnte nicht vorgemerkt werden."
     end
   end
 
@@ -97,13 +119,15 @@ class Admin::BooksController < Admin::AdminController
     @book = Book.find(params[:id])
     @lending = @book.lendings.new
     @lending.return_date = Date.today + 28.days
-    @lending.borrower_id = session[:last_borrower] || Borrower.order(:name).first
+    @next_borrower = @book.next_reservation ? @book.next_reservation.borrower : nil
+    @lending.borrower_id = @next_borrower.id || session[:last_borrower] || Borrower.order(:name).first.id
   end
 
   def create_lending
     @lending = Lending.new(params[:lending])
     session[:last_borrower] = @lending.borrower.id
     if @lending.save
+      @lending.borrower.remove_reservations(@lending.book)
       flash[:notice] = "'#{@lending.book.titel}' wurde verliehen"
     else
       flash[:error] = "Buch wurde nicht verliehen"

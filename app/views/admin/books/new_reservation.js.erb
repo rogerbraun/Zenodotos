@@ -1,0 +1,3 @@
+var dialog = $("<%= escape_javascript(render "reservation_form")%>");
+dialog.modal();
+$("#reservation_borrower_id").select_autocomplete();

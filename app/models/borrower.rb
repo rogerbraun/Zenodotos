@@ -5,6 +5,7 @@ class Borrower < ActiveRecord::Base
   paginates_per 10
 
   has_many :lendings
+  has_many :reservations
 
   def borrow(book, date = nil)
     date ||= 28.days.from_now
@@ -13,6 +14,10 @@ class Borrower < ActiveRecord::Base
     lending.book = book
     lending.return_date = date
     lending.save
+  end
+
+  def remove_reservations(book)
+    self.reservations.where(:book_id => book.id).destroy_all
   end
 
   def return_all_books

@@ -5,9 +5,11 @@
   <%= semantic_form_for @lending, :url => lendings_admin_book_path, :method => :post do |f| %>
     <div class="modal-body">
       <%= f.input :return_date, :as => :string %>
+      <% if @next_borrower %>
+        <span class='label info'>Vorgemerkt von <%= @next_borrower.name %></span>
+      <% end %>
       <%= f.input :borrower, :collection => Borrower.order("name") %>
       <%= f.input :book_id, :as => :hidden %>
-      
     </div>
     <div class="modal-footer">
       <button id="lend_book_button" class="btn primary">Buch verleihen</button>

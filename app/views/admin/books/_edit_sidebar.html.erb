@@ -5,3 +5,12 @@
     <li><a href="#" title="Ausfüllen mit Google Books" data-content="Sucht den Titel des Buches bei Google Books und versucht damit weitere Felder auszufüllen." id="fill_in_with_google">Ausfüllen mit Google Books</a></li>
   </ul>
 </div>
+<div class='well'>
+  <h4>Vorgemerkt von:</h4>
+  <ol>
+    <% @book.reservations.order(:created_at).each do |reservation| %>
+      <li><%= reservation.borrower.name%> <%= link_to '<sup>[&times;]</sup>'.html_safe, admin_delete_reservation_path(reservation), :method => :delete, :confirm => 'Wirklich diese Reservierung löschen?' %></li>
+    <% end %> 
+  </ol>
+</div>
+    

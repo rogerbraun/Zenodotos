@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120202205704) do
+ActiveRecord::Schema.define(:version => 20120403130112) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -134,6 +134,13 @@ ActiveRecord::Schema.define(:version => 20120202205704) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.boolean  "sent"
+  end
+
+  create_table "reservations", :force => true do |t|
+    t.integer  "book_id"
+    t.integer  "borrower_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "versions", :force => true do |t|
