@@ -47,7 +47,7 @@ class Admin::BooksController < Admin::AdminController
     @reservation = Reservation.new params[:reservation]
 
     if @reservation.save
-      redirect_to admin_books_path, notice: "#{@reservation.book.titel} wurde für #{@reservation.borrower.name} vorgemerkt!"
+      redirect_to :back, notice: "#{@reservation.book.titel} wurde für #{@reservation.borrower.name} vorgemerkt!"
     else
       redirect_to :back, notice: "Das Buch konnte nicht vorgemerkt werden."
     end
