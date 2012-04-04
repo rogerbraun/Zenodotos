@@ -93,6 +93,8 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
+    ledermann-rails-settings (1.0.1)
+      activerecord (>= 2.3)
     libnotify (0.7.2)
     mail (2.4.1)
       i18n (>= 0.4.0)
@@ -233,6 +235,7 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   kaminari
+  ledermann-rails-settings
   libnotify
   mailcatcher
   mysql2

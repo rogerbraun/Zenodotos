@@ -1,11 +1,5 @@
-Lieber Entleiher <%= @name %>,
-
-sie haben Bücher entliehen die inzwischen überfällig sind. Bitte geben sie folgende Bücher so bald wie möglich zurück:
-
+<%= Settings.reminder_mail[:intro] %>
 <% @lendings.each do |lending| %>
 Titel: <%= lending.book.titel %>, fällig gewesen am <%= lending.return_date.strftime("%d. %m. %y") %>
 <% end %>
-
-Beste Grüße
-
-Bibliothek der Japanologie Tübingen
+<%= Settings.reminder_mail[:outro] %>
