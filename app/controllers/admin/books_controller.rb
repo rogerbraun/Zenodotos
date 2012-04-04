@@ -120,7 +120,8 @@ class Admin::BooksController < Admin::AdminController
     @lending = @book.lendings.new
     @lending.return_date = Date.today + 28.days
     @next_borrower = @book.next_reservation ? @book.next_reservation.borrower : nil
-    @lending.borrower_id = @next_borrower.id || session[:last_borrower] || Borrower.order(:name).first.id
+    @next_borrower_id = @next_borrower && @next_borrower.id
+    @lending.borrower_id = @next_borrower_id || session[:last_borrower] || Borrower.order(:name).first.id
   end
 
   def create_lending
