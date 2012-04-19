@@ -6,6 +6,14 @@
   </ul>
 </div>
 <div class='well'>
+  <% if @book.current_lending %>
+    <h4>Entliehen von:</h4>
+    <ul>
+      <li>
+        <%= link_to @book.current_lending.borrower.name, admin_borrower_path(@book.current_lending.borrower) %>
+      </li>
+    </ul>
+  <% end %>
   <h4>Vorgemerkt von:</h4>
   <ol>
     <% @book.reservations.order(:created_at).each do |reservation| %>
