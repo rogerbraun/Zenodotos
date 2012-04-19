@@ -10,7 +10,7 @@
     <h4>Entliehen von:</h4>
     <ul>
       <li>
-        <%= link_to @book.current_lending.borrower.name, admin_borrower_path(@book.current_lending.borrower) %>
+        <%= link_to @book.current_lending.borrower.name + " (#{@book.current_lending.extCount} mal verlängert)", admin_borrower_path(@book.current_lending.borrower) %>
       </li>
     </ul>
   <% end %>

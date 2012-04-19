@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120404111924) do
+ActiveRecord::Schema.define(:version => 20120419123809) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(:version => 20120404111924) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "printout_id"
+    t.integer  "extCount",    :default => 0
   end
 
   add_index "lendings", ["book_id"], :name => "index_lendings_on_book_id"

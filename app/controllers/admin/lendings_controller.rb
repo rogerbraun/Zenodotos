@@ -7,7 +7,9 @@ class Admin::LendingsController < Admin::AdminController
 
   def extend_lending
     @return_date = params[:return_date] || Date.today + 28.days
-    @lendings.update_all(return_date: @return_date)
+    @lendings.each do |lending|
+      lending.extend_date(@return_date)
+    end
     redirect_to :back, notice: "#{@lendings.count} Bücher verlängert."
   end
 

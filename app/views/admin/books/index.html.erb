@@ -66,7 +66,7 @@
                   <%= "<span class='label warning'>".html_safe if book.current_lending.overdue? %>
                   <%= book.current_lending.return_date.strftime("%d.%m.%Y") %>
                   <%= "</span>".html_safe if book.current_lending.overdue? %>
-                <br><%= book.reservations.count %> mal vorgemerkt.
+                <br><%= book.reservations.count %> mal vorgemerkt, <%= book.current_lending.extCount %> mal verlängert.
                   
                 <% else %>
                   <%= render partial: 'not_borrowed_or_reserved', locals: {book: book} %>

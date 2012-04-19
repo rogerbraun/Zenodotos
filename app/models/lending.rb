@@ -28,8 +28,9 @@ class Lending < ActiveRecord::Base
     update_attribute(:returned, true)
   end
 
-  def extend_date(days = 28.days)
-    update_attribute(:return_date, return_date + days)
+  def extend_date(date = Date.today + 28.days)
+    update_attribute(:return_date, date)
+    update_attribute(:extCount, extCount + 1)
   end
 
   def overdue?
