@@ -50,4 +50,5 @@ class Borrower < ActiveRecord::Base
     ids = res.ids(1000000)
     Borrower.where("id in (?)", ids)
   end
+
 end

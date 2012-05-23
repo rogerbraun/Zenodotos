@@ -50,4 +50,11 @@ class Admin::BorrowersController < Admin::AdminController
     end
   end
 
+  def destroy
+    @borrower = Borrower.find(params[:id])
+    @borrower.unreturned.each(&:return)
+    @borrower.destroy
+    redirect_to admin_borrowers_path, notice: "Entleiher wurde gelöscht"
+  end
+
 end
