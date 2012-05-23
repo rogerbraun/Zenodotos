@@ -1,0 +1,22 @@
+<% content_for :content do %>
+  <div class="page-header">
+    <h1>Neuer Mitarbeiter</h1>
+    <%= semantic_form_for @coworker, url: admin_coworkers_path do |f| %>
+      <fieldset class="inputs well">
+        <%= f.input :email %>
+        <%= f.input :password %>
+        <%= f.input :password_confirmation %>
+      </fieldset>
+
+      <fieldset class="form-actions">
+        <button id="submit_coworker" class="btn primary"><%=icon "file"%>Speichern</button>
+        <%= link_to "Abbrechen", request.referrer, :class => "btn" %>
+      </fieldset>
+      
+    <% end %>
+  </div>
+<% end %>
+
+<% content_for :sidebar do %>
+  &nbsp;
+<% end %>

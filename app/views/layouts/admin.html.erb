@@ -10,14 +10,19 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="#">Zenodotos</a>
+      <%= link_to "Zenodotos", admin_path, :class => 'brand' %>
       <ul class="nav">
-        <li><%= link_to "Dashboard", admin_path %></li>
         <li><%= link_to "Bücher", admin_books_path %></li>
-        <li><%= link_to "Sammlungen", admin_collections_path %></li>
         <li><%= link_to "Entleiher", admin_borrowers_path %></li>
-        <li><%= link_to "Leihzettel", admin_printouts_path %></li>
-        <li><%= link_to "Mahnungen", admin_reminders_path %></li>
+        <li class='dropdown'>
+          <a class='dropdown-toggle' data-toggle='dropdown' href='#'>Mehr <b class='caret'></b></a>
+          <ul class='dropdown-menu'>
+            <li><%= link_to "Sammlungen", admin_collections_path %></li>
+            <li><%= link_to "Leihzettel", admin_printouts_path %></li>
+            <li><%= link_to "Mahnungen", admin_reminders_path %></li>
+            <li><%= link_to "Mitarbeiter", admin_coworkers_path %></li>
+          </ul>
+        </li>
       </ul>
       <ul class="nav pull-right">
         <li><%= image_tag current_admin_user.gravatar_url, :class => "avatar" %></li> 

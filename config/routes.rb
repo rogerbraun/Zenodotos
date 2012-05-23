@@ -7,7 +7,6 @@ Zenodotos::Application.routes.draw do
 
   get "home/index"
 
-
   match "/search" => 'search#index'
   match '/search/:id' => 'search#show', :as => 'opac_show_book'
   
@@ -65,6 +64,7 @@ Zenodotos::Application.routes.draw do
       end
     end
     resources :borrowers 
+    resources :coworkers
     resources :books do
       collection do
         get "next_free_signature"

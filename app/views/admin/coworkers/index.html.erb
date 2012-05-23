@@ -1,0 +1,40 @@
+<% content_for :sidebar do %>
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Aktionen</li>
+      <li><%= link_to icon("file") + "Neuer Mitarbeiter", new_admin_coworker_path, :id => "new_coworker_button" %></li>
+    </ul>
+  </div>
+<% end %>
+
+<% content_for :content do %>
+  <div class="page-header">
+    <h1>Mitarbeiter</h1>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Aktionen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @coworkers.each do |coworker| %>
+            <tr>
+              <td><%= coworker.id %></td>
+              <td><%= coworker.email %></td>
+              <td class="actions">
+                <div class="btn-group span3">
+                  <%= link_to icon("remove"), admin_coworker_path(coworker), :class => "btn", :title => "Löschen", :data => {:content => "Hier klicken um den Mitarbeiter zu löschen"},:confirm => "Wirklich diesen Mitarbeiter löschen?",:method => :delete %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>
