@@ -7,6 +7,6 @@ class BorrowerMailer < ActionMailer::Base
   def overdue_reminder(borrower, lendings)
     @name = borrower.name
     @lendings = lendings
-    mail :to => borrower.email, :cc => "bibliothek@japanologie.uni-tuebingen.de", :subject => "Bücher sind überfallig" 
+    mail :to => borrower.email, :cc => "bibliothek@japanologie.uni-tuebingen.de", :subject => Settings[:reminder_mail][:subject]
   end
 end

@@ -1,5 +1,7 @@
 <%= Settings.reminder_mail[:intro] %>
+
 <% @lendings.each do |lending| %>
 Titel: <%= lending.book.titel %>, fällig gewesen am <%= lending.return_date.strftime("%d. %m. %y") %>
 <% end %>
+
 <%= Settings.reminder_mail[:outro] %>

@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Admin::RemindersController < Admin::AdminController
 
   # GET /reminders
@@ -68,6 +69,16 @@ class Admin::RemindersController < Admin::AdminController
         format.json { render json: @reminder.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def change_text
+  end
+
+  def save_text
+    Settings.reminder_mail[:intro] = params[:intro]
+    Settings.reminder_mail[:outro] = params[:outro]
+
+    redirect_to admin_reminders_path, notice: "Mahnungstext wurde geändert"
   end
 
   def deliver 

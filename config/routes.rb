@@ -87,6 +87,10 @@ Zenodotos::Application.routes.draw do
     end
     resources :printouts
     resources :reminders do
+      collection do
+        get "change_text"
+        post "save_text"
+      end
       member do
         post "deliver"
       end
