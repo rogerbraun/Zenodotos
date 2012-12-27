@@ -53,6 +53,11 @@ end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+#
+group :deployment do
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+end
 
 group :test do
   # Pretty printed test output

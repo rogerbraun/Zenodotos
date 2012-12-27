@@ -1,7 +1,8 @@
 # -*- encoding : utf-8 -*-
 require "bundler/capistrano"
 require "capistrano/ext/multistage"
-#require "rvm/capistrano"                  # Load RVM's capistrano plugin.
+require "rvm/capistrano"                  # Load RVM's capistrano plugin.
+set :rvm_type, :system  # Copy the exact line. I really mean :system here
 
 set :application, "Zenodotos"
 set :repository,  "git://github.com/rogerbraun/Zenodotos.git"
@@ -9,9 +10,11 @@ set :repository,  "git://github.com/rogerbraun/Zenodotos.git"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "rokuhara.japanologie.kultur.uni-tuebingen.de"                          # Your HTTP server, Apache/etc
-role :app, "rokuhara.japanologie.kultur.uni-tuebingen.de"                          # This may be the same as your `Web` server
-role :db,  "rokuhara.japanologie.kultur.uni-tuebingen.de", :primary => true # This is where Rails migrations will run
+server_ip = "192.168.2.105"
+
+role :web, server_ip                          # Your HTTP server, Apache/etc
+role :app, server_ip                          # This may be the same as your `Web` server
+role :db,  server_ip, :primary => true # This is where Rails migrations will run
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
@@ -20,7 +23,7 @@ role :db,  "rokuhara.japanologie.kultur.uni-tuebingen.de", :primary => true # Th
 options[:pty] = true
 ssh_options[:forward_agent] = true
 set :deploy_via, :remote_cache
-set :user, "edv"
+set :user, "deploy"
 set :use_sudo, false
 
 # if you're still using the script/reaper helper you will need
@@ -33,6 +36,10 @@ namespace :deploy do
 
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+
+  task :fix_ownership, :roles => :app do
+    sudo "chown -R http:http #{deploy_to}"
   end
 end
 
@@ -59,3 +66,4 @@ end
 
 after "deploy:update_code", "db_setup:link_shared"
 after "deploy:setup", "db_setup:create_shared"
+after "deploy:update_code", "deploy:fix_ownership"
