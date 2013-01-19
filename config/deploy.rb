@@ -10,7 +10,7 @@ set :repository,  "git://github.com/rogerbraun/Zenodotos.git"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-server_ip = "192.168.2.105"
+server_ip = "wadoku.eu"
 
 role :web, server_ip                          # Your HTTP server, Apache/etc
 role :app, server_ip                          # This may be the same as your `Web` server
@@ -22,6 +22,7 @@ role :db,  server_ip, :primary => true # This is where Rails migrations will run
 
 options[:pty] = true
 ssh_options[:forward_agent] = true
+default_run_options[:pty] = true
 set :deploy_via, :remote_cache
 set :user, "deploy"
 set :use_sudo, false
@@ -39,7 +40,7 @@ namespace :deploy do
   end
 
   task :fix_ownership, :roles => :app do
-    sudo "chown -R http:http #{deploy_to}"
+    sudo "chown -R deploy:http #{deploy_to}"
   end
 end
 
