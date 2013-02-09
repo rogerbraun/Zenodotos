@@ -14,7 +14,7 @@ describe Admin do
 
     describe "Index Page" do
       before do
-        visit admin_book_path
+        visit admin_books_path
       end
 
       it "displays all books if nothing is searched" do
@@ -68,14 +68,15 @@ describe Admin do
         @book.current_lending.should be_true
       end
 
-      it "can destroy a book", :js => true do
+      it "can destroy a book", :js => false do
         @book = Factory(:book, :titel => 'Unique Book')
         fill_in "search", with: "Unique Book"
         click_on "search_button"
         id = @book.id
         page.find("#delete_book_#{id}").click
+        #page.driver.wait_until(page.driver.browser.switch_to.alert.accept)
         #page.driver.browser.switch_to.alert.accept    
-        #Book.find(id).should be_nil
+        expect{Book.find(id)}.to raise_error(ActiveRecord::RecordNotFound)
       end
 
     end
@@ -85,7 +86,7 @@ describe Admin do
         @book = Book.first
         visit admin_book_path(@book)
       end
-        
+
       it "displays a single book", :js => false do
         page.should have_content @book.titel
       end
