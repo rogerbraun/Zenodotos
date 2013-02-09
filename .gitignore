@@ -6,3 +6,4 @@ tmp/
 *.sw?
 public/pdf
 index
+coverage
