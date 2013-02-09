@@ -25,18 +25,24 @@ gem "formtastic"
 gem "formtastic-bootstrap"
 gem "kaminari"
 gem "prawn"
-gem "mysql2"
-gem "sequel"
+
+group :import do
+  gem "mysql2"
+  gem "sequel"
+end
 gem "paper_trail", "~> 2"
 gem "draper"
 gem 'ledermann-rails-settings', :require => 'rails-settings'
 
 group :development do
-  gem "thin"
-  gem "pry"
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "rspec-rails"
   gem "capybara"
   gem "capybara-webkit"
+  gem "selenium-webdriver"
+  gem "thin"
+  gem "pry"
   gem "libnotify"
   gem "mailcatcher"
 end
