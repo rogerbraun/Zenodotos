@@ -36,6 +36,7 @@ class Admin::CollectionsController < Admin::AdminController
   end
 
   def mass_edit
+    @collection = Collection.find(params[:id])
     @book = Book.new
     @book.signatur = nil
     @book.aufnahmedatum = nil
@@ -52,7 +53,7 @@ class Admin::CollectionsController < Admin::AdminController
     @collection = Collection.find(params[:id])
     @collection.books.update_all(changes)
     @collection.books.each(&:save)
-    redirect_to admin_collections_path, notice: "Alle Bücher der Sammlung wurden verändert."
+    redirect_to admin_collection_path(@collection), notice: "Alle Bücher der Sammlung wurden verändert."
   end
 
 end

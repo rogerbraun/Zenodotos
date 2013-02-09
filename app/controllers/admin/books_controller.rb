@@ -155,6 +155,6 @@ class Admin::BooksController < Admin::AdminController
       f.json {render :json => {:next_free_signature => @free}}
       f.js
     end
-  end  
+  end
 
 end
