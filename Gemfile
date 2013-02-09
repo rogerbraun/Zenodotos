@@ -30,6 +30,13 @@ group :import do
   gem "mysql2"
   gem "sequel"
 end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+  gem 'database_cleaner'
+end
+
 gem "paper_trail", "~> 2"
 gem "draper"
 gem 'ledermann-rails-settings', :require => 'rails-settings'

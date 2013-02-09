@@ -5,11 +5,13 @@ describe Admin do
   describe Collection do
 
     before do
-      login_as_admin
-      @collection = Collection.new name: "Meine Sammlung 1"
-      @books = 10.times.map{Factory(:book)}
-      @collection.books = @books
-      @collection.save
+      VCR.use_cassette('creation') do
+        login_as_admin
+        @collection = Collection.new name: "Meine Sammlung 1"
+        @books = 10.times.map{Factory(:book)}
+        @collection.books = @books
+        @collection.save
+      end
     end
 
     describe "Member page" do

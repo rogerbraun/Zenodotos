@@ -5,11 +5,13 @@ describe Admin do
 
   describe Borrower do
     before do
-      login_as_admin
+      VCR.use_cassette('creation') do
+        login_as_admin
 
-      10.times do
-        Factory(:book)
-        Factory(:lending)
+        10.times do
+          Factory(:book)
+          Factory(:lending)
+        end
       end
     end
 
@@ -18,13 +20,13 @@ describe Admin do
         visit admin_borrowers_path
       end
 
-      it "displays all borrowers if nothing is searched" do
+      it "displays all borrowers if nothing is searched", :vcr do
         Borrower.limit(10).each do |borrower|
           page.should have_content(borrower.name)
         end
       end
 
-      it "has a working search" do
+      it "has a working search", :vcr do
         @borrower = Factory(:borrower, name: "Jochen Wendecyborg")
         fill_in "search", with: @borrower.name
         click_on "search_button"
@@ -38,14 +40,14 @@ describe Admin do
         visit admin_borrower_path(@borrower)
       end
 
-      it "can update the borrower" do
+      it "can update the borrower", :vcr do
         fill_in "borrower_name", :with => "Ein neuer Name"
         click_on "submit_borrower"
         @borrower.reload
         @borrower.name.should == "Ein neuer Name"
       end
       
-      it "shows all unreturned books" do
+      it "shows all unreturned books", :vcr do
         @books = 10.times.map{Factory(:book)}
         @books.each do |book|
           @borrower.borrow(book)
@@ -57,7 +59,7 @@ describe Admin do
         end
       end
 
-      it "can return a selected number of books" do
+      it "can return a selected number of books", :vcr do
         @books = 2.times.map{Factory(:book)}
         @books.each do |book|
           @borrower.borrow book
@@ -77,7 +79,7 @@ describe Admin do
         end
       end
 
-      it "can extend a selected number of books" do
+      it "can extend a selected number of books", :vcr do
         @books = 2.times.map{Factory(:book)}
         @books.each do |book|
           @borrower.borrow book, 1.day.ago

@@ -1,0 +1,188 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:9295/
+    body:
+      encoding: US-ASCII
+      string: index=borrowers&data=%7B%22id%22%3A11%2C%22anschrift%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22email%22%3A%22borrower_146%40example.com%22%2C%22heimatanschrift%22%3Anull%2C%22matrikelnr%22%3Anull%2C%22mobiltelefon%22%3Anull%2C%22name%22%3A%22Borrower+Number+145%22%2C%22status%22%3Anull%2C%22telefon%22%3Anull%2C%22telefon2%22%3Anull%2C%22ub_nr%22%3Anull%2C%22vermerke%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A31Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A31Z%22%7D
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Server:
+      - thin 1.3.1 codename Triple Espresso
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Sat, 09 Feb 2013 15:58:32 GMT
+- request:
+    method: put
+    uri: http://localhost:9295/
+    body:
+      encoding: US-ASCII
+      string: index=books&data=%7B%22id%22%3A21%2C%22titel%22%3A%22Titel+293%22%2C%22autor%22%3A%22Autor+296%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+296%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+296%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+296%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A32Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A32Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Server:
+      - thin 1.3.1 codename Triple Espresso
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Sat, 09 Feb 2013 15:58:32 GMT
+- request:
+    method: put
+    uri: http://localhost:9295/
+    body:
+      encoding: US-ASCII
+      string: index=books&data=%7B%22id%22%3A22%2C%22titel%22%3A%22Titel+294%22%2C%22autor%22%3A%22Autor+297%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+297%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+297%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+297%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A32Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A32Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Server:
+      - thin 1.3.1 codename Triple Espresso
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Sat, 09 Feb 2013 15:58:32 GMT
+- request:
+    method: put
+    uri: http://localhost:9295/
+    body:
+      encoding: US-ASCII
+      string: index=books&data=%7B%22id%22%3A21%2C%22titel%22%3A%22Titel+293%22%2C%22autor%22%3A%22Autor+296%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+296%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+296%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+296%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A32Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A32Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Server:
+      - thin 1.3.1 codename Triple Espresso
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Sat, 09 Feb 2013 15:58:32 GMT
+- request:
+    method: put
+    uri: http://localhost:9295/
+    body:
+      encoding: US-ASCII
+      string: index=books&data=%7B%22id%22%3A22%2C%22titel%22%3A%22Titel+294%22%2C%22autor%22%3A%22Autor+297%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+297%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+297%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+297%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A32Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A32Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Server:
+      - thin 1.3.1 codename Triple Espresso
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Sat, 09 Feb 2013 15:58:32 GMT
+recorded_with: VCR 2.4.0
