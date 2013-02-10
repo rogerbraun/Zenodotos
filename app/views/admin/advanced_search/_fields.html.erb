@@ -119,6 +119,11 @@
   </div>
     
 </fieldset>
-<fieldset class="form-actions">
-  <button id="submit_book" class="btn primary"><%=icon "file"%>Suchen</button>
-</fieldset>
+  <fieldset class="form-actions form-inline">
+        <button id="submit_book" class="btn primary"><%=icon "file"%>Suchen</button>
+        
+        <%=icon "list"%>
+        <select name="sort_order">
+          <%= options_for_select @sortables, @sort_order %>
+        </select>
+  </fieldset>
