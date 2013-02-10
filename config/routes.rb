@@ -53,7 +53,8 @@ Zenodotos::Application.routes.draw do
   namespace :admin do
     post "lendings/return_or_extend"
     match 'reservations/:id' => 'books#delete_reservation', :as => 'delete_reservation', :via => :delete
-
+    match "/advanced_search" => 'advanced_search#index'
+    match "/advanced_search/results" => 'advanced_search#show_results', :via => :get
     resources :collections do
 
       member do

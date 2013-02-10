@@ -1,0 +1,124 @@
+<fieldset class="inputs well">
+  <div class="row-fluid">
+    <div class="span2">
+      <%= f.input :signatur %>
+    </div>
+    <div class="span2">
+      <%= f.input :nebensignatur%>
+    </div>
+    <div class="span2">
+      <%= f.input :stifter %>
+    </div>
+    <div class="span2">
+      <%= f.input :standort %>
+    </div>
+    <div class="span4">
+      <%= f.input :publikationsart %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span8">
+      <%= f.input :autor %>
+    </div>
+    <div class="span4">
+      <%= f.input :autor_japanisch %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <%= f.input :titel, :as => :text, :input_html => {:rows => 2}%>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <%= f.input :titel_japanisch, :as => :text, :input_html => {:rows => 2}%>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span8">
+      <%= f.input :reihe %>
+    </div>
+    <div class="span4">
+      <%= f.input :reihe_japanisch %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span4">
+      <%= f.input :verlag %>
+    </div>
+    <div class="span4">
+      <%= f.input :verlag_japanisch %>
+    </div>
+    <div class="span4">
+      <%= f.input :ort %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span1">
+      <%= f.input :seiten%>
+    </div>
+    <div class="span1">
+      <%= f.input :format %>
+    </div>
+    <div class="span1">
+      <%= f.input :jahr %>
+    </div>
+    <div class="span1">
+      <%= f.input :auflage%>
+    </div>
+    <div class="span1">
+      <%= f.input :baende %>
+    </div>
+    <div class="span1">
+      <%= f.input :sprache%>
+    </div>
+    <div class="span1"> <%= f.input :preis %>
+    </div>
+    <div class="span1"><%= f.input :invent %>
+    </div>
+    <div class="span4">
+      <%= f.input :aufnahmedatum, :as => :string %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span6">
+      <%= f.input :isbn %>
+    </div>
+    <div class="span6">
+      <%= f.input :issn %>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span4">
+      <%= f.input :inhalt, :input_html => {:rows => 4, :class => "span12"} %>
+    </div>
+    <div class="span4">
+      <%= f.input :anmerkungen , :input_html => {:rows => 4, :class => "span12"} %>
+    </div>
+    <div class="span4">
+      <%= f.input :bearbeiter%>
+      <%= f.input :altes_datum %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <%= f.input :nacsis_url %>
+     </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span6">
+      <%= f.input :nacsis_japanisch, :input_html => {rows: 4, class: "span12"} %>
+    </div>
+    <div class="span3">
+      <%= f.input :kommentar, :input_html => {rows: 4, class: "span12" }%>
+    </div>
+    <div class="span3">
+      <%= f.input :interne_notizen, :as => :text, :input_html => {rows: 4, class: "span12" } %>
+    </div>
+  </div>
+    
+</fieldset>
+<fieldset class="form-actions">
+  <button id="submit_book" class="btn primary"><%=icon "file"%>Suchen</button>
+</fieldset>

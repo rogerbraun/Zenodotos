@@ -1,0 +1,35 @@
+<% content_for :sidebar do %>
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="nav-header">Aktionen</li>
+      <li><%= link_to icon("file") + "Neues Buch", new_admin_book_path, :id => "new_book_button" %></li>
+      <li><%= link_to icon("plus-sign") + "Alle zu Sammlung hinzufügen", add_all_to_collection_admin_books_path(search: params[:search]), :remote => true %></li>  
+    </ul>
+    <ul class="nav nav-list">
+      <li class="nav-header">Suche</li>
+      <%= form_tag admin_books_path, method: "get", id: "search_form" do %>
+        <fieldset>
+          <li>
+            <label for="search">Suchbegriff</label>
+            <input type="text" id="search" name="search" class="span12" value="<%= params[:search] %>"></input>
+          </li>
+          <li>
+            <label for="sort_order">Sortieren nach...</label>
+            <select name="sort_order">
+              <%= options_for_select @sortables, @sort_order %>
+            </select>
+          </li>
+        <fieldset>
+        <li>
+          <button id="search_button" class="btn">Suchen</button>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<% content_for :content do %>
+  <div class="page-header">
+    <h1>Erweiterte Suche</h1>
+  </div>
+  <%= render "search_form" %>
+<% end %>

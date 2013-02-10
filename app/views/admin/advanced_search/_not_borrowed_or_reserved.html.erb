@@ -1,0 +1,5 @@
+<% if book.reservations.count > 0 %>
+  Reserviert von <%= book.next_reservation.borrower.name %>
+<% else %>
+  Nicht entliehen
+<% end %>
