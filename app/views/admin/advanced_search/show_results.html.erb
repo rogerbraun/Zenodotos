@@ -31,7 +31,7 @@
 
 <% content_for :content do %>
   <div class="page-header">
-    <h1>Bücher <small><%= @books.total_count %> Ergebnisse</h1>
+    <h1>Bücher <small><%= @results.total_count %> Ergebnisse</h1>
   </div>
   <div class="row">
     <div class="span12">
@@ -47,7 +47,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @books.each do |book| %>
+          <% @results.each do |book| %>
             <tr>
               <td><%= book.id %></td>
               <td>
@@ -101,5 +101,5 @@
       </table>
     </div>
   </div>
-  <%= paginate @books %>
+  <%= paginate @results %>
 <% end %>

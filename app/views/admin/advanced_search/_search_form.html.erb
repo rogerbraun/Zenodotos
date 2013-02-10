@@ -1,0 +1,3 @@
+<%= semantic_form_for [:admin, @book], :url => admin_advanced_search_results_path, :html => {:class => "maxed-form"}, :method => :get do |f| %>
+  <%= render :partial => "fields", :locals => {:f => f} %>
+<% end %>
