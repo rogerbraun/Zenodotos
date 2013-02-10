@@ -24,7 +24,6 @@ class Admin::AdvancedSearchController < Admin::AdminController
     @sortables = Book.attribute_names + Book.attribute_names.map{|n| "#{n} DESC"}
     @page = params[:page] || 0
     @results = Book.order(@sort_order).where(conditions, hash).page(@page)
-    binding.pry
   end
 
 end
