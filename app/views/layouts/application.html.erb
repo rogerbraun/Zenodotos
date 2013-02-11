@@ -10,9 +10,13 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Zenodotos OPAC der Japanologie Tübingen", search_path, :class => 'brand' %>
+      <%= link_to "Zenodotos", "https://github.com/rogerbraun/Zenodotos", :class => 'brand' %>
+      <ul class="nav">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Erweiterte Suche", admin_borrowers_path %></li>
+      </ul>
             <%= form_tag search_path, method: "get", id: "search_form", class: "form-search navbar-form pull-right" do %>
-              <input type="text" id="appendedInputButton" name="search" class="input-medium search-query" value="<%= params[:search] %>">
+              <input type="text" id="search" name="search" class="input-medium search-query" value="<%= params[:search] %>">
               <button id="search_button" class="btn">Suchen</button>
             <% end %>
 
