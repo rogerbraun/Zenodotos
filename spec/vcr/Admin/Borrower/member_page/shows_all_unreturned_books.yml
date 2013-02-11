@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=borrowers&data=%7B%22id%22%3A11%2C%22anschrift%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22email%22%3A%22borrower_135%40example.com%22%2C%22heimatanschrift%22%3Anull%2C%22matrikelnr%22%3Anull%2C%22mobiltelefon%22%3Anull%2C%22name%22%3A%22Borrower+Number+134%22%2C%22status%22%3Anull%2C%22telefon%22%3Anull%2C%22telefon2%22%3Anull%2C%22ub_nr%22%3Anull%2C%22vermerke%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A19Z%22%7D
+      string: index=borrowers&data=%7B%22id%22%3A11%2C%22anschrift%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22email%22%3A%22borrower_135%40example.com%22%2C%22heimatanschrift%22%3Anull%2C%22matrikelnr%22%3Anull%2C%22mobiltelefon%22%3Anull%2C%22name%22%3A%22Borrower+Number+134%22%2C%22status%22%3Anull%2C%22telefon%22%3Anull%2C%22telefon2%22%3Anull%2C%22ub_nr%22%3Anull%2C%22vermerke%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A45Z%22%7D
     headers:
       Accept:
       - ! '*/*'
@@ -36,13 +36,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:19 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:45 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A21%2C%22titel%22%3A%22Titel+263%22%2C%22autor%22%3A%22Autor+266%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+266%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+266%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+266%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A21%2C%22titel%22%3A%22Titel+263%22%2C%22autor%22%3A%22Autor+266%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+266%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+266%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+266%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -73,13 +73,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:19 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:45 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A22%2C%22titel%22%3A%22Titel+264%22%2C%22autor%22%3A%22Autor+267%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+267%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+267%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+267%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A22%2C%22titel%22%3A%22Titel+264%22%2C%22autor%22%3A%22Autor+267%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+267%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+267%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+267%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -110,13 +110,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:19 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:45 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A23%2C%22titel%22%3A%22Titel+265%22%2C%22autor%22%3A%22Autor+268%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+268%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+268%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+268%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A23%2C%22titel%22%3A%22Titel+265%22%2C%22autor%22%3A%22Autor+268%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+268%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+268%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+268%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -147,13 +147,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:20 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:45 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A24%2C%22titel%22%3A%22Titel+266%22%2C%22autor%22%3A%22Autor+269%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+269%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+269%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+269%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A24%2C%22titel%22%3A%22Titel+266%22%2C%22autor%22%3A%22Autor+269%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+269%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+269%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+269%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -184,13 +184,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:20 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:46 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A25%2C%22titel%22%3A%22Titel+267%22%2C%22autor%22%3A%22Autor+270%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+270%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+270%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+270%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A25%2C%22titel%22%3A%22Titel+267%22%2C%22autor%22%3A%22Autor+270%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+270%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+270%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+270%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -221,13 +221,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:20 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:46 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A26%2C%22titel%22%3A%22Titel+268%22%2C%22autor%22%3A%22Autor+271%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+271%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+271%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+271%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A26%2C%22titel%22%3A%22Titel+268%22%2C%22autor%22%3A%22Autor+271%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+271%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+271%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+271%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -258,13 +258,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:20 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:46 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A27%2C%22titel%22%3A%22Titel+269%22%2C%22autor%22%3A%22Autor+272%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+272%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+272%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+272%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A27%2C%22titel%22%3A%22Titel+269%22%2C%22autor%22%3A%22Autor+272%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+272%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+272%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+272%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -295,13 +295,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:20 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:46 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A28%2C%22titel%22%3A%22Titel+270%22%2C%22autor%22%3A%22Autor+273%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+273%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+273%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+273%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A28%2C%22titel%22%3A%22Titel+270%22%2C%22autor%22%3A%22Autor+273%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+273%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+273%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+273%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -332,13 +332,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:20 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:46 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A29%2C%22titel%22%3A%22Titel+271%22%2C%22autor%22%3A%22Autor+274%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+274%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+274%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+274%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A29%2C%22titel%22%3A%22Titel+271%22%2C%22autor%22%3A%22Autor+274%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+274%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+274%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+274%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -369,13 +369,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:21 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:47 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A30%2C%22titel%22%3A%22Titel+272%22%2C%22autor%22%3A%22Autor+275%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+275%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+275%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+275%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A21Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A21Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A30%2C%22titel%22%3A%22Titel+272%22%2C%22autor%22%3A%22Autor+275%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+275%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+275%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+275%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A47Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A47Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -406,13 +406,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:21 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:47 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A21%2C%22titel%22%3A%22Titel+263%22%2C%22autor%22%3A%22Autor+266%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+266%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+266%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+266%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A21%2C%22titel%22%3A%22Titel+263%22%2C%22autor%22%3A%22Autor+266%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+266%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+266%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+266%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -443,13 +443,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:21 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:47 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A22%2C%22titel%22%3A%22Titel+264%22%2C%22autor%22%3A%22Autor+267%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+267%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+267%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+267%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A22%2C%22titel%22%3A%22Titel+264%22%2C%22autor%22%3A%22Autor+267%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+267%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+267%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+267%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -480,13 +480,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:21 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:47 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A23%2C%22titel%22%3A%22Titel+265%22%2C%22autor%22%3A%22Autor+268%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+268%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+268%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+268%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A19Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A23%2C%22titel%22%3A%22Titel+265%22%2C%22autor%22%3A%22Autor+268%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+268%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+268%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+268%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -517,13 +517,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:21 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:47 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A24%2C%22titel%22%3A%22Titel+266%22%2C%22autor%22%3A%22Autor+269%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+269%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+269%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+269%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A24%2C%22titel%22%3A%22Titel+266%22%2C%22autor%22%3A%22Autor+269%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+269%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+269%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+269%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A45Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -554,13 +554,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:21 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:48 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A25%2C%22titel%22%3A%22Titel+267%22%2C%22autor%22%3A%22Autor+270%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+270%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+270%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+270%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A25%2C%22titel%22%3A%22Titel+267%22%2C%22autor%22%3A%22Autor+270%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+270%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+270%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+270%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -591,13 +591,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:22 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:48 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A26%2C%22titel%22%3A%22Titel+268%22%2C%22autor%22%3A%22Autor+271%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+271%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+271%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+271%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A26%2C%22titel%22%3A%22Titel+268%22%2C%22autor%22%3A%22Autor+271%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+271%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+271%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+271%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -628,13 +628,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:22 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:48 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A27%2C%22titel%22%3A%22Titel+269%22%2C%22autor%22%3A%22Autor+272%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+272%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+272%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+272%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A27%2C%22titel%22%3A%22Titel+269%22%2C%22autor%22%3A%22Autor+272%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+272%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+272%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+272%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -665,13 +665,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:22 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:48 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A28%2C%22titel%22%3A%22Titel+270%22%2C%22autor%22%3A%22Autor+273%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+273%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+273%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+273%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A28%2C%22titel%22%3A%22Titel+270%22%2C%22autor%22%3A%22Autor+273%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+273%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+273%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+273%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -702,13 +702,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:22 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:48 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A29%2C%22titel%22%3A%22Titel+271%22%2C%22autor%22%3A%22Autor+274%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+274%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+274%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+274%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A20Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A29%2C%22titel%22%3A%22Titel+271%22%2C%22autor%22%3A%22Autor+274%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+274%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+274%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+274%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A46Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -739,13 +739,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:22 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:49 GMT
 - request:
     method: put
     uri: http://localhost:9295/
     body:
       encoding: US-ASCII
-      string: index=books&data=%7B%22id%22%3A30%2C%22titel%22%3A%22Titel+272%22%2C%22autor%22%3A%22Autor+275%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+275%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-09%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+275%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+275%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-09T15%3A58%3A21Z%22%2C%22updated_at%22%3A%222013-02-09T15%3A58%3A21Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
+      string: index=books&data=%7B%22id%22%3A30%2C%22titel%22%3A%22Titel+272%22%2C%22autor%22%3A%22Autor+275%22%2C%22hrsg%22%3Anull%2C%22signatur%22%3A%22Signatur+275%22%2C%22jahr%22%3Anull%2C%22kommentar%22%3Anull%2C%22anmerkungen%22%3Anull%2C%22auflage%22%3Anull%2C%22baende%22%3Anull%2C%22bearbeiter%22%3Anull%2C%22bestelladresse%22%3Anull%2C%22drehbuch%22%3Anull%2C%22format%22%3Anull%2C%22inhalt%22%3Anull%2C%22sprache%22%3Anull%2C%22literaturvorlage%22%3Anull%2C%22nebensignatur%22%3Anull%2C%22ort%22%3Anull%2C%22platz%22%3Anull%2C%22preis%22%3Anull%2C%22publikationsart%22%3Anull%2C%22reihe%22%3Anull%2C%22seiten%22%3Anull%2C%22stifter%22%3Anull%2C%22verlag%22%3Anull%2C%22standort%22%3Anull%2C%22datensatz%22%3Anull%2C%22aufnahmedatum%22%3A%222013-02-11%22%2C%22issn%22%3Anull%2C%22isbn%22%3Anull%2C%22invent%22%3Anull%2C%22autor_japanisch%22%3A%22Autor+japanisch+275%22%2C%22hrsg_japanisch%22%3Anull%2C%22drehbuch_japanisch%22%3Anull%2C%22reihe_japanisch%22%3Anull%2C%22titel_japanisch%22%3A%22Titel+japanisch+275%22%2C%22verlag_japanisch%22%3Anull%2C%22literaturvorlage_japanisch%22%3Anull%2C%22nacsis_japanisch%22%3Anull%2C%22jid%22%3Anull%2C%22nacsis_url%22%3Anull%2C%22interne_notizen%22%3Anull%2C%22created_at%22%3A%222013-02-11T09%3A36%3A47Z%22%2C%22updated_at%22%3A%222013-02-11T09%3A36%3A47Z%22%2C%22vormerken%22%3Anull%2C%22altes_datum%22%3Anull%7D
     headers:
       Accept:
       - ! '*/*'
@@ -776,5 +776,5 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Sat, 09 Feb 2013 15:58:22 GMT
+  recorded_at: Mon, 11 Feb 2013 09:36:49 GMT
 recorded_with: VCR 2.4.0
