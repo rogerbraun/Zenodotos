@@ -7,6 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Zenodotos OPAC der Japanologie Tübingen", search_path, :class => 'brand' %>
+            <%= form_tag search_path, method: "get", id: "search_form", class: "form-search navbar-form pull-right" do %>
+              <input type="text" id="appendedInputButton" name="search" class="input-medium search-query" value="<%= params[:search] %>">
+              <button id="search_button" class="btn">Suchen</button>
+            <% end %>
+
+
+    </div>
+  </div>
+</div>
 
 <%= yield %>
 
