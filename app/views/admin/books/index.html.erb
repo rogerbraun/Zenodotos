@@ -75,9 +75,6 @@
               </td>
               <td class="actions">
                 <div class="btn-group">
-                  <script>
-                      $(".icon_popover").popover({trigger: 'hover', placement: 'left', delay: {show: 1200}})
-                  </script>
                   <%= link_to icon("pencil"), edit_admin_book_path(book), :class => "btn icon_popover", :title => "Bearbeiten", :data => {:content => "Auf diesen Knopf drücken um das Buch anzusehen oder zu bearbeiten."}%>
                   <%= link_to icon("repeat"), duplicate_admin_book_path(book), :class => "btn icon_popover", :title => "Duplizieren", :data => {:content => "Auf diesen Knopf drücken um das Buch zu duplizieren und den duplizierten Eintrag zu bearbeiten."} %>
                   <%= link_to icon("list-alt"), add_to_collection_admin_book_path(book), :class => "btn icon_popover", :title => "Zur Sammlung hinzufügen", :data => {content: "Dieses Buch zu einer Sammlung hinzufügen."}, :remote => true %>
