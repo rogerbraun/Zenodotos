@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <h1><%= @total_amount%> Ergebnisse</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Signatur</th>
+            <th>Titel</th>
+            <th>Autor</th>
+            <th>Entliehen?</th>
+            <th>Aktionen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+            <tr>
+              <td><%= book.signatur %></td>
+              <td><%= book.titel %></td>
+              <td><%= book.autor %></td>
+              <td><%= book.current_lending ? "Bis #{book.current_lending.return_date.strftime '%d.%m.%y'}" : "Nicht entliehen" %></td>
+              <td><%= link_to 'Details', opac_show_book_path(book) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @books %>
+    </div>
+  </div>
+</div>

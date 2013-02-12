@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <fieldset>
+      <legend>Erweiterte Suche</legend>
+      <%= form_tag advanced_search_results_path, method: "get", id: "advanced_search_form", class: "form-horizontal well" do %>
+        <% 0.upto(3) do |num| %>
+          <div class="control-group">
+            <select name=<%="search_field" + num.to_s%>>
+              <% @options.each do |option| %>
+                <% if @options[num + 1] == option %>
+                  <option selected><%= option %></option>
+                <% else %>
+                  <option><%= option %></option>
+                <% end %> 
+              <% end %> 
+            </select>
+            <input type="text" name=<%="input_field" + num.to_s%> class="input-xlarge"></input>
+              <% if num != 3 %>
+                <select name=<%="logic_field" + num.to_s%>>
+                  <option>AND</option>
+                  <option>OR</option>
+                  <option>AND NOT</option>
+                </select>
+              <% end %>
+          </div>
+        <% end %>
+        <hr>
+        <button id="search_button" class="btn btn-primary">Suchen</button>
+      <% end %>
+
+    </fieldset>
+
+  </div>
+</div>
