@@ -13,7 +13,7 @@
       <%= link_to "Zenodotos", "#", :class => 'brand' %>
       <ul class="nav">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Erweiterte Suche", admin_borrowers_path %></li>
+        <li><%= link_to "Erweiterte Suche", advanced_search_path %></li>
       </ul>
             <%= form_tag search_path, method: "get", id: "search_form", class: "form-search navbar-form pull-right" do %>
               <input type="text" id="search" name="search" class="input-medium search-query" value="<%= params[:search] %>">
