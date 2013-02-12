@@ -6,7 +6,7 @@
  *= require home
  *= require fm_style
  *= require new_admin
- *= require bootstrap
+ *= require bootstrap.min
  *= require bootstrap_override
  *= require jquery-ui-1.8.17.custom
 */

@@ -1,2 +1,33 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+
+    <div class="row">
+    <div class="hero-unit page-header">
+      <h1>OPAC Japanologie</h1>
+      <h4>Willkommen beim Online-Bibliothekskatalog der Japanologie Tübingen</h4>
+    </div>
+    <div class="span6 offset3">
+      <%= form_tag search_path, method: "get", id: "search_form", class: "form-search" do %>
+      <script type="text/javascript">
+        $(function(){
+            $("#search_main").popover();
+        })
+      </script>
+      <input type="text" id="search_main" data-toggle="popover" data-trigger="hover" data-placement="left" data-title="Freie Suche" data-content="eine unspezifische Suche über alle Felder starten. Für spezifische Suchanfragen entweder die erweiterte Suche benutzen oder die folgende Syntax verwenden 'Kategorie:Stichwort' z.B. 'autor:kenko' oder 'titel:kyoto'" name="search" class="input-xlarge search-query" value="<%= params[:search] %>">
+        <button id="search_button_main" class="btn btn-primary">Suchen</button>
+      <% end %>
+    </div>
+
+    <div class="span12">
+      <p>Sie finden hier den Gesamtbestand unserer Bibliothek (momentan noch ausschließlich Zeitschriften- und Medienbestand).</p>
+      <p>Alle Felder sind durchsuchbar.</p>
+      <p>Sollten Sie im Signaturfeld auf eine der folgende Bezeichnungen stoßen - „Signatur folgt“ oder „Best. Nr. …“ - dann ist das Buch zwar in den Katalog aufgenommen, aber noch nicht für die Ausleihe vorbereitet.</p>
+      <p>Bei "Best.Nr. ...“ ist es noch im Bestellvorgang und wird nach Lieferung und Beklebung mit Signaturschild automatisch für einige Wochen zu den Neuerwerbungen gestellt. Danach ist es zur Ausleihe bereit.</p>
+      <p>Bücher mit „Signatur folgt“ sind in unserem Magazin zwischengelagert und werden erst nach Anforderung durch Sie aktiv in die Ausleihe aufgenommen, d.h. Sie müssten an der Leihtheke oder per e-mail (bibliothek@japanologie.uni-tuebingen.de) bei uns Bescheid geben, dass Sie dieses Buch benötigen. Sie sollten Antwort von einem Bibliotheksmitarbeiter bekommen, dass die Nachricht eingegangen und Ihrem Wunsch entsprochen worden ist. Dann dauert es - abhängig davon, ob Semesterferien sind oder nicht – ca. 3 Wochen, bis wir das Buch mit Signaturnummer und –schild versehen haben.</p>
+    </div>
+  </div>
+  <hr>
+  <footer class="footer">
+  <p>Programmierung © 2013 <%= link_to "Roger Braun", "https://github.com/rogerbraun/Zenodotos"%>, <%= link_to "Jiayi Zheng", "https://github.com/thebluber"%></p>
+  </footer>
+</div>
+

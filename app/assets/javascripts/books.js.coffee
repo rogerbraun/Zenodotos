@@ -15,6 +15,7 @@ $( () ->
     delay:
       show: 500
       hide: 100
+    trigger: 'hover'
 
   $("#next_free_signature, #fill_in_with_google").popover()
 
