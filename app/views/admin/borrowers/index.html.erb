@@ -27,10 +27,10 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
+            <th><%= link_to 'ID', admin_borrowers_path%></th>
+            <th><%= link_to 'Name', admin_borrowers_path(:params => {:search => session[:search], :sort_order => 'name'})%></th>
             <th>Email</th>
-            <th>Matrikelnummer</th>
+            <th><%= link_to 'Matrikelnummer', admin_borrowers_path(:params => {:search => session[:search], :sort_order => 'matrikelnr'})%></th>
             <th>Bücher</th>
             <th>Aktionen</th>
           </tr>

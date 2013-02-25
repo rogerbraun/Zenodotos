@@ -3,8 +3,10 @@ class Admin::BorrowersController < Admin::AdminController
 
   def index
     params[:search] = nil if params[:search] and params[:search].strip == ""
+    session[:search] = params[:search]
+    @sort_order = params[:sort_order] || 'id'
     @page = params[:page] || 0
-    @borrowers = (params[:search] ? Borrower.search(params[:search]) : Borrower).page(@page)
+    @borrowers = (params[:search] ? Borrower.search(params[:search]) : Borrower).order(@sort_order).page(@page)
     @borrowers = BorrowerDecorator.decorate(@borrowers)
     flash[:notice] = "Nichts gefunden..." if @borrowers.size == 0
   end
