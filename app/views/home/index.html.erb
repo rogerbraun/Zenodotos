@@ -5,14 +5,14 @@
       <h1>OPAC Japanologie</h1>
       <h4>Willkommen beim Online-Bibliothekskatalog der Japanologie Tübingen</h4>
     </div>
-    <div class="span6 offset3">
+    <div class="span9 offset2">
       <%= form_tag search_path, method: "get", id: "search_form", class: "form-search" do %>
       <script type="text/javascript">
         $(function(){
             $("#search_main").popover();
         })
       </script>
-      <input type="text" id="search_main" data-toggle="popover" data-trigger="hover" data-placement="left" data-title="Freie Suche" data-content="eine unspezifische Suche über alle Felder starten. Für spezifische Suchanfragen entweder die erweiterte Suche benutzen oder die folgende Syntax verwenden 'Kategorie:Stichwort' z.B. 'autor:kenko' oder 'titel:kyoto'" name="search" class="input-xlarge search-query" value="<%= params[:search] %>">
+      <input type="text" id="search_main" data-toggle="popover" data-trigger="hover" data-placement="left" data-title="Freie Suche" data-content="eine unspezifische Suche über alle Felder starten. Für spezifische Suchanfragen entweder die erweiterte Suche benutzen oder die folgende Syntax verwenden 'Kategorie:Stichwort' z.B. 'autor:kenko' oder 'titel:kyoto'" name="search" class="input-xxlarge search-query" value="<%= params[:search] %>">
         <button id="search_button_main" class="btn btn-primary">Suchen</button>
       <% end %>
     </div>
