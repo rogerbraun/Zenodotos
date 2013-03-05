@@ -7,7 +7,7 @@
           <div class="control-group">
             <select name=<%="search_field" + num.to_s%>>
               <% @options.each do |option| %>
-                <% if @options[num + 1] == option %>
+                <% if @options[num] == option %>
                   <option selected><%= option %></option>
                 <% else %>
                   <option><%= option %></option>
