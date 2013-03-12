@@ -8,7 +8,12 @@
       <%= f.text_field :new_collection_name %> oder...
       <%= f.label :collection_id %>
       <%= f.collection_select :collection_id, @collections, :id, :name %>
-      <%= f.hidden_field :search, :value => @search %>
+      <% if @search %>
+        <%= f.hidden_field :search, :value => @search%>
+      <% end %>
+      <% if @ids %>
+        <%= f.hidden_field :ids, :value => @ids%>
+      <% end %>
     </div>
     <div class="modal-footer">
       <button id="add_book_to_collection_button" class="btn primary">Zur Sammlung hinzufügen</button>

@@ -71,7 +71,7 @@ Zenodotos::Application.routes.draw do
     resources :books do
       collection do
         get "next_free_signature"
-        get "add_all_to_collection"
+        post "add_all_to_collection"
         post "put_all_into_collection"
       end
       member do

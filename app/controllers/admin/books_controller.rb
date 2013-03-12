@@ -66,12 +66,23 @@ class Admin::BooksController < Admin::AdminController
 
   def add_all_to_collection
     @search = params[:search]
-    @count = Book.search(@search).count
+    @ids = params[:ids]
+    if @search
+      @count = Book.search(@search).count
+    else 
+      @count = @ids.split.length
+    end
     @collections = Collection.all
   end  
 
   def put_all_into_collection
-    @books = Book.search(params[:book_for_collection][:search])
+    if params[:book_for_collection][:search]
+      @books = Book.search(params[:book_for_collection][:search])
+    else
+      ids = params[:book_for_collection][:ids].split.map{|id| Integer(id)}
+      @books = Book.find(ids)
+    end
+
     if params[:book_for_collection][:new_collection_name].strip != "" 
       @collection = Collection.new(:name => params[:book_for_collection][:new_collection_name].strip)
     else
