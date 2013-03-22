@@ -6,7 +6,7 @@ class Borrower < ActiveRecord::Base
   has_many :lendings
   has_many :reservations
 
-  after_save :save_to_fts
+  include FTSSearchable
 
   def borrow(book, date = nil)
     date ||= 28.days.from_now
@@ -44,23 +44,4 @@ class Borrower < ActiveRecord::Base
     current_lending ? current_lending.borrower.name : "nicht entliehen"
   end
 
-  def self.search keys
-    # TODO: Build real sql query
-    ids = ActiveRecord::Base.connection.execute("select rowid from borrowers_fts where borrowers_fts match #{ActiveRecord::Base.connection.quote(keys)}").map{|h| h["rowid"]}
-    Borrower.where("id in (?)", ids)
-  end
-
-  private
-
-  def sqlize attributes
-    attribute_names = Borrower.attribute_names.dup
-    attribute_names[0] = :rowid
-    "INSERT OR REPLACE INTO borrowers_fts(#{attribute_names.join(', ')}) VALUES(#{attributes.map{|a| ActiveRecord::Base.connection.quote(a)}.join(', ')});"
-  end
-
-  def save_to_fts
-    sql = sqlize self.attributes.values
-    sql.gsub!("\u0000","") # For some reason, there was this invalid null-byte in the database
-    ActiveRecord::Base.connection.execute sql
-  end
 end
