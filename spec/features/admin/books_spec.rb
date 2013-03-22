@@ -4,12 +4,10 @@ require_relative "admin_helper"
 describe Admin do
   describe Book do
     before(:each) do
-      VCR.use_cassette('creation') do
-        login_as_admin
-        10.times do
-          Factory(:book)
-          Factory(:lending)
-        end
+      login_as_admin
+      10.times do
+        Factory(:book)
+        Factory(:lending)
       end
     end
 
@@ -33,14 +31,14 @@ describe Admin do
         Book.where("titel = ?", "Onko der harmonische").count.should == 1
       end
 
-      it "has a working search", :vcr do
+      it "has a working search" do
         Factory(:book, :titel => "Mein liebstes Buch")
         fill_in "search", with: "Mein liebstes Buch"
         click_on "search_button"
         page.should have_content("Mein liebstes Buch")
       end
 
-      it "can extend the return date of a book", :vcr do
+      it "can extend the return date of a book" do
         @overdue = Factory(:overdue_lending)
         @book = @overdue.book
         fill_in "search", with: @book.titel
@@ -49,7 +47,7 @@ describe Admin do
         @book.lendings.overdue.should be_empty
       end
 
-      it "can return a book", :vcr do
+      it "can return a book" do
         @lending = Factory(:lending)
         @book = @lending.book
         fill_in "search", with: @book.titel
@@ -58,7 +56,7 @@ describe Admin do
         @book.current_lending.should be_nil
       end
 
-      it "can lend a book",:vcr => true, :js => true do
+      it "can lend a book", :js => true do
         @book = Factory(:book, :titel => "Mein liebstes Buch")  
         @book.current_lending.should be_false
         fill_in "search", with: "Mein liebstes Buch"
@@ -69,7 +67,7 @@ describe Admin do
         @book.current_lending.should be_true
       end
 
-      it "can destroy a book", :vcr => true, :js => false do
+      it "can destroy a book", :js => false do
         @book = Factory(:book, :titel => 'Unique Book')
         fill_in "search", with: "Unique Book"
         click_on "search_button"
