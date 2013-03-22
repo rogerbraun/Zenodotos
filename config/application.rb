@@ -49,5 +49,7 @@ module Zenodotos
     # Fix for deploy without db
     config.assets.initialize_on_precompile=false                                                  
 
+    config.active_record.schema_format = :sql
+
   end
 end
