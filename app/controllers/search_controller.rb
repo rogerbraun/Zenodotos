@@ -10,7 +10,7 @@ class SearchController < ApplicationController
   def show
     @book = Book.find(params[:id])
   end
-  
+
   def advanced_search
     #@options = Book.attribute_names 
     @options = PARSE_OPTIONS.keys

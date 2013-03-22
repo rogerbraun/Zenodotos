@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class Borrower < ActiveRecord::Base
-  extend Picky::Client::ActiveRecord.configure(host: 'localhost', port: PICKY_PORT, path: '/')
   has_paper_trail
   paginates_per 10
 
   has_many :lendings
   has_many :reservations
+
+  include FTSSearchable
 
   def borrow(book, date = nil)
     date ||= 28.days.from_now
@@ -41,14 +42,6 @@ class Borrower < ActiveRecord::Base
 
   def borrower
     current_lending ? current_lending.borrower.name : "nicht entliehen"
-  end
-
-  def self.search keys
-    # TODO: Find out how to tell Picky to get all ids
-    res = BorrowerSearch.search(:query =>keys, :ids => 1000000)
-    res.extend Picky::Convenience 
-    ids = res.ids(1000000)
-    Borrower.where("id in (?)", ids)
   end
 
 end
