@@ -33,8 +33,6 @@ end
 
 group :test do
   gem 'simplecov', :require => false
-  gem 'vcr'
-  gem 'webmock'
   gem 'database_cleaner'
 end
 
@@ -47,7 +45,7 @@ group :development do
   gem "binding_of_caller"
   gem "rspec-rails"
   gem "capybara"
-  gem "capybara-webkit"
+  gem "capybara-webkit", git: 'git://github.com/thoughtbot/capybara-webkit.git'
   gem "selenium-webdriver"
   gem "thin"
   gem "pry"
@@ -79,5 +77,5 @@ group :test do
   gem "factory_girl_rails"
   gem "rspec-rails"
   gem "guard-rspec"
-  gem "capybara-webkit"
+  gem "capybara-webkit", git: 'git://github.com/thoughtbot/capybara-webkit.git'
 end
