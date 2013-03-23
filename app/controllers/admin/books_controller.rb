@@ -17,6 +17,10 @@ class Admin::BooksController < Admin::AdminController
     @book = Book.new
   end
 
+  def print
+    @book = Book.find(params[:id])
+  end
+
   def duplicate
     @book = Book.find(params[:id]).dup
     render "new"
@@ -157,7 +161,7 @@ class Admin::BooksController < Admin::AdminController
 
   def show
     # Braucht man wirklich show und edit?
-    redirect_to :action => "edit"
+    redirect_to :action => "print"
   end
 
   def next_free_signature

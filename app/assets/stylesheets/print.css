@@ -1,0 +1,19 @@
+.navbar {
+  display: none
+}
+.sidebar {
+  display: none
+  }
+.label {
+  font-weight: bold;
+  font-size: medium;
+}
+.page-header {
+  border-bottom: 1px solid black;
+}
+.content {
+  margin-top: 20px;
+  }
+.hidden {
+  display: none;
+}

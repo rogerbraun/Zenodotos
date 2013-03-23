@@ -85,6 +85,7 @@ Zenodotos::Application.routes.draw do
         post 'reservations', action: 'create_reservation'
         post "extend_current_lending"
         post "return_book"
+        get "print", :action => "print"
       end
 
     end

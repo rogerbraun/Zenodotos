@@ -1,0 +1,231 @@
+<%= content_for :content do %>
+  <div class="page-header">
+    <h1>Buch #<%= @book.id %></h1>
+  </div>
+
+  <div class="content">
+    <div class="row-fluid">
+      <div class="span2">
+        <span class="label">
+          Signatur:
+        </span>
+        <%= @book.signatur %>
+      </div>
+      <div class="span2">
+        <span class="label">
+          Nebensignatur:
+        </span>
+        <%= @book.nebensignatur%>
+      </div>
+      <div class="span2">
+        <span class="label">
+          Stifter:
+        </span>
+        <%= @book.stifter %>
+      </div>
+      <div class="span2">
+        <span class="label">
+          Standort:
+        </span>
+        <%= @book.standort %>
+      </div>
+      <div class="span4">
+        <span class="label">
+          Publikationsart:
+        </span>
+        <%= @book.publikationsart %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span8">
+        <span class="label">
+          Autor:
+        </span>
+        <%= @book.autor %>
+      </div>
+      <div class="span4">
+        <span class="label">
+          Autor Japanisch:
+        </span>
+        <%= @book.autor_japanisch %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <span class="label">
+          Titel:
+        </span>
+        <%= @book.titel%>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <span class="label">
+          Titel Japanisch:
+        </span>
+        <%= @book.titel_japanisch %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span8">
+        <span class="label">
+          Reihe:
+        </span>
+        <%= @book.reihe %>
+      </div>
+      <div class="span4">
+        <span class="label">
+          Reihe Japanisch:
+        </span>
+        <%= @book.reihe_japanisch %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">
+        <span class="label">
+          Verlag:
+        </span>
+        <%= @book.verlag %>
+      </div>
+      <div class="span4">
+        <span class="label">
+          Verlag Japanisch:
+        </span>
+        <%= @book.verlag_japanisch %>
+      </div>
+      <div class="span4">
+        <span class="label">
+          Ort:
+        </span>
+        <%= @book.ort %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span1">
+        <span class="label">
+          Seiten:
+        </span>
+        <%= @book.seiten%>
+      </div>
+      <div class="span1">
+        <span class="label">
+          Format:
+        </span>
+        <%= @book.format %>
+      </div>
+      <div class="span1">
+        <span class="label">
+          Jahr:
+        </span>
+        <%= @book.jahr %>
+      </div>
+      <div class="span1">
+        <span class="label">
+          Auflage:
+        </span>
+        <%= @book.auflage%>
+      </div>
+      <div class="span1">
+        <span class="label">
+          Bände:
+        </span>
+        <%= @book.baende %>
+      </div>
+      <div class="span1">
+        <span class="label">
+          Sprache:
+        </span>
+        <%= @book.sprache%>
+      </div>
+      <div class="span1">
+        <span class="label">
+          Preis:
+        </span>
+        <%= @book.preis %>
+      </div>
+      <div class="span1">
+        <span class="label">
+          Invent:
+        </span>
+        <%= @book.invent %>
+      </div>
+      <div class="span4">
+        <span class="label">
+          Aufnahmedatum:
+        </span>
+        <%= @book.aufnahmedatum %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span6">
+        <span class="label">
+          ISBN:
+        </span>
+        <%= @book.isbn %>
+      </div>
+      <div class="span6">
+        <span class="label">
+          ISSN:
+        </span>
+        <%= @book.issn %>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span4">
+        <span class="label">
+          Inhalt:
+        </span>
+        <%= @book.inhalt %>
+      </div>
+      <div class="span4">
+        <span class="label">
+          Anmerkungen:
+        </span>
+        <%= @book.anmerkungen %>
+      </div>
+      <div class="span4">
+        <span class="label">
+          Bearbeiter:
+        </span>
+        <%= @book.bearbeiter%>
+        <br />
+        <span class="label">
+          Altes Datum:
+        </span>
+        <%= @book.altes_datum %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <span class="label">
+          NACSIS URL:
+        </span>
+        <%= @book.nacsis_url %>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span6">
+        <span class="label">
+          NACSIS Japanisch:
+        </span>
+        <%= @book.nacsis_japanisch %>
+      </div>
+      <div class="span3">
+        <span class="label">
+          Kommentar:
+        </span>
+        <%= @book.kommentar%>
+      </div>
+      <div class="span3">
+        <span class="label">
+          Interne Notizen:
+        </span>
+        <%= @book.interne_notizen%>
+      </div>
+    </div>
+  </div>
+  <div class="form-actions">
+    <a class="btn hidden" href="javascript:window.print()"><i class="icon-print"></i> Diese Seite drucken</a>
+  </div> 
+<% end %>
