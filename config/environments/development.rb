@@ -29,6 +29,8 @@ Zenodotos::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  config.assets.precompile += ['print.css']
 
   # Expands the lines which load the assets
   config.assets.debug = true
