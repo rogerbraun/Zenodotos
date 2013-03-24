@@ -1,19 +1,38 @@
-.navbar {
-  display: none
-}
-.sidebar {
-  display: none
+@media print{
+  .navbar {
+    display: none
   }
-.label {
-  font-weight: bold;
-  font-size: medium;
-}
-.page-header {
-  border-bottom: 1px solid black;
-}
-.content {
-  margin-top: 20px;
+  .sidebar {
+    display: none
   }
-.hidden {
-  display: none;
+  .label {
+    font-weight: bold;
+    font-size: medium;
+  }
+  .page-header {
+    border-bottom: 1px solid black;
+  }
+  .content {
+    margin-top: 20px;
+  }
+  .hidden {
+    display: none;
+  }
+  body {
+    float: none;
+  }
+  table{
+    page-break-inside:auto;
+    border-collapse: collapse;
+  }
+  table tr{ 
+    page-break-inside:avoid; 
+    page-break-after:auto;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+  }
+  table tr td{ 
+    page-break-inside:avoid;
+  }
+  table thead { display:table-header-group }
 }

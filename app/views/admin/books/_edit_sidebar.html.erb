@@ -1,9 +1,11 @@
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
     <li class="nav-header">Aktionen</li>
-    <li>
-      <%= link_to icon("book") + " Buch anzeigen", print_admin_book_path(@book), :target => "_blank" %>
-    </li>
+    <% if @book.id %>
+      <li>
+      <%= link_to icon("book") + " Buch anzeigen", admin_book_path(@book) %>
+      </li>
+    <% end %>
     <li><a href="#" data-trigger="hover" data-original-title="Nächste freie Signatur" data-content="Fügt die nächste freie Signaturnummer in das Signaturfeld ein. Bitte die Signaturnummer bis zum letzten Bindestrich eingeben, also etwa '210.3-'." id="next_free_signature">Nächste freie Signatur</a></li>
     <li><a href="#" data-trigger="hover" data-original-title="Ausfüllen mit Google Books" class="link_popover" data-content="Sucht den Titel des Buches bei Google Books und versucht damit weitere Felder auszufüllen." id="fill_in_with_google">Ausfüllen mit Google Books</a></li>
   </ul>

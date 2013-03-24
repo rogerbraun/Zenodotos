@@ -1,0 +1,22 @@
+<%= content_for :content do %>
+  <div class="page-header">
+    <h1><%= @collection.name %></h1>
+    <a class="hidden" href="javascript:window.print()">Diese Seite drucken</a>
+  </div>
+  <table class="table">
+    <thead>
+      <th>Signatur</th>
+      <th>Titel</th>
+      <th>Autor</th>
+    </thead>
+    <tbody>
+      <% @books.each_with_index do |book,i| %>
+        <tr>
+          <td><%= book.nebensignatur ? book.signatur + "/#{book.nebensignatur}" : book.signatur %></td>
+          <td><strong><%= book.titel %></strong></td>
+          <td><%= book.autor %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

@@ -34,6 +34,8 @@ end
 group :test do
   gem 'simplecov', :require => false
   gem 'database_cleaner'
+  gem "binding_of_caller"
+  gem "pry"
 end
 
 gem "paper_trail", "~> 2"

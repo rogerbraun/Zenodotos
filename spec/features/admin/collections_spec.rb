@@ -24,6 +24,13 @@ describe Admin do
           book.verlag.should == "Semmel Verlach"
         end
       end
+
+      it "should have a printversion without pagination" do
+        visit admin_collection_path(@collection)
+        click_on "Druckansicht"
+        page.should have_link "Diese Seite drucken"
+        page.should_not have_selector "#pagination"
+      end
     end
   end
 end

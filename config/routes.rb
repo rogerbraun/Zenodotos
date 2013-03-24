@@ -62,6 +62,7 @@ Zenodotos::Application.routes.draw do
       member do
         post 'remove_books'
         get "mass_edit"
+        get "print"
         post "do_mass_edit"
         match "/books/:book_id/remove" => "collections#remove_book", :as => "remove_book", :via => :post
       end

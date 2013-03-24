@@ -78,12 +78,21 @@ describe Admin do
         expect{Book.find(id)}.to raise_error(ActiveRecord::RecordNotFound)
       end
 
+      it "should show a book's information and link to print" do
+        @book = Factory(:book, :titel => 'A good book')
+        fill_in "search", with: "titel:#{@book.titel}"
+        click_on "search_button"
+        page.find("a#book_#{@book.id}").click
+        page.should have_content "Buch ##{@book.id}"
+        page.should have_link("Diese Seite drucken")
+      end
+
     end
 
     describe "Member Page" do
       before do
         @book = Book.first
-        visit admin_book_path(@book)
+        visit edit_admin_book_path(@book)
       end
 
       it "displays a single book", :js => false do

@@ -10,6 +10,12 @@ class Admin::CollectionsController < Admin::AdminController
     redirect_to :action => :edit
   end
 
+  def print 
+    @sort_order = params["sort_order"]
+    @collection = Collection.find(params[:id])
+    @books = @collection.books.order(@sort_order)
+  end
+
   def edit
     @sort_order = params[:sort_order] || "id"
     @collection = Collection.find(params[:id])

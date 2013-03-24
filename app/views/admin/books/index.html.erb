@@ -51,7 +51,7 @@
             <tr>
               <td><%= book.id %></td>
               <td>
-                <%= link_to book.titel, admin_book_path(book) %>
+                <%= link_to book.titel, admin_book_path(book), :id => "book_#{book.id}" %>
                 <%= tag "br" %>    
                 <%= link_to book.titel_japanisch, admin_book_path(book)%>
               </td>

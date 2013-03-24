@@ -2,6 +2,7 @@
   <div class="well sidebar-nav">
     <ul class="nav nav-list">
       <li class="nav-header">Aktionen</li>
+      <li><%= link_to icon("print") + "Druckansicht", print_admin_collection_path(@collection, :sort_order => @sort_order), :id => "print_collection_button"%></li>
       <li><%= link_to icon("pencil") + "Alle editieren", mass_edit_admin_collection_path(@collection), :id => "mass_edit_button" %></li>
       <%= form_tag '', method: "get", id: "search_form" do %>
         <fieldset>
@@ -35,7 +36,7 @@
     <tbody>
       <% @books.each_with_index do |book,i| %>
         <tr>
-          <td><%= link_to book.titel, [:admin, book] %></td>
+          <td><%= link_to book.titel, edit_admin_book_path(book) %></td>
           <td><%= book.autor %></td>
           <td><%= [book.signatur, book.nebensignatur].join(" / ") %></td>
           <td class='actions'>
