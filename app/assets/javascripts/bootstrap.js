@@ -1113,7 +1113,6 @@
 
   , getOptions: function (options) {
       options = $.extend({}, $.fn[this.type].defaults, this.$element.data(), options)
-
       if (options.delay && typeof options.delay == 'number') {
         options.delay = {
           show: options.delay
