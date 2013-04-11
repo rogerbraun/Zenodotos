@@ -161,7 +161,7 @@ class Admin::BooksController < Admin::AdminController
 
   def show
     # Braucht man wirklich show und edit?
-    redirect_to :action => "print"
+    redirect_to :action => "edit"
   end
 
   def next_free_signature

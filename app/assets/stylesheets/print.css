@@ -20,6 +20,7 @@
   }
   body {
     float: none;
+    font-size: 120%
   }
   table{
     page-break-inside:auto;
