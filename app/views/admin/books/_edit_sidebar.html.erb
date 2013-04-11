@@ -3,7 +3,7 @@
     <li class="nav-header">Aktionen</li>
     <% if @book.id %>
       <li>
-      <%= link_to icon("print") + " Druckansicht", print_admin_book_path(@book) %>
+      <%= link_to icon("print") + " Druckansicht", print_admin_book_path(@book), :id => "book_#{@book.id}" %>
       </li>
     <% end %>
     <li><a href="#" data-trigger="focus" data-original-title="Nächste freie Signatur" data-content="Fügt die nächste freie Signaturnummer in das Signaturfeld ein. Bitte die Signaturnummer bis zum letzten Bindestrich eingeben, also etwa '210.3-'." id="next_free_signature">Nächste freie Signatur</a></li>

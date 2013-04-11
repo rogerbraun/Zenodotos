@@ -83,6 +83,7 @@ describe Admin do
         fill_in "search", with: "titel:#{@book.titel}"
         click_on "search_button"
         page.find("a#book_#{@book.id}").click
+        page.find("a#book_#{@book.id}").click
         page.should have_content "Buch ##{@book.id}"
         page.should have_link("Diese Seite drucken")
       end
