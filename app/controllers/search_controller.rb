@@ -34,7 +34,7 @@ class SearchController < ApplicationController
         #next_input = params["input_field" + (num + 1).to_s]
         search_fields = PARSE_OPTIONS[search_option]
         if search_fields
-          if logic_condition #&& next_input.strip != ""
+          if logic_condition && condition != ""
             condition += " " + logic_condition + " "
           end
           condition += "(" + search_fields.map{|field| field + " LIKE :#{field} "}.join("OR ") + ")"
