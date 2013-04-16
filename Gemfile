@@ -6,8 +6,6 @@ gem 'rails', '~>3.2.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-#gem "picky"#, :git => "git://github.com/rogerbraun/picky.git", :branch => "yajl_encoding_workaround"
-gem 'picky-client'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,10 +30,17 @@ group :import do
 end
 
 group :test do
+  gem "capybara"
+  gem 'poltergeist'
   gem 'simplecov', :require => false
   gem 'database_cleaner'
   gem "binding_of_caller"
   gem "pry"
+  # Pretty printed test output
+  gem 'turn', :require => false
+  gem "factory_girl_rails"
+  gem "rspec-rails"
+  gem "guard-rspec"
 end
 
 gem "paper_trail", "~> 2"
@@ -46,9 +51,6 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "rspec-rails"
-  gem "capybara"
-  gem "capybara-webkit", git: 'git://github.com/thoughtbot/capybara-webkit.git'
-  gem "selenium-webdriver"
   gem "thin"
   gem "pry"
   gem "libnotify"
@@ -71,13 +73,4 @@ end
 group :deployment do
   gem 'capistrano'
   gem 'rvm-capistrano'
-end
-
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
-  gem "factory_girl_rails"
-  gem "rspec-rails"
-  gem "guard-rspec"
-  gem "capybara-webkit", git: 'git://github.com/thoughtbot/capybara-webkit.git'
 end
