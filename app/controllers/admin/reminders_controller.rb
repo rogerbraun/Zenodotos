@@ -4,7 +4,7 @@ class Admin::RemindersController < Admin::AdminController
   # GET /reminders
   # GET /reminders.json
   def index
-    @reminders = ReminderDecorator.decorate(Reminder.all)
+    @reminders = ReminderDecorator.decorate(Reminder.order("id DESC").all)
 
     respond_to do |format|
       format.html # index.html.erb
