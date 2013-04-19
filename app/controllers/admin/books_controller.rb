@@ -44,7 +44,7 @@ class Admin::BooksController < Admin::AdminController
   def new_reservation
     @reservation = Reservation.new
     @reservation.book_id = params[:id]
-    @reservation.borrower_id = session[:last_borrower] || Borrower.order(:name).first
+    #@reservation.borrower_id = session[:last_borrower] || Borrower.order(:name).first.id
   end
 
   def create_reservation

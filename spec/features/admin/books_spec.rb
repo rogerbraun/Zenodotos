@@ -67,11 +67,24 @@ describe Admin do
         @book.current_lending.should be_true
       end
 
+      it "can make a reservation of a book", :js => true do
+        @lending = Factory(:lending)
+        @book = @lending.book
+        fill_in "search", with: @book.titel
+        click_on "search_button"
+        page.find("#reserve_book_#{@book.id}").click
+        page.should have_content("Buch vormerken")
+        page.click_on "reserve_book_button"
+        @book.reload
+        @book.reservations.should_not be_nil
+      end
+
       it "can destroy a book", :js => false do
         @book = Factory(:book, :titel => 'Unique Book')
         fill_in "search", with: "Unique Book"
         click_on "search_button"
         id = @book.id
+        binding.pry
         page.find("#delete_book_#{id}").click
         #page.driver.wait_until(page.driver.browser.switch_to.alert.accept)
         #page.driver.browser.switch_to.alert.accept    

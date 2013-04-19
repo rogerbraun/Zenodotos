@@ -5,7 +5,7 @@
   <%= semantic_form_for @reservation, :url => reservations_admin_book_path, :method => :post do |f| %>
     <div class="modal-body">
       <%= f.input :borrower, :collection => Borrower.order("name") %>
-      <%= f.input :book_id, :as => :hidden %>
+      <%= f.hidden_field :book_id, :value => @reservation.book_id %>
     </div>
     <div class="modal-footer">
       <button id="reserve_book_button" class="btn primary">Buch vormerken</button>
