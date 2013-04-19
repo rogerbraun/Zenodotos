@@ -5,52 +5,50 @@ describe Admin do
   describe Book do
 
     let!(:borrower) { FactoryGirl.create :borrower }
-    let(:book) { FactoryGirl.create :book }
+    let!(:book) { FactoryGirl.create :book }
     let(:borrowed_book) { FactoryGirl.create :book }
     let!(:lending) { FactoryGirl.create :lending, book: borrowed_book }
 
-    before(:each) do
+    before do
       login_as_admin
-      10.times do
-        Factory(:book)
-        Factory(:lending)
-      end
     end
 
     describe "Index Page" do
-      before(:each) do
+      before do
         visit admin_books_path
       end
 
       it "displays all books if nothing is searched" do
         Book.limit(10).each do |book|
-          page.should have_content(book.titel)
+          expect(page).to have_content(book.titel)
         end
       end
 
       it "can make new books" do
-        page.should have_selector("#new_book_button")
+        expect(page).to have_selector('#new_book_button')
         click_on "new_book_button"
-        page.should have_content("Neues Buch")
-        fill_in "book_titel", with: "Onko der harmonische"
+        expect(page).to have_content('Neues Buch')
+        fill_in 'book_titel', with: 'Onko der harmonische'
         click_on "submit_book"
-        Book.where("titel = ?", "Onko der harmonische").count.should == 1
+        expect(Book.last.titel).to eq 'Onko der harmonische'
       end
 
-      it "has a working search" do
-        Factory(:book, :titel => "Mein liebstes Buch")
-        fill_in "search", with: "Mein liebstes Buch"
-        click_on "search_button"
-        page.should have_content("Mein liebstes Buch")
+      it 'has a working search' do
+        fill_in 'search', with: book.titel
+        click_on 'search_button'
+        expect(page).to have_content(book.titel)
       end
 
-      it "can extend the return date of a book" do
-        @overdue = Factory(:overdue_lending)
-        @book = @overdue.book
-        fill_in "search", with: @book.titel
-        click_on "search_button"
-        page.find("#extend_book_#{@book.id}").click
-        @book.lendings.overdue.should be_empty
+      context 'a lending is overdue' do
+        let!(:overdue_book) { FactoryGirl.create :book }
+        let!(:overdue_lending) { FactoryGirl.create :overdue_lending, book: overdue_book }
+
+        it 'can extend the return date of a book' do
+          fill_in 'search', with: overdue_book.titel
+          click_on 'search_button'
+          click_on "extend_book_#{overdue_book.id}"
+          overdue_book.lendings.overdue.should be_empty
+        end
       end
 
       it "can return a book" do
