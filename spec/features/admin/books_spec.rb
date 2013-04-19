@@ -3,6 +3,12 @@ require_relative "admin_helper"
 
 describe Admin do
   describe Book do
+
+    let!(:borrower) { FactoryGirl.create :borrower }
+    let(:book) { FactoryGirl.create :book }
+    let(:borrowed_book) { FactoryGirl.create :book }
+    let!(:lending) { FactoryGirl.create :lending, book: borrowed_book }
+
     before(:each) do
       login_as_admin
       10.times do
@@ -68,15 +74,23 @@ describe Admin do
       end
 
       it "can make a reservation of a book", :js => true do
-        @lending = Factory(:lending)
-        @book = @lending.book
-        fill_in "search", with: @book.titel
+        # Search for our book
+        fill_in "search", with: borrowed_book.titel
         click_on "search_button"
-        page.find("#reserve_book_#{@book.id}").click
-        page.should have_content("Buch vormerken")
-        page.click_on "reserve_book_button"
-        @book.reload
-        @book.reservations.should_not be_nil
+
+        # Click the reservation link
+        click_on "reserve_book_#{borrowed_book.id}"
+
+        # We should get the modal window
+        page.should have_content('Buch vormerken')
+
+        # Select a borrower and submit the form
+        select borrower.name
+        click_on 'reserve_book_button'
+
+        # We should have a reservation now
+        borrowed_book.reload
+        expect(borrowed_book.reservations.count).to be 1
       end
 
       it "can destroy a book", :js => false do
@@ -84,10 +98,9 @@ describe Admin do
         fill_in "search", with: "Unique Book"
         click_on "search_button"
         id = @book.id
-        binding.pry
         page.find("#delete_book_#{id}").click
         #page.driver.wait_until(page.driver.browser.switch_to.alert.accept)
-        #page.driver.browser.switch_to.alert.accept    
+        #page.driver.browser.switch_to.alert.accept
         expect{Book.find(id)}.to raise_error(ActiveRecord::RecordNotFound)
       end
 

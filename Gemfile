@@ -30,6 +30,7 @@ group :import do
 end
 
 group :test do
+  gem 'launchy'
   gem "capybara"
   gem 'poltergeist'
   gem 'simplecov', :require => false

@@ -22,8 +22,8 @@ FactoryGirl.define do
 
   factory :lending do
     return_date 1.month.from_now
-    association :borrower
-    association :book
+    borrower
+    book
     returned false
   end
 
