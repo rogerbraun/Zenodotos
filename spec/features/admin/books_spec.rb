@@ -52,23 +52,19 @@ describe Admin do
       end
 
       it "can return a book" do
-        @lending = Factory(:lending)
-        @book = @lending.book
-        fill_in "search", with: @book.titel
+        fill_in "search", with: borrowed_book.titel
         click_on "search_button"
-        page.find("#return_book_#{@book.id}").click
-        @book.current_lending.should be_nil
+        click_on "return_book_#{borrowed_book.id}"
+        expect(borrowed_book.current_lending).to be_blank
       end
 
       it "can lend a book", :js => true do
-        @book = Factory(:book, :titel => "Mein liebstes Buch")  
-        @book.current_lending.should be_false
-        fill_in "search", with: "Mein liebstes Buch"
+        fill_in "search", with: book.titel
         click_on "search_button"
-        page.find("#lend_book_#{@book.id}").click
+        page.find("#lend_book_#{book.id}").click
         page.should have_content("Buch verleihen")
         page.click_on "lend_book_button"
-        @book.current_lending.should be_true
+        book.current_lending.should be_true
       end
 
       it "can make a reservation of a book", :js => true do
@@ -92,23 +88,20 @@ describe Admin do
       end
 
       it "can destroy a book", :js => false do
-        @book = Factory(:book, :titel => 'Unique Book')
-        fill_in "search", with: "Unique Book"
+        fill_in "search", with: book.titel
         click_on "search_button"
-        id = @book.id
-        page.find("#delete_book_#{id}").click
+        page.find("#delete_book_#{book.id}").click
         #page.driver.wait_until(page.driver.browser.switch_to.alert.accept)
         #page.driver.browser.switch_to.alert.accept
-        expect{Book.find(id)}.to raise_error(ActiveRecord::RecordNotFound)
+        expect{Book.find(book.id)}.to raise_error(ActiveRecord::RecordNotFound)
       end
 
       it "should show a book's information and link to print" do
-        @book = Factory(:book, :titel => 'A good book')
-        fill_in "search", with: "titel:#{@book.titel}"
+        fill_in "search", with: book.titel
         click_on "search_button"
-        page.find("a#book_#{@book.id}").click
-        page.find("a#book_#{@book.id}").click
-        page.should have_content "Buch ##{@book.id}"
+        page.find("a#book_#{book.id}").click
+        page.find("a#book_#{book.id}").click
+        page.should have_content "Buch ##{book.id}"
         page.should have_link("Diese Seite drucken")
       end
 
@@ -116,19 +109,18 @@ describe Admin do
 
     describe "Member Page" do
       before do
-        @book = Book.first
-        visit edit_admin_book_path(@book)
+        visit edit_admin_book_path(book)
       end
 
       it "displays a single book", :js => false do
-        page.should have_content @book.titel
+        page.should have_content book.titel
       end
 
       it "can update a book" do
         fill_in "book_titel", with: "Ein neuer Titel"
         click_on "submit_book"
-        @book.reload
-        @book.titel.should == "Ein neuer Titel"
+        book.reload
+        book.titel.should == "Ein neuer Titel"
       end
     end
   end
