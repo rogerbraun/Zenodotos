@@ -11,11 +11,8 @@ $( () ->
   # Popovers
 
   $("td.actions a").popover
-    placement: "left"
-    delay:
-      show: 500
-      hide: 100
-    trigger: 'hover'
+    container: 'body',
+    placement: 'top'
 
   $("#next_free_signature, #fill_in_with_google").popover()
 

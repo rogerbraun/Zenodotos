@@ -75,23 +75,23 @@
               </td>
               <td class="actions">
                 <div class="btn-group">
-                  <%= link_to icon("pencil"), edit_admin_book_path(book), :class => "btn icon_popover", :data => {:trigger => "focus", :title => "Bearbeiten", :placement => "top", :content => "Auf diesen Knopf drücken um das Buch anzusehen oder zu bearbeiten."}%>
-                  <%= link_to icon("repeat"), duplicate_admin_book_path(book), :class => "btn icon_popover", :title => "Duplizieren", :data => {:trigger => "focus", :content => "Auf diesen Knopf drücken um das Buch zu duplizieren und den duplizierten Eintrag zu bearbeiten."} %>
-                  <%= link_to icon("list-alt"), add_to_collection_admin_book_path(book), :class => "btn icon_popover", :title => "Zur Sammlung hinzufügen", :data => {:trigger => "focus", content: "Dieses Buch zu einer Sammlung hinzufügen."}, :remote => true %>
-                  <%= link_to icon('trash'), admin_book_path(book), :class => 'btn icon_popover', :title => 'Löschen', :data => {:trigger => "focus", :content => 'Dieses Buch löschen.'}, :confirm => 'Dieses Buch wirklich löschen', :method => :delete, :id => "delete_book_#{book.id}" %>
+                  <%= link_action 'edit', 'pencil', edit_admin_book_path(book), book %>
+                  <%= link_action 'duplicate', 'repeat', duplicate_admin_book_path(book), book %>
+                  <%= link_action 'add_to_collection', 'list-alt', add_to_collection_admin_book_path(book), book %>
+                  <%= link_action 'delete', 'trash', admin_book_path(book),book, method: :delete, confirm: 'Dieses Buch wirklich löschen?' %>
                 </div>
-                <br />
+                <br>
                 <div class="btn-group">
                   <% unless book.current_lending %>
-                    <%= link_to icon("share-alt"), lendings_new_admin_book_path(book), :class => "btn icon_popover", :title => "Verleihen", :data => {:trigger => "focus", :content => "Auf diesen Knopf drücken um das Buch zu verleihen."}, :remote => true, :id => "lend_book_#{book.id}" %>
+                    <%= link_action 'lend', 'share-alt', lendings_new_admin_book_path(book), book, remote: true %>
                   <% else %>
-                    <%= link_to icon("arrow-left"), return_book_admin_book_path(book), :class => "btn icon_popover", :title => "Zurückgeben", :data => {:trigger => "focus", :content => "Auf diesen Knopf drücken um das Buch zurück zu geben."},:method => :post, :confirm => "Wirklich zurückgeben?", :id => "return_book_#{book.id}" %>
+                    <%= link_action 'return', 'arrow-left', return_book_admin_book_path(book), book, method: 'post', confirm: 'Wirklich zurückgeben?' %>
 
                     <% if book.current_lending.overdue? %>
-                      <%= link_to icon("calendar"), extend_current_lending_admin_book_path(book), :class => "btn icon_popover", :title => "Verlängern", :data => {:trigger => "focus", :content => "Dieser Knopf verlängert das Ausleihdatum um vier Wochen. Wenn eine andere Frist gewünscht ist bitte direkt auf den Leihvorgang gehen und dort das Datum editieren."}, :method => :post, :confirm => "Wirklich verlängern?", :id => "extend_book_#{book.id}" %>
+                      <%= link_action 'extend', 'calendar', extend_current_lending_admin_book_path(book), book, method: 'post', confirm: 'Wirklich verlängern?' %>
                     <% end %>
 
-                    <%= link_to icon('inbox'), reservations_new_admin_book_path(book), :class => 'btn icon_popover', :title => 'Vormerken', :data => {:trigger => "focus", :content => 'Das Buch für einen Nutzer vormerken.'}, :remote => true, :id => "reserve_book_#{book.id}" %>
+                    <%= link_action 'reserve', 'inbox', reservations_new_admin_book_path(book), book, remote: true %>
                   <% end %>
                 </div>
               </td>

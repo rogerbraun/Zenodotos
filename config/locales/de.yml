@@ -3,3 +3,30 @@ de:
     attributes:
       book:
         ort: "Erscheinungsort"
+  admin:
+    books:
+      actions:
+        edit:
+          title:  Bearbeiten
+          content: Auf diesen Knopf drücken um das Buch anzusehen oder zu bearbeiten.
+        duplicate:
+          title: Duplizieren
+          content: Auf diesen Knopf drücken um das Buch zu duplizieren und den duplizierten Eintrag zu bearbeiten.
+        add_to_collection:
+          title: Zur Sammlung hinzufügen
+          content: Dieses Buch zu einer Sammlung hinzufügen.
+        delete:
+          title: Löschen
+          content: Dieses Buch löschen.
+        reserve:
+          title: Vormerken
+          content: Das Buch für einen Nutzer vormerken.
+        lend:
+          title: Verleihen
+          content: Das Buch an einen Nutzer verleihen.
+        return:
+          title: Zurückgeben
+          content: Das Buch zurückgeben.
+        extend:
+          title: Verlängern
+          content: Dieser Knopf verlängert das Ausleihdatum um vier Wochen. Wenn eine andere Frist gewünscht ist bitte direkt auf den Leihvorgang gehen und dort das Datum editieren.
