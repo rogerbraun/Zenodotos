@@ -45,8 +45,8 @@
               <td><%= borrower.books_info %></td>
               <td class="actions">
                 <div class="btn-group">
-                  <%= link_action 'edit_borrower', 'pencil', admin_borrower_path(borrower), borrower %>
-                  <%= link_action 'delete_borrower', 'trash', admin_borrower_path(borrower), borrower, :method => :delete, :confirm => "Diesen Nutzer wirklich löschen? Alle Bücher dieses Nutzer werden damit automatisch zurückgegeben." %>
+                  <%= link_borrower_action 'edit_borrower', 'pencil', admin_borrower_path(borrower), borrower %>
+                  <%= link_borrower_action 'delete_borrower', 'trash', admin_borrower_path(borrower), borrower, :method => :delete, :confirm => "Diesen Nutzer wirklich löschen? Alle Bücher dieses Nutzer werden damit automatisch zurückgegeben." %>
                 </div>
               </td>
             </tr>

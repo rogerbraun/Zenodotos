@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 module BorrowersHelper
-  def link_action name, icon, path, borrower, options = {}
+  def link_borrower_action name, icon, path, borrower, options = {}
     options.merge!({
       data: {
         title: I18n.t("admin.borrowers.actions.#{name}.title"),
