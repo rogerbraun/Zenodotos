@@ -30,10 +30,9 @@ de:
         extend:
           title: Verlängern
           content: Dieser Knopf verlängert das Ausleihdatum um vier Wochen. Wenn eine andere Frist gewünscht ist bitte direkt auf den Leihvorgang gehen und dort das Datum editieren.
-  admin:
     borrowers:
       actions:
-        edit_borrower:  
+        edit_borrower:
           title: Entleiher bearbeiten
           content: Datensatz des Entleihers bearbeiten
         delete_borrower:
