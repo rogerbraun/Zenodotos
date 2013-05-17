@@ -40,54 +40,56 @@ de:
           content: Diesen Entleiher löschen
   errors:
     messages:
-      expired: "ist abgelaufen, bitte neu anfordern"
-      not_found: "nicht gefunden"
-      already_confirmed: "wurde bereits bestätigt"
-      not_locked: "ist nicht gesperrt"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      already_confirmed: "was already confirmed, please try signing in"
+      not_locked: "was not locked"
       not_saved:
-        one: "Konnte %{resource} nicht speichern: ein Fehler."
-        other: "Konnte %{resource} nicht speichern: %{count} Fehler." 
-   devise:
-    failure:
-      already_authenticated: 'Sie sind bereits angemeldet.'
-      unauthenticated: 'Sie müssen sich anmelden oder registrieren, bevor Sie fortfahren können.'
-      unconfirmed: 'Sie müssen Ihren Account bestätigen, bevor Sie fortfahren können.'
-      locked: 'Ihr Account ist gesperrt.'
-      invalid: 'Ungültige Anmeldedaten.'
-      invalid_token: 'Der Anmelde-Token ist ungültig.'
-      timeout: 'Ihre Sitzung ist abgelaufen, bitte melden Sie sich erneut an.'
-      inactive: 'Ihr Account ist nicht aktiv.'
-    sessions:
-      signed_in: 'Erfolgreich angemeldet.'
-      signed_out: 'Erfolgreich abgemeldet.'
-    passwords:
-      send_instructions: 'Sie erhalten in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie ihr Passwort zurücksetzen können.'
-      updated: 'Ihr Passwort wurde geändert. Sie sind jetzt angemeldet.'
-      updated_not_active: 'Ihr Passwort wurde geändert.'
-      send_paranoid_instructions: "Falls Ihre E-Mail-Adresse in unserer Datenbank existiert erhalten Sie in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihr Passwort zurücksetzen können."
-    confirmations:
-      send_instructions: 'Sie erhalten in wenigen Minuten eine E-Mail, mit der Sie Ihre Registrierung bestätigen können.'
-      send_paranoid_instructions: 'Falls Ihre E-Mail-Adresse in unserer Datenbank existiert erhalten Sie in wenigen Minuten eine E-Mail mit der die Sie Ihre Registrierung bestätigen können.'
-      confirmed: 'Vielen Dank für Ihre Registrierung. Sie sind jetzt angemeldet.'
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
+
+  devise:
     registrations:
-      signed_up: 'Sie haben sich erfolgreich registriert.'
-      signed_up_but_unconfirmed: 'Sie haben sich erfolgreich registriert. Wir konnten Sie noch nicht anmelden, da Ihr Account noch nicht bestätigt ist. Sie erhalten in Kürze eine E-Mail mit der Anleitung, wie Sie Ihren Account freischalten können.'
-      signed_up_but_inactive: 'Sie haben sich erfolgreich registriert. Wir konnten Sie noch nicht anmelden, da Ihr Account inaktiv ist.'
-      signed_up_but_locked: 'Sie haben sich erfolgreich registriert. Wir konnten Sie noch nicht anmelden, da Ihr Account gesperrt ist.'
-      updated: 'Ihre Daten wurden aktualisiert.'
-      update_needs_confirmation: "Ihre Daten wurden aktualisiert, aber Sie müssen Ihre neue E-Mail-Adresse bestätigen. Sie erhalten in wenigen Minuten eine E-Mail, mit der Sie die Änderung Ihrer E-Mail-Adresse abschließen können."
-      destroyed: 'Ihr Account wurde gelöscht.'
+      signed_up_but_unconfirmed: 'A message with a confirmation link has been sent to your email address. Please open the link to activate your account.'
+      signed_up_but_inactive: 'You have signed up successfully. However, we could not sign you in because your account is not yet activated.'
+      signed_up_but_locked: 'You have signed up successfully. However, we could not sign you in because your account is locked.'
+    failure:
+      already_authenticated: 'You are already signed in.'
+      unauthenticated: 'You need to sign in or sign up before continuing.'
+      unconfirmed: 'You have to confirm your account before continuing.'
+      locked: 'Your account is locked.'
+      invalid: 'Invalid email or password.'
+      invalid_token: 'Invalid authentication token.'
+      timeout: 'Your session expired, please sign in again to continue.'
+      inactive: 'Your account was not activated yet.'
+    sessions:
+      signed_in: 'Signed in successfully.'
+      signed_out: 'Signed out successfully.'
+    passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
+      updated_not_active: 'Your password was changed successfully.'
+      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+    confirmations:
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    registrations:
+      signed_up: 'Welcome! You have signed up successfully.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
     unlocks:
-      send_instructions: 'Sie erhalten in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihren Account entsperren können.'
-      unlocked: 'Ihr Account wurde entsperrt. Sie sind jetzt angemeldet.'
-      send_paranoid_instructions: "Falls Ihre E-Mail-Adresse in unserer Datenbank existiert erhalten Sie in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie Ihren Account entsperren können."
-      omniauth_callbacks:
-      success: 'Die haben sich erfolgreich mit Ihrem %{kind}-Account angemeldet.'
-      failure: 'Sie konnten nicht Ihrem %{kind}-Account angemeldet werden, weil "%{reason}".'
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+    omniauth_callbacks:
+      success: 'Successfully authorized from %{kind} account.'
+      failure: 'Could not authorize you from %{kind} because "%{reason}".'
     mailer:
       confirmation_instructions:
-      subject: 'Anleitung zur Bestätigung Ihres Accounts'
+        subject: 'Confirmation instructions'
       reset_password_instructions:
-      subject: 'Anleitung um Ihr Passwort zurückzusetzen'
+        subject: 'Reset password instructions'
       unlock_instructions:
-      subject: 'Anleitung um Ihren Account freizuschalten'
+        subject: 'Unlock Instructions'
+
