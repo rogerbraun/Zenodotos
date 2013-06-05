@@ -5,7 +5,7 @@ class Printout < ActiveRecord::Base
   has_many :lendings
 
   def self.new_from_unprinted
-    lendings = Lending.where("printout_id is null").all
+    lendings = Lending.where("printout_id is null").all.select(&:valid?)
     Printout.create(lendings: lendings)
   end
   
