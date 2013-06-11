@@ -77,7 +77,7 @@
                 <div class="btn-group">
                   <%= link_action 'edit', 'pencil', edit_admin_book_path(book), book %>
                   <%= link_action 'duplicate', 'repeat', duplicate_admin_book_path(book), book %>
-                  <%= link_action 'add_to_collection', 'list-alt', add_to_collection_admin_book_path(book), book %>
+                  <%= link_action 'add_to_collection', 'list-alt', add_to_collection_admin_book_path(book), book, remote: true %>
                   <%= link_action 'delete', 'trash', admin_book_path(book),book, method: :delete, confirm: 'Dieses Buch wirklich löschen?' %>
                 </div>
                 <br>
