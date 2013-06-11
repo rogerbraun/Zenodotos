@@ -1,3 +1,4 @@
+#encoding: utf-8
 require 'spec_helper'
 require_relative "admin_helper"
 
@@ -56,6 +57,13 @@ describe Admin do
         click_on "search_button"
         click_on "return_book_#{borrowed_book.id}"
         expect(borrowed_book.current_lending).to be_blank
+      end
+
+      it "can add a book to collection", :js => true do
+        fill_in "search", with: book.titel
+        click_on "search_button"
+        click_on "add_to_collection_book_#{book.id}"
+        page.should have_content("Buch zu Sammlung hinzufügen")
       end
 
       it "can lend a book", :js => true do
