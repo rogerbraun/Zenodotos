@@ -4,7 +4,7 @@ require "capistrano/ext/multistage"
 require "rvm/capistrano"                  # Load RVM's capistrano plugin.
 set :rvm_type, :system  # Copy the exact line. I really mean :system here
 
-set :application, "Zenodotos"
+set :application, "Kyotopac"
 set :repository,  "git://github.com/rogerbraun/Zenodotos.git"
 
 set :scm, :git

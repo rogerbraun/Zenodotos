@@ -7,3 +7,5 @@ en:
     attributes:
       book:
         ort: "Erscheinungsort"
+        isbn: 'ISBN'
+        issn: 'ISSN'
