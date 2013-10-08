@@ -3,6 +3,9 @@ de:
     attributes:
       book:
         ort: "Erscheinungsort"
+        nacsis_url: "CiNii-Url"
+        nacsis_japanisch: 'CiNii-Eintrag'
+
   admin:
     books:
       actions:
