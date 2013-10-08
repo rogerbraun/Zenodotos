@@ -5,6 +5,9 @@ de:
         ort: "Erscheinungsort"
         isbn: 'ISBN'
         issn: 'ISSN'
+        nacsis_url: "CiNii-Url"
+        nacsis_japanisch: 'CiNii-Eintrag'
+
   admin:
     books:
       actions:
