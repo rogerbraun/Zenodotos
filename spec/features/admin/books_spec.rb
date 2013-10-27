@@ -48,7 +48,7 @@ describe Admin do
           fill_in 'search', with: overdue_book.titel
           click_on 'search_button'
           click_on "extend_book_#{overdue_book.id}"
-          overdue_book.lendings.overdue.should be_empty
+          overdue_book.lendings.overdue.should be_present
         end
       end
 
