@@ -7,13 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<script type="text/javascript">
+  $(function(){
+      $(".active").tooltip();
+  })
+</script>
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "Zenodotos", root_path, :class => 'brand' %>
       <ul class="nav">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Erweiterte Suche", advanced_search_path %></li>
+        <li class="active" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-title="Benutzen Sie die erweiterte Suche, wenn Sie nach dem Signatur-Feld suchen wollen!"><%= link_to "Erweiterte Suche", advanced_search_path %></li>
       </ul>
             <%= form_tag search_path, method: "get", id: "search_form", class: "form-search navbar-form pull-right" do %>
               <input type="text" id="search" name="search" class="input-medium search-query" value="<%= params[:search] %>">
@@ -24,7 +29,6 @@
     </div>
   </div>
 </div>
-
 <%= yield %>
 
 </body>
