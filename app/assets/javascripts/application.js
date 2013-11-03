@@ -11,3 +11,4 @@
 //= require reminders
 //= require jquery.select-autocomplete
 //= require bootstrap
+//= require admin/lendings
