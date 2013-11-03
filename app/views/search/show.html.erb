@@ -1,103 +1,152 @@
 <div class="container">
   <div class="row">
-    <div class="span12">
-      <h1><%= "#{@book.titel} - #{@book.autor}"  %></h1>
-      <div class="row">
-        <div class="span2">
-          <span class='label'>signatur </span>: <%= @book.signatur  %>
-        </div>
-        <div class="span2">
-          <span class='label'>nebensignatur</span>: <%= @book.nebensignatur %>
-        </div>
-        <div class="span2">
-          <span class='label'>stifter </span>: <%= @book.stifter  %>
-        </div>
-        <div class="span2">
-          <span class='label'>standort </span>: <%= @book.standort  %>
-        </div>
-        <div class="span4">
-          <span class='label'>publikationsart </span>: <%= @book.publikationsart  %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span8">
-          <span class='label'>autor </span>: <%= @book.autor  %>
-        </div>
-        <div class="span4">
-          <span class='label'>autor_japanisch </span>: <%= @book.autor_japanisch  %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span12">
-          <span class='label'>titel</span>: <%= @book.titel %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span12">
-          <span class='label'>titel_japanisch</span>: <%= @book.titel_japanisch %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span8">
-          <span class='label'>reihe </span>: <%= @book.reihe  %>
-        </div>
-        <div class="span4">
-          <span class='label'>reihe_japanisch </span>: <%= @book.reihe_japanisch  %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span4">
-          <span class='label'>verlag </span>: <%= @book.verlag  %>
-        </div>
-        <div class="span4">
-          <span class='label'>verlag_japanisch </span>: <%= @book.verlag_japanisch  %>
-        </div>
-        <div class="span4">
-          <span class='label'>Erscheinungsort </span>: <%= @book.ort  %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span1">
-          <span class='label'>seiten</span>: <%= @book.seiten %>
-        </div>
-        <div class="span1">
-          <span class='label'>format </span>: <%= @book.format  %>
-        </div>
-        <div class="span1">
-          <span class='label'>jahr </span>: <%= @book.jahr  %>
-        </div>
-        <div class="span1">
-          <span class='label'>auflage</span>: <%= @book.auflage %>
-        </div>
-        <div class="span1">
-          <span class='label'>baende </span>: <%= @book.baende  %>
-        </div>
-        <div class="span1">
-          <span class='label'>sprache</span>: <%= @book.sprache %>
-        </div>
-        <div class="span1"> <span class='label'>preis </span>: <%= @book.preis  %>
-        </div>
-        <div class="span1"><span class='label'>invent </span>: <%= @book.invent  %>
-        </div>
-        <div class="span4">
-          <span class='label'>aufnahmedatum</span>: <%= @book.aufnahmedatum %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span6">
-          <span class='label'>isbn </span>: <%= @book.isbn  %>
-        </div>
-        <div class="span6">
-          <span class='label'>issn </span>: <%= @book.issn  %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="span4">
-          <span class='label'>inhalt</span>: <%= @book.inhalt %>
-        </div>
-      </div>
-    </div>
+    <h2>
+      <%= "#{@book.titel} - #{@book.autor}"  %>
+    </h2>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>
+            <span class='label'>Signatur </span>: <%= @book.signatur  %>
+          </td>
+          <td>
+            <span class='label'>Nebensignatur</span>: <%= @book.nebensignatur %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Autor </span>: <%= @book.autor  %>
+          </td>
+          <td>
+            <span class='label'>Autor Japanisch </span>: <%= @book.autor_japanisch  %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Titel</span>: <%= @book.titel %>
+          </td>
+          <td>
+            <span class='label'>Titel Japanisch</span>: <%= @book.titel_japanisch %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Reihe </span>: <%= @book.reihe  %>
+          </td>
+          <td>
+            <span class='label'>Reihe Japanisch </span>: <%= @book.reihe_japanisch  %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Erscheinungsort </span>: <%= @book.ort  %>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Verlag </span>: <%= @book.verlag  %>
+          </td>
+          <td>
+            <span class='label'>Verlag Japanisch </span>: <%= @book.verlag_japanisch  %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Jahr </span>: <%= @book.jahr  %>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Auflage</span>: <%= @book.auflage %>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>ISBN </span>: <%= @book.isbn  %>
+          </td>
+          <td>
+            <span class='label'>ISSN </span>: <%= @book.issn  %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Bände </span>: <%= @book.baende  %>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Seiten </span>: <%= @book.seiten  %>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Format </span>: <%= @book.format  %>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Sprache </span>: <%= @book.sprache  %>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class='label'>Inhalt </span>: <%= @book.inhalt  %>
+          </td>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-striped">
+      <tr>
+        <td>
+          <span class='label'>Standort </span>: <%= @book.standort %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='label'>Publikationsart </span>: <%= @book.publikationsart  %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='label'>Stifter </span>: <%= @book.stifter  %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='label'>Invent. </span>: <%= @book.invent  %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='label'>Preis </span>: <%= @book.preis  %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='label'>CiNii URL </span>: <%= @book.nacsis_url  %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='label'>CiNii Eintrag </span>: <%= @book.nacsis_japanisch  %>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
-
