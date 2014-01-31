@@ -5,6 +5,7 @@ class Borrower < ActiveRecord::Base
 
   has_many :lendings
   has_many :reservations
+  after_destroy :delete_lendings
 
   include FTSSearchable
 
@@ -42,6 +43,10 @@ class Borrower < ActiveRecord::Base
 
   def borrower
     current_lending ? current_lending.borrower.name : "nicht entliehen"
+  end
+  private
+  def delete_lendings
+    lendings.destroy_all
   end
 
 end
