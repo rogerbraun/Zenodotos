@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 <div>
 <% @reminder.lendings_by_borrower.each do |lending| %>
-  <h4><%= lending[0].name %> Matrkelnr. <%= lending[0].matrikelnr%></h4>
+  <h4><%= lending[0].name %> Matrikelnr. <%= lending[0].matrikelnr%></h4>
   <ol>
     <% lending[1].each do |l|%>
       <% if l.returned %>
