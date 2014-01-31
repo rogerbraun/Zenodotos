@@ -1,5 +1,19 @@
+<% content_for :content do %>
 <p id="notice"><%= notice %></p>
-
+<div>
+<% @reminder.lendings_by_borrower.each do |lending| %>
+  <h4><%= lending[0].name %> Matrkelnr. <%= lending[0].matrikelnr%></h4>
+  <ol>
+    <% lending[1].each do |l|%>
+      <% if l.returned %>
+        <li>Buch #<%= l.book_id %>: ✓</li>
+      <% else %>
+        <li>Buch #<%= l.book_id %>: fällig am <%= l.return_date %></li>
+      <% end %>
+  <% end %>
+  </ol>
+<% end %>
+</div>
 <p>
   <b>Send date:</b>
   <%= @reminder.send_date %>
@@ -8,3 +22,4 @@
 
 <%= link_to 'Edit', edit_admin_reminder_path(@reminder) %> |
 <%= link_to 'Back', admin_reminders_path %>
+<% end %>
