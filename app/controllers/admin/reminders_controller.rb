@@ -18,7 +18,7 @@ class Admin::RemindersController < Admin::AdminController
     @reminder = ReminderDecorator.new(Reminder.find(params[:id]))
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @reminders }
+      format.json { render json: @reminder }
     end
   end
 
