@@ -44,7 +44,7 @@ group :test do
   gem "guard-rspec"
 end
 
-gem "paper_trail", "~> 2"
+gem "paper_trail", "~> 3"
 gem "draper"
 gem 'ledermann-rails-settings', :require => 'rails-settings'
 
